@@ -4,58 +4,83 @@
 
 $color-blue: #0C2340
 $color-pink: #EF426F
-$font: NeueHaasGrotesk
+$font: NeueHaasGrotesk, sans-serif
+
+body
+  font-family: $font
+  font-size: 18px
+
+h1
+  font-size: 3em
+  line-height: 1.05em
+  font-weight: bolder
+
+h2
+  font-size: 2.25em
+  line-height: 1.25em
+  font-weight: bold
+
+h3
+  font-size: 1.75em
+  line-height: 1.25em
+  font-weight: bold
+
+h4
+  font-size: 1.125em
+  line-height: 1.222222em
+  font-weight: bold
+
+h5
+  font-size: 1em
+  line-height: 1.375em
+  font-weight: bold
+
+p
+  font-size: 1em
+  line-height: 1.375em
+  font-weight: lighter
+
+b
+  font-weight: bold
+
+body, h1, h2, h3, h4, h5, h6
+  font-size-adjust: 0.5
 
 .container-fluid.home
   min-height: 100vh
 
-  .row.space
-    min-height: 20vh
-
   .row.hero
-    padding-top: 10vh
-    padding-bottom: 10vh
+    padding: 10vh
     background-color: $color-blue
     color: white
 
-  .row.form
-    margin-top: 10vh
+    h1
+      color: $color-pink
 
-  .row.value
-    margin-top: 10vh
-
-  .row.program
-    margin-top: 10vh
-    p
-      margin-bottom: 5vh
-
-  html
-    font-family: $font, sans-serif
-
-  h1
-    font-size: 75px
-    font-weight: bold
-    letter-spacing: -5px
-
-    span
+    h3
       font-weight: lighter
 
-  h2
-    font-size: 65px
+    h3.opening-date
+      margin-top: 5vh
+      font-weight: bold
 
-  h3
-    font-size: 51px
-    color: $color-pink
+    img
+      padding-bottom: 5vh
 
-  h4
-    font-size: 40px
+  .row.form
+    padding: 5vh 10vh
 
-  h5
-    font-size: 31px
-    font-weight: 200
+  .row.value
+    padding: 5vh 10vh
 
-  h5.opening
-    margin-top: 5vh
+  .row.program
+    padding: 5vh 10vh
+
+    .module
+      padding: 1.25vh 0vh
+
+  .row.footer
+    padding: 5vh 10vh
 
   #registerButton
     color: white
