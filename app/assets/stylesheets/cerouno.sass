@@ -1,5 +1,6 @@
 $color-blue: #0C2340
 $color-pink: #EF426F
+$color-dark-pink: #CC2952
 $color-gray: #ADADAD
 $font: NeueHaasGrotesk, sans-serif
 
@@ -43,9 +44,28 @@ b
 a
   color: $color-pink
 
+label
+  font-weight: bold
+
+input
+  font-weight: lighter
+  color: $color-gray
+
 a:hover, a:focus
   text-decoration: none
   color: $color-gray
 
 body, h1, h2, h3, h4, h5, h6
   font-size-adjust: 0.5
+
+.btn-primary
+  color: white
+  background-color: $color-pink
+  border-color: $color-dark-pink
+  font-weight: bold
+
+.btn-primary:hover
+  color: $color-gray
+  background-color: $color-dark-pink
+  border-color: $color-dark-pink
+  font-weight: bold
