@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   context 'when user is valid' do
     it 'creates user record' do
-      user = User.create(
+      user = build(
+        :user,
         name:                  'Jorge Téllez',
         email:                 'jorge@example.com',
         password:              'password',
@@ -18,52 +19,47 @@ RSpec.describe User, type: :model do
 
   context 'when user is invalid' do
     it 'does not create user without name' do
-      user = User.create(
-        email:                 'jorge@example.com',
-        password:              'password',
-        password_confirmation: 'password'
-        )
+      user = build(:user, name: nil)
 
       expect(user).not_to be_valid
     end
 
     it 'does not create user with non-letter characters' do
-      user = User.create(
-        name:                  '12312Jorge',
-        email:                 'jorge@example.com',
-        password:              'password',
-        password_confirmation: 'password'
-        )
+      user = build(:user, name: '12312Jorge')
 
       expect(user).not_to be_valid
     end
 
     it 'does not create user without email' do
-      user = User.create(
-        name:                  'Jorge',
-        password:              'password',
-        password_confirmation: 'password'
-        )
+      user = build(:user, email: nil)
 
       expect(user).not_to be_valid
     end
 
     it 'does not create user with invalid email' do
-      user = User.create(
-        name:                  'Jorge Téllez',
-        email:                 'jorge@example.',
-        password:              'password',
-        password_confirmation: 'password'
-        )
+      user = build(:user, email: 'jorge@example.')
 
       expect(user).not_to be_valid
     end
 
+    it 'does not create a user with a duplicate email' do
+      first_user = create(:user, email: 'jorge@example.com')
+
+      expect(first_user).to be_valid
+
+      second_user = build(:user, email: 'jorge@example.com')
+
+      expect(second_user).not_to be_valid
+    end
+
     it 'does not create user without password' do
-      user = User.create(
-        name:                  'Jorge Téllez',
-        email:                 'jorge@example.com',
-        )
+      user = build(:user, password: nil)
+
+      expect(user).not_to be_valid
+    end
+
+    it 'does not create user without password confirmation' do
+      user = build(user, password_confirmation: nil)
 
       expect(user).not_to be_valid
     end

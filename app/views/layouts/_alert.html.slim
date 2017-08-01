@@ -1,0 +1,5 @@
+- unless flash.empty?
+  - flash.each do |key, value|
+    .row
+      .col-md-12
+        = content_tag :div, value, class: "alert alert-#{key}"

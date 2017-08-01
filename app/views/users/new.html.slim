@@ -7,18 +7,17 @@
       h3 PLATAFORMA DE ADMISIONES
       p Bienvenido/a a nuestro sistema de admisiones en línea. Crea una cuenta para comenzar tu aplicación.
       p ¿Tienes una cuenta? Inicia tu sesión #{link_to 'aquí', login_path}. 
-      form
+      = form_for @user do |f|
         .form-group
-          label for="inputName" NOMBRE
-          input#inputName.form-control aria-describedby="nameHelp" placeholder=("Juan Garza") type="name"
+          = f.label(:name, 'NOMBRE')
+          = f.text_field(:name, placeholder: 'Ada Lovelace', class: 'form-control')
         .form-group
-          label for="inputEmail" EMAIL
-          input#inputEmail.form-control aria-describedby="emailHelp" placeholder=("juan@ejemplo.com") type="email"
+          = f.label(:email, 'EMAIL')
+          = f.email_field(:email, placeholder: 'ada@example.com', class: 'form-control')
           small#emailHelp.form-text.text-muted Nunca compartiremos tu email con terceros sin tu permiso.
         .form-group
-          label for="inputPassword" PASSWORD
-          input#inputPassword.form-control placeholder="Password" type="password"
-        .form-group
-          input#inputPasswordConfirmation.form-control placeholder="Confirma tu Password" type="password-confirmation"
-        button.btn.btn-primary.form-control type="submit" CREAR CUENTA
+          = f.label(:password, 'PASSWORD')
+          = f.password_field(:password, placeholder: 'Password', class: 'form-control')
+          = f.password_field(:password_confirmation, placeholder: 'Confirma tu Password', class: 'form-control')
+        = f.submit('CREAR CUENTA', class: 'btn btn-primary form-control')        
     .col-md-3
