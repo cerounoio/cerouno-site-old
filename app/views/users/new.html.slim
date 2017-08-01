@@ -11,13 +11,19 @@
         .form-group
           = f.label(:name, 'NOMBRE')
           = f.text_field(:name, placeholder: 'Ada Lovelace', class: 'form-control')
+          - if @user.errors.messages[:name].any?
+            small.form-text.text-alert= format_form_errors(@user, :name)
         .form-group
           = f.label(:email, 'EMAIL')
           = f.email_field(:email, placeholder: 'ada@example.com', class: 'form-control')
           small#emailHelp.form-text.text-muted Nunca compartiremos tu email con terceros sin tu permiso.
+          - if @user.errors.messages[:email].any?
+            small.form-text.text-alert= format_form_errors(@user, :email)
         .form-group
           = f.label(:password, 'PASSWORD')
           = f.password_field(:password, placeholder: 'Password', class: 'form-control')
           = f.password_field(:password_confirmation, placeholder: 'Confirma tu Password', class: 'form-control')
+          - if @user.errors.messages[:password].any?
+            small.form-text.text-alert= format_form_errors(@user, :password)
         = f.submit('CREAR CUENTA', class: 'btn btn-primary form-control')        
     .col-md-3

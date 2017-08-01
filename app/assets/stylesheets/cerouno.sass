@@ -4,6 +4,11 @@ $color-dark-pink: #CC2952
 $color-gray: #ADADAD
 $font: NeueHaasGrotesk, sans-serif
 
+$color-danger: #A21D3F
+$color-success: #0CA221
+$color-warning: #F86138
+$color-info: #2583A2
+
 body
   font-family: $font
   font-size: 18px
@@ -67,16 +72,19 @@ body, h1, h2, h3, h4, h5, h6
   font-size: 1em
 
 .alert.alert-danger
-  background-color: #A21D3F
+  background-color: $color-danger
 
 .alert.alert-success
-  background-color: #0CA221
+  background-color: $color-success
 
 .alert.alert-warning
-  background-color: #F86138
+  background-color: $color-warning
 
 .alert.alert-info
-  background-color: #2583A2
+  background-color: $color-info
+
+small.form-text.text-alert
+  color: $color-danger
 
 .btn-primary
   color: white
