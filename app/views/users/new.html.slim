@@ -9,11 +9,14 @@
       p ¿Tienes una cuenta? Inicia tu sesión #{link_to 'aquí', login_path}. 
       form
         .form-group
-          label for="exampleInputEmail1" EMAIL
+          label for="inputName" NOMBRE
+          input#inputName.form-control aria-describedby="nameHelp" placeholder=("Juan Garza") type="name"
+        .form-group
+          label for="inputEmail" EMAIL
           input#inputEmail.form-control aria-describedby="emailHelp" placeholder=("juan@ejemplo.com") type="email"
           small#emailHelp.form-text.text-muted Nunca compartiremos tu email con terceros sin tu permiso.
         .form-group
-          label for="exampleInputPassword1" PASSWORD
+          label for="inputPassword" PASSWORD
           input#inputPassword.form-control placeholder="Password" type="password"
         .form-group
           input#inputPasswordConfirmation.form-control placeholder="Confirma tu Password" type="password-confirmation"
