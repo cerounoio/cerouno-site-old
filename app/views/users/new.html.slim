@@ -22,8 +22,10 @@
         .form-group
           = f.label(:password, 'PASSWORD')
           = f.password_field(:password, placeholder: 'Password', class: 'form-control')
-          = f.password_field(:password_confirmation, placeholder: 'Confirma tu Password', class: 'form-control')
           - if @user.errors.messages[:password].any?
             small.form-text.text-alert= format_form_errors(@user, :password)
+          = f.password_field(:password_confirmation, placeholder: 'Confirma tu Password', class: 'form-control')
+          - if @user.errors.messages[:password_confirmation]
+            small.form-text.text-alert= format_form_errors(@user, :password_confirmation)
         = f.submit('CREAR CUENTA', class: 'btn btn-primary form-control')        
     .col-md-3

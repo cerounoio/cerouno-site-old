@@ -27,5 +27,8 @@ module CerounoSite
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Set locale to Mexican Spanish
+    config.i18n.default_locale = 'es-MX'
   end
 end

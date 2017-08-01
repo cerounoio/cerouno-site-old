@@ -1,0 +1,5 @@
+es-MX:
+  name: 'el nombre'
+  email: 'el email'
+  password: 'el password'
+  password confirmation: 'la confirmación de password'
