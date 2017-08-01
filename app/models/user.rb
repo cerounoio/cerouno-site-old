@@ -10,4 +10,7 @@ class User < ApplicationRecord
 
   validates :password, presence:     true,
                        confirmation: true
+
+  has_many :applications
+  has_one  :application
 end
