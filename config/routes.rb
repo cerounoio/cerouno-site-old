@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   # Users
   get 'register', to: 'users#new'
-  resources 'users', except: [:index, :destroy, :new]
+  resources :users, only: [:show, :create, :edit, :update]
+
+  # Applications
+  resources :applications, only: [:show, :update]
 
   # Home
   root 'home#show'

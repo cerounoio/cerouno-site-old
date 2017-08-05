@@ -1,0 +1,171 @@
+.container-fluid.applications
+  .row.dashboard
+    .col-md-2
+      .row.nav
+        .col-md-12
+          .profile
+            h6 PERFIL
+            h5 JORGE TÉLLEZ
+          .application
+            h4 APLICACIÓN
+            h6 DEMOGRAFÍA
+            h6 DIRECCIÓN
+            h6.completed EXPERIENCIA 
+            h6.completed REFERENCIA
+          .logout
+            h6 SALIR
+          
+    .col-md-10
+      .row.info
+        .col-md-12
+          .title
+            .card
+              .card-block
+                .row
+                  .col-md-12
+                    h1 APLICACIÓN
+                .row
+                  .col-md-12
+                    p
+                      | Gracias por iniciar tu proceso de admisiónes con <b>CEROUNO</b>. 
+                      | Por favor, completa la siguiente información antes de enviar tu 
+                      | aplicación. Puedes modificar la información en cualquier momento
+                      | antes de enviarla. 
+                      | Una vez enviada, revisaremos tu solicitud y te 
+                      | contactaremos para agendar tu entrevista presencial.
+                .row
+                  .col-md-6
+                    h5 ESTATUS
+                    p APLICACIÓN INICIADA
+                  .col-md-6
+                    h5 INFORMACIÓN PENDIENTE
+                    p DEMOGRAFÍA, DIRECCIÓN
+                .row.button
+                  .col-md-12
+                    .text-right
+                      button.btn.disabled ENVIAR APLICACIÓN
+          .demographics
+            .card
+              .card-block
+                h5 PASO 1
+                h3 DEMOGRAFÍA
+                p 
+                  | Nuestro objetivo es dar oportunidades a grupos que tradicionalmente 
+                  | no están representados en el sector de tecnología. Estos datos nos 
+                  | ayudarán a mejorar nuestro proceso de admisiones para atraer a gente 
+                  | diversa y altamente calificada.
+                form
+                  .form-group.row
+                    .col-md-6
+                      label for="inputEmail3" NACIMIENTO
+                      .row
+                        .col-md-12
+                          = date_select(:user, :birthdate, { default: 18.years.ago, start_year: 100.years.ago.year, end_year: 18.years.ago.year }, { class: 'custom-select' })
+                    .col-md-6
+                      label for="inputPassword3" GÉNERO
+                      select#selectGender.custom-select.form-control
+                        option Género
+                        option Femenino
+                        option Masculino
+                        option Otro
+                  .form-group.row.button
+                    .col-md-12
+                      .text-right
+                        button.btn.btn-primary type="submit" GUARDAR DEMOGRAFÍA
+
+          .address
+            .card
+              .card-block
+                h5 PASO 2
+                h3 DIRECCIÓN
+                p 
+                  | El darnos tu dirección nos ayuda a entrar en contacto contigo
+                  | para poderte enviar correspondecia como certificados y darle 
+                  | seguimiento a tu trayectoria profesional una vez que te gradúes.
+                form
+                  .form-group.row
+                    .col-md-6
+                      label for="inputStreet" CALLE Y NÚMERO
+                      input#inputStreet.form-control placeholder="Avenida Siempre Viva 742"
+                    .col-md-6
+                      label for="inputState" ESTADO
+                      select#selectState.custom-select.form-control
+                        - mexican_states.each do |state|
+                          option= state
+                  .form-group.row
+                    .col-md-6
+                      label for="inputCity" CIUDAD
+                      input#inputCity.form-control placeholder="Springfield"
+                    .col-md-6
+                      label for="inputZipCode" CÓDIGO POSTAL
+                      input#inputZipCode.form-control placeholder="49007"
+                  .form-group.row.button
+                    .col-md-12
+                      .text-right
+                        button.btn.btn-primary type="submit" GUARDAR DIRECCIÓN
+          .experience
+            .card
+              .card-block
+                h5 PASO 3
+                h3 EXPERIENCIA
+                p 
+                  | Queremos conocer lo que has hecho y medir el impacto de nuestro
+                  | programa. Por eso preguntamos tu nivel de ingreso mensual y tu
+                  | nivel de estudios. En cuanto a tu currículum, no te preocupes
+                  | en pulirlo. Sólo queremos conocerte.
+                form
+                  .form-group.row
+                    .col-md-6
+                      label for="selectEducation" NIVEL DE ESTUDIOS
+                      select#selectEduaction.custom-select.form-control
+                        - education_level.each do |level|
+                          option= level
+                      small.form-text.text-muted Máximo nivel de estudios terminado.
+                    .col-md-6
+                      label for="inputIncome" NIVEL DE INGRESOS
+                      input#inputIncome.form-control placeholder="15000" type="number"
+                      small.form-text.text-muted Sueldo mensual bruto (antes de impuestos).
+                  .form-group.row
+                    .col-md-6
+                      label for="select" EXPERIENCIA PREVIA
+                      select#selectExperience.custom-select.form-control
+                        option Sí
+                        option No
+                      small.form-text.text-muted 
+                        | ¿Tienes experiecia previa programando? Tu respuesta no 
+                        | afectará nuesta decisión, sólo queremos entender mejor 
+                        | tus necesidades.
+                    .col-md-6
+                      label for="inputCity" CURRÍCULUM VITAE
+                      .row
+                        .col-md-12
+                          label.form-control.custom-file
+                            input.custom-file-input type="file" id="file"
+                            span.custom-file-control
+                  .form-group.row.button
+                    .col-md-12
+                      .text-right
+                        button.btn.btn-primary type="submit" GUARDAR EXPERIENCIA
+          .reference
+            .card
+              .card-block
+                h5 PASO 4
+                h3 RECLUTAMIENTO
+                p
+                  | Nos gustaría saber cómo te enteraste de nosotros. Esto nos permite 
+                  | mejorar nuestra estrategia de reclutamiento y crear mejores alianzas 
+                  | para ofrecer nuestro programa a perfiles no tradicionales. 
+                form
+                  .form-group.row
+                    .col-md-6
+                      label for="select" CÓMO ESCUCHASTE DE NOSOTROS
+                      select#selectReferral.custom-select.form-control
+                        - referral_options.each do |option|
+                          option= option
+                    .col-md-6
+                      label for="inputPromoCode" CÓDIGO PROMOCIONAL
+                      input#inputIncome.form-control placeholder="Cupón" type="text"
+                  .form-group.row.button
+                    .col-md-12
+                      .text-right
+                        button.btn.btn-primary type="submit" GUARDAR RECLUTAMIENTO

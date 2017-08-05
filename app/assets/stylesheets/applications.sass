@@ -1,0 +1,77 @@
+// Place all the styles related to the applications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-fluid.applications
+  min-height: 100vh
+  min-width: 100vw
+
+  .row.dashboard
+    min-height: 100%
+
+    .row.nav
+      background-color: $color-blue
+      min-height: 100%
+      padding: 2.5vh 1.25vw
+      color: white
+
+      h4
+        color: $color-pink
+      h5
+        color: white
+      h6
+        color: $color-gray
+      h6.pending
+        color: $color-warning
+      h6.completed
+        color: $color-success
+      small
+        color: $color-gray
+
+      .profile
+        margin: 5vh 0vw
+      .application
+        margin: 5vh 0vw
+
+    .row.info
+      min-height: 100vh
+      padding: 2.5vh 1.25vw
+
+      h1
+        color: $color-pink
+        margin-bottom: 5vh
+
+      h3
+        margin-bottom: 5vh
+
+      .title
+        margin: 5vh 2.5vw
+      .demographics
+        margin: 5vh 2.5vw
+      .address
+        margin: 5vh 2.5vw
+      .experience
+        margin: 5vh 2.5vw
+      .reference
+        margin: 5vh 2.5vw
+
+      .row.button
+        margin-top: 5vh
+
+      form
+        #user_birthdate_3i
+          min-width: 5vw
+        #user_birthdate_2i
+          min-width: 15vw
+        #user_birthdate_1i
+          min-width: 7.5vw
+
+
+        .form-control.custom-file
+          border: none
+        .custom-file-control
+          font-weight: lighter
+        .custom-file-control:before
+          content: "BUSCAR"
+        .custom-file-control:after
+          content: "Agregar currículum"
