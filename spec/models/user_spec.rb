@@ -19,7 +19,7 @@ RSpec.describe User, type: :model do
 
   context 'when user is invalid' do
     it 'does not create user without name' do
-      user = build(:user, name: nil)
+      user = build(:user, name: '')
 
       expect(user).not_to be_valid
     end
@@ -31,7 +31,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'does not create user without email' do
-      user = build(:user, email: nil)
+      user = build(:user, email: '')
 
       expect(user).not_to be_valid
     end
@@ -53,13 +53,13 @@ RSpec.describe User, type: :model do
     end
 
     it 'does not create user without password' do
-      user = build(:user, password: nil)
+      user = build(:user, password: '')
 
       expect(user).not_to be_valid
     end
 
     it 'does not create user without password confirmation' do
-      user = build(user, password_confirmation: nil)
+      user = build(:user, password_confirmation: '')
 
       expect(user).not_to be_valid
     end

@@ -12,10 +12,11 @@ RSpec.describe Application, type: :model do
         user:   user
         )
 
-      expect(application).to        be_valid
-      expect(application.status).to eq 'started'
-      expect(application.steps).to  eq ['demographic', 'address']
-      expect(application.user).to   eq user
+      expect(application).to                    be_valid
+      expect(application.status).to             eq 'started'
+      expect(application.steps).to              eq ['demographic', 'address']
+      expect(application.pending_steps.sort).to eq ['experience', 'recruitment'].sort
+      expect(application.user).to               eq user
     end
   end
 
