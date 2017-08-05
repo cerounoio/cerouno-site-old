@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate!, except: :create
+
   def show
   end
 

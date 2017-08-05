@@ -1,4 +1,6 @@
 class ApplicationsController < ApplicationController
+  before_action :authenticate!
+
   def show
   end
 

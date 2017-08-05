@@ -13,7 +13,7 @@
             h6.completed EXPERIENCIA 
             h6.completed REFERENCIA
           .logout
-            h6 SALIR
+            h6= link_to 'SALIR', logout_path
           
     .col-md-10
       .row.info
@@ -136,7 +136,7 @@
                         | afectará nuesta decisión, sólo queremos entender mejor 
                         | tus necesidades.
                     .col-md-6
-                      label for="inputCity" CURRÍCULUM VITAE
+                      label for="inputCurriculumVitae" CURRÍCULUM VITAE
                       .row
                         .col-md-12
                           label.form-control.custom-file

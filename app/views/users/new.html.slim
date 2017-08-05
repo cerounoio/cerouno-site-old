@@ -9,7 +9,7 @@
       p ¿Tienes una cuenta? Inicia tu sesión #{link_to 'aquí', login_path}. 
       = form_for @user do |f|
         .form-group
-          = f.label(:name, 'NOMBRE')
+          = f.label(:name, 'NOMBRE COMPLETO')
           = f.text_field(:name, placeholder: 'Ada Lovelace', class: 'form-control')
           - if @user.errors.messages[:name].any?
             small.form-text.text-alert= format_form_errors(@user, :name)
