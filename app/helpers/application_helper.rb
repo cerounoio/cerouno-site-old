@@ -55,6 +55,12 @@ module ApplicationHelper
     ]
   end
 
+  def format_steps(steps)
+    return I18n.translate('none').capitalize if steps.empty?
+
+    steps.map { |step| I18n.translate(step) }.join(', ').capitalize
+  end
+
   def format_form_errors(object, attribute)
     messages = object.errors.messages[attribute.to_sym].uniq
     messages.map { |message| format_error_message(attribute, message) }.join(' ')

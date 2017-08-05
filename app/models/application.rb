@@ -1,5 +1,5 @@
 class Application < ApplicationRecord
-  STEPS = %w(demographic address experience referral)
+  STEPS = %w(demographic address experience recruitment)
 
   belongs_to :user
 
@@ -16,6 +16,10 @@ class Application < ApplicationRecord
     needs_rejection:          7,
     rejected:                 8
   }
+
+  def pending_steps
+    STEPS - steps
+  end
 
   private
 

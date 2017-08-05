@@ -1,0 +1,13 @@
+.row.nav
+  .col-md-12
+    .profile
+      h6= link_to 'PERFIL', edit_user_path
+      h5= @current_user.name.upcase
+    .application
+      h4= link_to 'APLICACIÓN', application_path(current_application)
+      h6 DEMOGRAFÍA
+      h6 DIRECCIÓN
+      h6.completed EXPERIENCIA 
+      h6.completed REFERENCIA
+    .logout
+      h6= link_to 'SALIR', logout_path

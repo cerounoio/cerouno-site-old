@@ -1,0 +1,43 @@
+.container-fluid.platform
+  .row.dashboard
+    .col-md-2
+      = render 'layouts/nav'
+    .col-md-10
+      .row.info
+        .col-md-12
+          .title
+            .card
+              .card-block
+                .row
+                  .col-md-12
+                    h1 PERFIL
+                .row
+                  .col-md-12
+                    = form_for @user, method: :patch do |f|
+                      .form-group.row
+                        .col-md-6
+                          = f.label(:name, 'NOMBRE COMPLETO')
+                          = f.text_field(:name, placeholder: 'Ada Lovelace', class: 'form-control')
+                          - if @user.errors.messages[:name].any?
+                            small.form-text.text-alert= format_form_errors(@user, :name)
+                        .col-md-6
+                          = f.label(:password, 'PASSWORD')
+                          = f.password_field(:password, placeholder: 'Password', class: 'form-control')
+                          - if @user.errors.messages[:password].any?
+                            small.form-text.text-alert= format_form_errors(@user, :password)
+                      .form-group.row
+                        .col-md-6
+                            = f.label(:email, 'EMAIL')
+                            = f.email_field(:email, placeholder: 'ada@example.com', class: 'form-control')
+                            small#emailHelp.form-text.text-muted Nunca compartiremos tu email con terceros sin tu permiso.
+                            - if @user.errors.messages[:email].any?
+                              small.form-text.text-alert= format_form_errors(@user, :email)
+                        .col-md-6
+                          = f.label(:password_confirmation, 'CONFIRMACIÓN DE PASSWORD')
+                          = f.password_field(:password_confirmation, placeholder: 'Confirma tu Password', class: 'form-control')
+                          - if @user.errors.messages[:password_confirmation]
+                            small.form-text.text-alert= format_form_errors(@user, :password_confirmation)
+                      .form-group.row.button
+                        .col-md-12
+                          .text-right
+                            = f.submit('ACTUALIZAR PERFIL', class: 'btn btn-primary')

@@ -7,7 +7,7 @@
       h3 PLATAFORMA DE ADMISIONES
       p Bienvenido/a a nuestro sistema de admisiones en línea. Introduce tu email y password para iniciar tu sesión.
       p ¿No tienes un usuario? Crea tu cuenta #{link_to 'aquí', register_path}.
-      = form_for(@user, url: login_path) do |f| 
+      = form_for @user, url: login_path do |f| 
         .form-group
           = f.label(:email, 'EMAIL')
           = f.email_field(:email, placeholder: 'ada@example.com', class: 'form-control')

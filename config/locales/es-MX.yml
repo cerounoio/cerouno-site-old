@@ -12,3 +12,8 @@ es-MX:
   declined invitation: 'invitación declinada'
   needs rejection: 'necesita recibir no aceptación'
   rejected: 'no aceptada'
+  demographic: 'demografía'
+  address: 'dirección'
+  experience: 'experiencia'
+  recruitment: 'reclutamiento'
+  none: 'ninguna'

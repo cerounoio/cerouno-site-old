@@ -1,20 +1,7 @@
-.container-fluid.applications
+.container-fluid.platform
   .row.dashboard
     .col-md-2
-      .row.nav
-        .col-md-12
-          .profile
-            h6 PERFIL
-            h5 JORGE TÉLLEZ
-          .application
-            h4 APLICACIÓN
-            h6 DEMOGRAFÍA
-            h6 DIRECCIÓN
-            h6.completed EXPERIENCIA 
-            h6.completed REFERENCIA
-          .logout
-            h6= link_to 'SALIR', logout_path
-          
+      = render 'layouts/nav'
     .col-md-10
       .row.info
         .col-md-12
@@ -36,10 +23,10 @@
                 .row
                   .col-md-6
                     h5 ESTATUS
-                    p APLICACIÓN INICIADA
+                    p= I18n.translate(current_application.status).upcase
                   .col-md-6
                     h5 INFORMACIÓN PENDIENTE
-                    p DEMOGRAFÍA, DIRECCIÓN
+                    p= format_steps(current_application.pending_steps).upcase
                 .row.button
                   .col-md-12
                     .text-right
@@ -127,7 +114,7 @@
                       small.form-text.text-muted Sueldo mensual bruto (antes de impuestos).
                   .form-group.row
                     .col-md-6
-                      label for="select" EXPERIENCIA PREVIA
+                      label for="select" EXPERIENCIA EN PROGRAMACIÓN
                       select#selectExperience.custom-select.form-control
                         option Sí
                         option No

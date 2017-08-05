@@ -48,16 +48,15 @@ b
 
 a
   color: $color-pink
+a:hover, a:focus
+  text-decoration: none
+  color: $color-gray
 
 label
   font-weight: bold
 
 input
   font-weight: lighter
-  color: $color-gray
-
-a:hover, a:focus
-  text-decoration: none
   color: $color-gray
 
 body, h1, h2, h3, h4, h5, h6
@@ -70,16 +69,12 @@ body, h1, h2, h3, h4, h5, h6
   color: white
   font-weight: lighter
   font-size: 1em
-
 .alert.alert-danger
   background-color: $color-danger
-
 .alert.alert-success
   background-color: $color-success
-
 .alert.alert-warning
   background-color: $color-warning
-
 .alert.alert-info
   background-color: $color-info
 
@@ -91,13 +86,17 @@ small.form-text.text-alert
   background-color: $color-pink
   border-color: $color-dark-pink
   font-weight: bold
-
-.btn.disabled
-  background-color: $color-gray
-  font-weight: bold
-
 .btn.btn-primary:hover
   color: $color-gray
   background-color: $color-dark-pink
   border-color: $color-dark-pink
   font-weight: bold
+.btn.disabled
+  background-color: $color-gray
+  font-weight: bold
+
+.nav
+  a
+    color: $color-gray
+  a:hover, a:focus
+    color: $color-pink

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate!, except: :create
+  before_action :authenticate!, except: [:create, :new]
 
   def show
   end
@@ -12,8 +12,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      session[:user_id]        = @user.id
-      application              = @user.create_application(status: :started)
+      session[:user_id] = @user.id
+      application       = @user.create_application(status: :started)
 
       redirect_to application_path(application), success: 'Tu cuenta fue creada exitosamente. Bienvenido/a.'
     else
@@ -23,9 +23,18 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
   end
 
   def update
+    @user = current_user
+
+    if @user.update(user_params)
+      redirect_back fallback_location: edit_user_path, success: 'Tu cuenta fue actualizada exitosamente.'
+    else
+      flash.now[:danger] = 'Tu cuenta no pudo ser actualizada. Por favor intenta de nuevo.'
+      render :edit
+    end
   end
 
   private
