@@ -11,8 +11,8 @@ class Application < ApplicationRecord
     needs_schedule_interview: 2,
     needs_interview_scores:   3,
     needs_invitation:         4,
-    accepted:                 5,
-    declined:                 6,
+    accepted_invitation:      5,
+    declined_invitation:      6,
     needs_rejection:          7,
     rejected:                 8
   }

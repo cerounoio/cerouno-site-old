@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def current_application
-    @current_application ||= Application.find_by(application_id: session[:application_id])
+    @current_application ||= current_user.application
   end
 end
