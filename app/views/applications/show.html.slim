@@ -23,10 +23,10 @@
                 .row
                   .col-md-6
                     h5 ESTATUS
-                    p= I18n.translate(current_application.status).upcase
+                    p= I18n.translate(current_application.status).capitalize
                   .col-md-6
                     h5 INFORMACIÓN PENDIENTE
-                    p= format_steps(current_application.pending_steps).upcase
+                    p= format_steps(current_application.pending_steps)
                 .row.button
                   .col-md-12
                     .text-right
@@ -129,6 +129,9 @@
                           label.form-control.custom-file
                             input.custom-file-input type="file" id="file"
                             span.custom-file-control
+                      small.form-text.text-muted 
+                        | Haz click en 'BUSCAR' y selecciona el archivo que 
+                        | contiene tu currículum vitae.
                   .form-group.row.button
                     .col-md-12
                       .text-right
