@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to application_path(current_application) if current_user
+
     @user = User.new
   end
 
