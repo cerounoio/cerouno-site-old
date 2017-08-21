@@ -2,6 +2,7 @@ class Application < ApplicationRecord
   STEPS = %w(demographic address experience recruitment)
 
   belongs_to :user
+  has_one    :demographic
 
   validate :valid_steps
 
@@ -19,6 +20,16 @@ class Application < ApplicationRecord
 
   def pending_steps
     STEPS - steps
+  end
+
+  def add_step(step)
+    steps << step unless steps.include?(step)
+    save
+  end
+
+  def remove_step(step)
+    self.steps = self.steps.reject { |step| step == step }
+    save
   end
 
   private

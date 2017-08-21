@@ -18,3 +18,6 @@ es-MX:
   experience: 'experiencia'
   recruitment: 'reclutamiento'
   none: 'ninguna'
+  female: 'femenino'
+  male: 'masculino'
+  other: 'otro'

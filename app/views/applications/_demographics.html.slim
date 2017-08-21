@@ -1,0 +1,34 @@
+.demographics
+  .card
+    .card-block
+      - if @demographic.complete?
+        .text-right
+          span.badge.badge-primary COMPLETADO
+      h5 PASO 1
+      h3 DEMOGRAFÍA
+      p 
+        | Nuestro objetivo es dar oportunidades a grupos que tradicionalmente 
+        | no están representados en el sector de tecnología. Estos datos nos 
+        | ayudarán a mejorar nuestro proceso de admisiones para atraer a gente 
+        | diversa y altamente calificada.
+      = form_for @demographic do |f|
+        .form-group.row
+          .col-md-6
+            = f.label(:birthdate, 'NACIMIENTO')
+            .row
+              .col-md-12
+                = f.date_select(:birthdate, { default: 18.years.ago, start_year: 100.years.ago.year, end_year: 18.years.ago.year }, { class: 'custom-select' })
+                - if @demographic.errors[:birthdate].any?
+                  small.form-text.text-alert= format_form_errors(@demographic, :birthdate)
+          .col-md-6
+            = f.label(:gender, 'GENDER')
+            = f.select(:gender, gender_options, { include_blank: true }, { class: 'custom-select form-control' })
+            - if @demographic.errors[:gender].any?
+              small.form-text.text-alert= format_form_errors(@demographic, :gender)
+        .form-group.row.button
+          .col-md-12
+            .text-right
+              - if @demographic.complete?
+                = f.submit('ACTUALIZAR DEMOGRAFÍA', class: 'btn btn-secondary')
+              - else
+                = f.submit('GUARDAR DEMOGRAFÍA', class: 'btn btn-primary')

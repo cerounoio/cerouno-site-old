@@ -2,7 +2,7 @@ class ApplicationsController < ApplicationController
   before_action :authenticate!
 
   def show
-    @application = current_user.application
+    @demographic = current_application.demographic || Demographic.new(application: current_application)
   end
 
   def update

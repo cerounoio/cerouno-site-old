@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   # Applications
   resources :applications, only: [:show, :update]
 
+  # Demographics
+  resources :demographics, only: [:create, :update]
+
   # Home
   root 'home#show'
 end

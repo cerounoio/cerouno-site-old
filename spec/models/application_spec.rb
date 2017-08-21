@@ -18,6 +18,20 @@ RSpec.describe Application, type: :model do
       expect(application.pending_steps.sort).to eq ['experience', 'recruitment'].sort
       expect(application.user).to               eq user
     end
+
+    it 'adds a step' do
+      application = build(:application)
+      application.add_step('demographic')
+
+      expect(application.steps).to include 'demographic'
+    end
+
+    it 'removes a step' do
+      application = build(:application, steps: ['demographic'])
+      application.remove_step('demographic')
+
+      expect(application.steps).not_to include 'demographic'
+    end
   end
 
   context 'when application is invalid' do

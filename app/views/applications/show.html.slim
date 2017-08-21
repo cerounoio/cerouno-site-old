@@ -31,35 +31,7 @@
                   .col-md-12
                     .text-right
                       button.btn.disabled ENVIAR APLICACIÓN
-          .demographics
-            .card
-              .card-block
-                h5 PASO 1
-                h3 DEMOGRAFÍA
-                p 
-                  | Nuestro objetivo es dar oportunidades a grupos que tradicionalmente 
-                  | no están representados en el sector de tecnología. Estos datos nos 
-                  | ayudarán a mejorar nuestro proceso de admisiones para atraer a gente 
-                  | diversa y altamente calificada.
-                form
-                  .form-group.row
-                    .col-md-6
-                      label for="inputEmail3" NACIMIENTO
-                      .row
-                        .col-md-12
-                          = date_select(:user, :birthdate, { default: 18.years.ago, start_year: 100.years.ago.year, end_year: 18.years.ago.year }, { class: 'custom-select' })
-                    .col-md-6
-                      label for="inputPassword3" GÉNERO
-                      select#selectGender.custom-select.form-control
-                        option Género
-                        option Femenino
-                        option Masculino
-                        option Otro
-                  .form-group.row.button
-                    .col-md-12
-                      .text-right
-                        button.btn.btn-primary type="submit" GUARDAR DEMOGRAFÍA
-
+          = render 'demographics'
           .address
             .card
               .card-block

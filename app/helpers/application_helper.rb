@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def gender_options
+    Demographic.genders.collect { |key, value| [ I18n.translate(key).capitalize, key ] }
+  end
+
   def mexican_states
     [
       "Aguascalientes",
