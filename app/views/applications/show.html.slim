@@ -123,6 +123,12 @@
                         | afectará nuesta decisión, sólo queremos entender mejor 
                         | tus necesidades.
                     .col-md-6
+                      label for="inputObjective" OBJETIVO PROFESIONAL
+                      select#selectObjective.custom-select.form-control
+                        - professional_objectives.each do |objective|
+                          option= objective
+                      small.form-text.text-muted Cuál es el motivo por el cuál estás aplicando a nuestro programa? 
+                    .col-md-12
                       label for="inputCurriculumVitae" CURRÍCULUM VITAE
                       .row
                         .col-md-12

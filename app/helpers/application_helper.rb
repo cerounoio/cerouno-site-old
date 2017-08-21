@@ -45,6 +45,15 @@ module ApplicationHelper
     ]
   end
 
+  def professional_objectives
+    [
+      "Trabajar como desarrollador de software",
+      "Abrir una startup / empresa",
+      "Actualizar mi conocimiento de programación",
+      "Aprender a manejar un equipo de desarrollo de software"
+    ]
+  end
+
   def referral_options
     [
       "Facebook",
