@@ -5,27 +5,41 @@ RSpec.describe User, type: :model do
     it 'creates user record' do
       user = build(
         :user,
-        name:                  'Jorge Téllez',
+        first_name:            'Jorge',
+        last_name:             'Téllez',
         email:                 'jorge@example.com',
         password:              'password',
         password_confirmation: 'password'
         )
 
       expect(user).to be_valid
-      expect(user.name).to eq  'Jorge Téllez'
+      expect(user.first_name).to eq  'Jorge'
+      expect(user.last_name).to eq 'Téllez'
       expect(user.email).to eq 'jorge@example.com'
     end
   end
 
   context 'when user is invalid' do
-    it 'does not create user without name' do
-      user = build(:user, name: '')
+    it 'does not create user without first name' do
+      user = build(:user, first_name: '')
 
       expect(user).not_to be_valid
     end
 
-    it 'does not create user with non-letter characters' do
-      user = build(:user, name: '12312Jorge')
+    it 'does not create user with non-letter characters first name' do
+      user = build(:user, first_name: '12312Jorge')
+
+      expect(user).not_to be_valid
+    end
+
+    it 'does not create user without last name' do
+      user = build(:user, last_name: '')
+
+      expect(user).not_to be_valid
+    end
+
+    it 'does not create user with non-letter characters last name' do
+      user = build(:user, last_name: '12312Jorge')
 
       expect(user).not_to be_valid
     end

@@ -16,22 +16,28 @@
                     = form_for @user, method: :patch do |f|
                       .form-group.row
                         .col-md-6
-                          = f.label(:name, 'NOMBRE COMPLETO')
-                          = f.text_field(:name, placeholder: 'Ada Lovelace', class: 'form-control')
-                          - if @user.errors.messages[:name].any?
-                            small.form-text.text-alert= format_form_errors(@user, :name)
+                          = f.label(:first_name, 'NOMBRE')
+                          = f.text_field(:first_name, placeholder: 'Ada', class: 'form-control')
+                          - if @user.errors.messages[:first_name].any?
+                            small.form-text.text-alert= format_form_errors(@user, :first_name)
+                        .col-md-6
+                          = f.label(:last_name, 'APELLIDO')
+                          = f.text_field(:last_name, placeholder: 'Ada', class: 'form-control')
+                          - if @user.errors.messages[:last_name].any?
+                            small.form-text.text-alert= format_form_errors(@user, :last_name)
+                      .form-group.row
+                        .col-md-6
+                          = f.label(:email, 'EMAIL')
+                          = f.email_field(:email, placeholder: 'ada@example.com', class: 'form-control')
+                          small#emailHelp.form-text.text-muted Nunca compartiremos tu email con terceros sin tu permiso.
+                          - if @user.errors.messages[:email].any?
+                            small.form-text.text-alert= format_form_errors(@user, :email)
+                      .form-group.row
                         .col-md-6
                           = f.label(:password, 'PASSWORD')
                           = f.password_field(:password, placeholder: 'Password', class: 'form-control')
                           - if @user.errors.messages[:password].any?
                             small.form-text.text-alert= format_form_errors(@user, :password)
-                      .form-group.row
-                        .col-md-6
-                            = f.label(:email, 'EMAIL')
-                            = f.email_field(:email, placeholder: 'ada@example.com', class: 'form-control')
-                            small#emailHelp.form-text.text-muted Nunca compartiremos tu email con terceros sin tu permiso.
-                            - if @user.errors.messages[:email].any?
-                              small.form-text.text-alert= format_form_errors(@user, :email)
                         .col-md-6
                           = f.label(:password_confirmation, 'CONFIRMACIÓN DE PASSWORD')
                           = f.password_field(:password_confirmation, placeholder: 'Confirma tu Password', class: 'form-control')

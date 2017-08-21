@@ -2,7 +2,7 @@
   .col-md-12
     .profile
       h6= link_to 'PERFIL', edit_user_path
-      h5= @current_user.name.upcase
+      h5= @current_user.first_name.upcase
     .application
       h4= link_to 'APLICACIÓN', application_path(current_application)
       h6 DEMOGRAFÍA

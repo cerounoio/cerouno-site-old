@@ -9,10 +9,15 @@
       p ¿Tienes una cuenta? Inicia tu sesión #{link_to 'aquí', login_path}. 
       = form_for @user do |f|
         .form-group
-          = f.label(:name, 'NOMBRE COMPLETO')
-          = f.text_field(:name, placeholder: 'Ada Lovelace', class: 'form-control')
-          - if @user.errors.messages[:name].any?
-            small.form-text.text-alert= format_form_errors(@user, :name)
+          = f.label(:first_name, 'NOMBRE')
+          = f.text_field(:first_name, placeholder: 'Ada', class: 'form-control')
+          - if @user.errors.messages[:first_name].any?
+            small.form-text.text-alert= format_form_errors(@user, :first_name)
+        .form-group
+          = f.label(:last_name, 'APELLIDO')
+          = f.text_field(:last_name, placeholder: 'Lovelace', class: 'form-control')
+          - if @user.errors.messages[:last_name].any?
+            small.form-text.text-alert= format_form_errors(@user, :last_name)
         .form-group
           = f.label(:email, 'EMAIL')
           = f.email_field(:email, placeholder: 'ada@example.com', class: 'form-control')
