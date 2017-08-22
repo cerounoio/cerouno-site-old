@@ -3,6 +3,7 @@ class Application < ApplicationRecord
 
   belongs_to :user
   has_one    :demographic
+  has_one    :address
 
   validate :valid_steps
 

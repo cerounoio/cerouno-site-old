@@ -21,3 +21,8 @@ es-MX:
   female: 'femenino'
   male: 'masculino'
   other: 'otro'
+  line 1: 'la dirección'
+  line 2: 'la dirección'
+  city: 'la ciudad'
+  state: 'el estado'
+  zipcode: 'el código postal'
