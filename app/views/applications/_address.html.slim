@@ -1,0 +1,44 @@
+.address
+  .card
+    .card-block
+      - @address = current_application.address || Address.new(application: current_application) unless @address
+      - if @address.complete?
+        .text-right
+          span.badge.badge-primary COMPLETADO
+      h5 PASO 2
+      h3 DIRECCIÓN
+      p
+        | El darnos tu dirección nos ayuda a entrar en contacto contigo
+        | para poderte enviar correspondecia como certificados y darle
+        | seguimiento a tu trayectoria profesional una vez que te gradúes.
+      = form_for @address do |f|
+        .form-group.row
+          .col-md-6
+            = f.label(:line_1, 'CALLE Y NÚMERO')
+            = f.text_field(:line_1, placeholder: 'Avenida Siempre Viva 742', class: 'form-control')
+            = render 'layouts/form_error', object: @address, attribute: :line_1
+          .col-md-6
+            = f.label(:line_2, 'COLONIA')
+            = f.text_field(:line_2, placeholder: 'Cumbres Primer Sector', class: 'form-control')
+            = render 'layouts/form_error', object: @address, attribute: :line_2
+        .form-group.row
+          .col-md-6
+            = f.label(:city, 'CIUDAD')
+            = f.text_field(:city, placeholder: 'Springfield', class: 'form-control')
+            = render 'layouts/form_error', object: @address, attribute: :city
+          .col-md-6
+            = f.label(:state, 'ESTADO')
+            = f.select(:state, mexican_states, { include_blank: 'Selecciona tu estado' }, { class: 'custom-select form-control'})
+            = render 'layouts/form_error', object: @address, attribute: :state
+        .form-group.row
+          .col-md-6
+            = f.label(:zipcode, 'CÓDIGO POSTAL')
+            = f.text_field(:zipcode, placeholder: "49007", class: 'form-control')
+            = render 'layouts/form_error', object: @address, attribute: :zipcode
+        .form-group.row.button
+          .col-md-12
+            .text-right
+              - if @address.complete?
+                = f.submit('ACTUALIZAR DIRECCIÓN', class: 'btn btn-secondary')
+              - else
+                = f.submit('GUARDAR DIRECCIÓN', class: 'btn btn-primary')

@@ -1,4 +1,13 @@
 module ApplicationHelper
+  def application_method(section)
+    section.complete? ? :patch : :post
+  end
+
+  def application_url(section)
+    section_name = section.class.to_s.downcase
+    section.complete? ? send("#{section_name}_path", section) : send("#{section_name}s_path")
+  end
+
   def gender_options
     Demographic.genders.collect { |key, value| [ I18n.translate(key).capitalize, key ] }
   end

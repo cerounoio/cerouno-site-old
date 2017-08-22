@@ -17,6 +17,7 @@ es-MX:
   address: 'dirección'
   experience: 'experiencia'
   recruitment: 'reclutamiento'
+  gender: 'el género'
   none: 'ninguna'
   female: 'femenino'
   male: 'masculino'

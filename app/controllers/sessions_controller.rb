@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
       redirect_to application_path(application), success: 'Bienvenido/a a CEROUNO.'
     else
-      redirect_to root_path, danger: 'Tus datos son incorrectos. Por favor intenta de nuevo.'
+      redirect_to login_path, danger: 'Tus datos son incorrectos. Por favor intenta de nuevo.'
     end
   end
 

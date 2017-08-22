@@ -1,15 +1,16 @@
 .demographics
   .card
     .card-block
+      - @demographic = current_application.demographic || Demographic.new(application: current_application) unless @demographic
       - if @demographic.complete?
         .text-right
           span.badge.badge-primary COMPLETADO
       h5 PASO 1
       h3 DEMOGRAFÍA
-      p 
-        | Nuestro objetivo es dar oportunidades a grupos que tradicionalmente 
-        | no están representados en el sector de tecnología. Estos datos nos 
-        | ayudarán a mejorar nuestro proceso de admisiones para atraer a gente 
+      p
+        | Nuestro objetivo es dar oportunidades a grupos que tradicionalmente
+        | no están representados en el sector de tecnología. Estos datos nos
+        | ayudarán a mejorar nuestro proceso de admisiones para atraer a gente
         | diversa y altamente calificada.
       = form_for @demographic do |f|
         .form-group.row
@@ -18,13 +19,11 @@
             .row
               .col-md-12
                 = f.date_select(:birthdate, { default: 18.years.ago, start_year: 100.years.ago.year, end_year: 18.years.ago.year }, { class: 'custom-select' })
-                - if @demographic.errors[:birthdate].any?
-                  small.form-text.text-alert= format_form_errors(@demographic, :birthdate)
+                = render 'layouts/form_error', object: @demographic, attribute: :birthdate
           .col-md-6
             = f.label(:gender, 'GÉNERO')
-            = f.select(:gender, gender_options, { include_blank: true }, { class: 'custom-select form-control' })
-            - if @demographic.errors[:gender].any?
-              small.form-text.text-alert= format_form_errors(@demographic, :gender)
+            = f.select(:gender, gender_options, { include_blank: 'Selecciona tu género' }, { class: 'custom-select form-control' })
+            = render 'layouts/form_error', object: @demographic, attribute: :gender
         .form-group.row.button
           .col-md-12
             .text-right

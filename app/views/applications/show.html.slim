@@ -14,11 +14,11 @@
                 .row
                   .col-md-12
                     p
-                      | Gracias por iniciar tu proceso de admisiónes con <b>CEROUNO</b>. 
-                      | Por favor, completa la siguiente información antes de enviar tu 
-                      | aplicación. Puedes modificar la información en cualquier momento 
-                      | antes de enviarla. 
-                      | Una vez enviada, revisaremos tu solicitud y te 
+                      | Gracias por iniciar tu proceso de admisiónes con <b>CEROUNO</b>.
+                      | Por favor, completa la siguiente información antes de enviar tu
+                      | aplicación. Puedes modificar la información en cualquier momento
+                      | antes de enviarla.
+                      | Una vez enviada, revisaremos tu solicitud y te
                       | contactaremos para agendar tu entrevista presencial.
                 .row
                   .col-md-6
@@ -31,43 +31,14 @@
                   .col-md-12
                     .text-right
                       button.btn.disabled ENVIAR APLICACIÓN
-          = render 'demographics'
-          .address
-            .card
-              .card-block
-                h5 PASO 2
-                h3 DIRECCIÓN
-                p 
-                  | El darnos tu dirección nos ayuda a entrar en contacto contigo
-                  | para poderte enviar correspondecia como certificados y darle 
-                  | seguimiento a tu trayectoria profesional una vez que te gradúes.
-                form
-                  .form-group.row
-                    .col-md-6
-                      label for="inputStreet" CALLE Y NÚMERO
-                      input#inputStreet.form-control placeholder="Avenida Siempre Viva 742"
-                    .col-md-6
-                      label for="inputState" ESTADO
-                      select#selectState.custom-select.form-control
-                        - mexican_states.each do |state|
-                          option= state
-                  .form-group.row
-                    .col-md-6
-                      label for="inputCity" CIUDAD
-                      input#inputCity.form-control placeholder="Springfield"
-                    .col-md-6
-                      label for="inputZipCode" CÓDIGO POSTAL
-                      input#inputZipCode.form-control placeholder="49007"
-                  .form-group.row.button
-                    .col-md-12
-                      .text-right
-                        button.btn.btn-primary type="submit" GUARDAR DIRECCIÓN
+          = render 'applications/demographics'
+          = render 'applications/address'
           .experience
             .card
               .card-block
                 h5 PASO 3
                 h3 EXPERIENCIA
-                p 
+                p
                   | Queremos conocer lo que has hecho y medir el impacto de nuestro
                   | programa. Por eso preguntamos tu nivel de ingreso mensual y tu
                   | nivel de estudios. En cuanto a tu currículum, no te preocupes
@@ -90,16 +61,16 @@
                       select#selectExperience.custom-select.form-control
                         option Sí
                         option No
-                      small.form-text.text-muted 
-                        | ¿Tienes experiecia previa programando? Tu respuesta no 
-                        | afectará nuesta decisión, sólo queremos entender mejor 
+                      small.form-text.text-muted
+                        | ¿Tienes experiecia previa programando? Tu respuesta no
+                        | afectará nuesta decisión, sólo queremos entender mejor
                         | tus necesidades.
                     .col-md-6
                       label for="inputObjective" OBJETIVO PROFESIONAL
                       select#selectObjective.custom-select.form-control
                         - professional_objectives.each do |objective|
                           option= objective
-                      small.form-text.text-muted Cuál es el motivo por el cuál estás aplicando a nuestro programa? 
+                      small.form-text.text-muted Cuál es el motivo por el cuál estás aplicando a nuestro programa?
                   .form-group.row
                     .col-md-12
                       label for="inputCurriculumVitae" CURRÍCULUM VITAE
@@ -108,8 +79,8 @@
                           label.form-control.custom-file
                             input.custom-file-input type="file" id="file"
                             span.custom-file-control
-                      small.form-text.text-muted 
-                        | Haz click en 'BUSCAR' y selecciona el archivo que 
+                      small.form-text.text-muted
+                        | Haz click en 'BUSCAR' y selecciona el archivo que
                         | contiene tu currículum vitae.
                   .form-group.row.button
                     .col-md-12
@@ -121,9 +92,9 @@
                 h5 PASO 4
                 h3 RECLUTAMIENTO
                 p
-                  | Nos gustaría saber cómo te enteraste de nosotros. Esto nos permite 
-                  | mejorar nuestra estrategia de reclutamiento y crear mejores alianzas 
-                  | para ofrecer nuestro programa a perfiles no tradicionales. 
+                  | Nos gustaría saber cómo te enteraste de nosotros. Esto nos permite
+                  | mejorar nuestra estrategia de reclutamiento y crear mejores alianzas
+                  | para ofrecer nuestro programa a perfiles no tradicionales.
                 form
                   .form-group.row
                     .col-md-6

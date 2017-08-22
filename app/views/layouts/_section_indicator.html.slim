@@ -1,0 +1,5 @@
+- section_name = section.class.to_s.downcase
+- if section.complete?
+  h6.completed= I18n.translate(section_name).upcase
+- else
+  h6= I18n.translate(section_name).upcase

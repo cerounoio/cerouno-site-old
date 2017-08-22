@@ -18,31 +18,26 @@
                         .col-md-6
                           = f.label(:first_name, 'NOMBRE')
                           = f.text_field(:first_name, placeholder: 'Ada', class: 'form-control')
-                          - if @user.errors.messages[:first_name].any?
-                            small.form-text.text-alert= format_form_errors(@user, :first_name)
+                          = render 'layouts/form_error', object: @user, attribute: :first_name
                         .col-md-6
                           = f.label(:last_name, 'APELLIDO')
                           = f.text_field(:last_name, placeholder: 'Ada', class: 'form-control')
-                          - if @user.errors.messages[:last_name].any?
-                            small.form-text.text-alert= format_form_errors(@user, :last_name)
+                          = render 'layouts/form_error', object: @user, attribute: :last_name
                       .form-group.row
                         .col-md-6
                           = f.label(:email, 'EMAIL')
                           = f.email_field(:email, placeholder: 'ada@example.com', class: 'form-control')
                           small#emailHelp.form-text.text-muted Nunca compartiremos tu email con terceros sin tu permiso.
-                          - if @user.errors.messages[:email].any?
-                            small.form-text.text-alert= format_form_errors(@user, :email)
+                          = render 'layouts/form_error', object: @user, attribute: :email
                       .form-group.row
                         .col-md-6
                           = f.label(:password, 'PASSWORD')
                           = f.password_field(:password, placeholder: 'Password', class: 'form-control')
-                          - if @user.errors.messages[:password].any?
-                            small.form-text.text-alert= format_form_errors(@user, :password)
+                          = render 'layouts/form_error', object: @user, attribute: :password
                         .col-md-6
                           = f.label(:password_confirmation, 'CONFIRMACIÓN DE PASSWORD')
                           = f.password_field(:password_confirmation, placeholder: 'Confirma tu Password', class: 'form-control')
-                          - if @user.errors.messages[:password_confirmation]
-                            small.form-text.text-alert= format_form_errors(@user, :password_confirmation)
+                          = render 'layouts/form_error', object: @user, attribute: :password_confirmation
                       .form-group.row.button
                         .col-md-12
                           .text-right

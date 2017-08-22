@@ -6,31 +6,26 @@
         = image_tag('cerouno-logo-horizontal.png')
       h3 PLATAFORMA DE ADMISIONES
       p Bienvenido/a a nuestro sistema de admisiones en línea. Crea una cuenta para comenzar tu aplicación.
-      p ¿Tienes una cuenta? Inicia tu sesión #{link_to 'aquí', login_path}. 
+      p ¿Tienes una cuenta? Inicia tu sesión #{link_to 'aquí', login_path}.
       = form_for @user do |f|
         .form-group
           = f.label(:first_name, 'NOMBRE')
           = f.text_field(:first_name, placeholder: 'Ada', class: 'form-control')
-          - if @user.errors.messages[:first_name].any?
-            small.form-text.text-alert= format_form_errors(@user, :first_name)
+          = render 'layouts/form_error', object: @user, attribute: :first_name
         .form-group
           = f.label(:last_name, 'APELLIDO')
           = f.text_field(:last_name, placeholder: 'Lovelace', class: 'form-control')
-          - if @user.errors.messages[:last_name].any?
-            small.form-text.text-alert= format_form_errors(@user, :last_name)
+          = render 'layouts/form_error', object: @user, attribute: :last_name
         .form-group
           = f.label(:email, 'EMAIL')
           = f.email_field(:email, placeholder: 'ada@example.com', class: 'form-control')
           small#emailHelp.form-text.text-muted Nunca compartiremos tu email con terceros sin tu permiso.
-          - if @user.errors.messages[:email].any?
-            small.form-text.text-alert= format_form_errors(@user, :email)
+          = render 'layouts/form_error', object: @user, attribute: :email
         .form-group
           = f.label(:password, 'PASSWORD')
           = f.password_field(:password, placeholder: 'Password', class: 'form-control')
-          - if @user.errors.messages[:password].any?
-            small.form-text.text-alert= format_form_errors(@user, :password)
-          = f.password_field(:password_confirmation, placeholder: 'Confirma tu Password', class: 'form-control')
-          - if @user.errors.messages[:password_confirmation]
-            small.form-text.text-alert= format_form_errors(@user, :password_confirmation)
-        = f.submit('CREAR CUENTA', class: 'btn btn-primary form-control')        
+          = render 'layouts/form_error', object: @user, attribute: :password
+          = f.password_field(:password_confirmation, placeholder: 'Confirma tu password', class: 'form-control')
+          = render 'layouts/form_error', object: @user, attribute: :password_confirmation
+        = f.submit('CREAR CUENTA', class: 'btn btn-primary form-control')
     .col-md-3

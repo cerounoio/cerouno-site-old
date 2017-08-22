@@ -7,9 +7,15 @@ class DemographicsController < ApplicationController
     if demographic.save
       current_application.add_step('demographic')
 
-      redirect_back fallback_location: application_path(current_application), success: 'Tu información demográfica fue guardada exitosamente.'
+      flash.clear
+      flash[:success] = 'Tu información demográfica fue guardada exitosamente.'
+
+      render 'applications/show'
     else
-      redirect_back fallback_location: application_path(current_application), danger: 'Tu información demográfica no pudo ser guardada exitosamente.'
+      flash.clear
+      flash[:danger] = 'Tu información demográfica no pudo ser guardada.'
+
+      render 'applications/show'
     end
   end
 
@@ -17,11 +23,17 @@ class DemographicsController < ApplicationController
     demographic = current_application.demographic
 
     if demographic.update(demographic_params)
-      redirect_back fallback_location: application_path(current_application), success: 'Tu información demográfica fue actualizada exitosamente.'
+      flash.clear
+      flash[:success] = 'Tu información demográfica fue actualizada exitosamente.'
+
+      render 'applications/show'
     else
       current_application.remove_step('demographic')
 
-      redirect_back fallback_location: application_path(current_application), danger: 'Tu información demográfica no pudo ser actualizada exitosamente.'
+      flash.clear
+      flash[:danger] = 'Tu información demográfica no pudo ser actualizada.'
+
+      render 'applications/show'
     end
   end
 
