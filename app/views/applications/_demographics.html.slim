@@ -21,7 +21,7 @@
                 - if @demographic.errors[:birthdate].any?
                   small.form-text.text-alert= format_form_errors(@demographic, :birthdate)
           .col-md-6
-            = f.label(:gender, 'GENDER')
+            = f.label(:gender, 'GÉNERO')
             = f.select(:gender, gender_options, { include_blank: true }, { class: 'custom-select form-control' })
             - if @demographic.errors[:gender].any?
               small.form-text.text-alert= format_form_errors(@demographic, :gender)
