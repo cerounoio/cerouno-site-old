@@ -4,6 +4,7 @@ class Application < ApplicationRecord
   belongs_to :user
   has_one    :demographic
   has_one    :address
+  has_one    :experience
 
   validate :valid_steps
 

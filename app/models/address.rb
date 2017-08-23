@@ -8,6 +8,9 @@ class Address < ApplicationRecord
   validates :zipcode, presence: true, format: { with: /\A[\d]+\z/ }, length: { is: 5 }
 
   def complete?
-    true if line_1.present? && city.present? && state.present? && zipcode.present?
+    line_1.present?  &&
+    city.present?    &&
+    state.present?   &&
+    zipcode.present?
   end
 end

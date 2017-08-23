@@ -11,6 +11,6 @@ class Demographic < ApplicationRecord
   validates :gender,    presence: true
 
   def complete?
-    true if gender.present? && birthdate.present?
+    gender.present? && birthdate.present?
   end
 end
