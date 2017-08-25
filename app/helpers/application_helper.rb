@@ -1,6 +1,13 @@
 module ApplicationHelper
-  def gender_options
-    Demographic.genders.collect { |key, value| [ I18n.translate(key).capitalize, key ] }
+  def enum_options(object, enum)
+    object.class.send(enum).collect { |key, value| [ I18n.translate(key.gsub('_', ' ')).capitalize, key ] }
+  end
+
+  def boolean_options
+    {
+      'Sí' => true,
+      'No' => false
+    }
   end
 
   def mexican_states
@@ -40,13 +47,14 @@ module ApplicationHelper
     ]
   end
 
-  def professional_objectives
-    [
-      "Trabajar como desarrollador de software",
-      "Abrir una startup / empresa",
-      "Actualizar mi conocimiento de programación",
-      "Aprender a manejar un equipo de desarrollo de software"
-    ]
+  def professional_objective_options
+    {
+      "Trabajar como desarrollador de software"       => :developer,
+      "Abrir una startup / empresa"                   => :startup,
+      "Actualizar mi conocimiento de programación"    => :level_up,
+      "Manejar a un equipo de desarrollo de software" => :manager,
+      "Otro"                                          => :other
+    }
   end
 
   def referral_options

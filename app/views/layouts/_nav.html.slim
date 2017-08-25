@@ -5,9 +5,9 @@
       h5= current_user.first_name.upcase
     .application
       h4= link_to 'APLICACIÓN', application_path(current_application)
-      = render 'layouts/section_indicator', section: current_application.demographic
-      = render 'layouts/section_indicator', section: current_application.address
-      h6.completed EXPERIENCIA
+      = render 'layouts/section_indicator', section: current_application.demographic || Demographic.new
+      = render 'layouts/section_indicator', section: current_application.address     || Address.new
+      = render 'layouts/section_indicator', section: current_application.experience  || Experience.new
       h6.completed REFERENCIA
     .logout
       h6= link_to 'SALIR', logout_path

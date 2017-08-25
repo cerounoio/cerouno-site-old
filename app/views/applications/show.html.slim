@@ -15,7 +15,7 @@
                   .col-md-12
                     p
                       | Gracias por iniciar tu proceso de admisiónes con <b>CEROUNO</b>.
-                      | Por favor, completa la siguiente información antes de enviar tu
+                      |  Por favor, completa la siguiente información antes de enviar tu
                       | aplicación. Puedes modificar la información en cualquier momento
                       | antes de enviarla.
                       | Una vez enviada, revisaremos tu solicitud y te
@@ -33,59 +33,7 @@
                       button.btn.disabled ENVIAR APLICACIÓN
           = render 'applications/demographics'
           = render 'applications/address'
-          .experience
-            .card
-              .card-block
-                h5 PASO 3
-                h3 EXPERIENCIA
-                p
-                  | Queremos conocer lo que has hecho y medir el impacto de nuestro
-                  | programa. Por eso preguntamos tu nivel de ingreso mensual y tu
-                  | nivel de estudios. En cuanto a tu currículum, no te preocupes
-                  | en pulirlo. Sólo queremos conocerte.
-                form
-                  .form-group.row
-                    .col-md-6
-                      label for="selectEducation" NIVEL DE ESTUDIOS
-                      select#selectEduaction.custom-select.form-control
-                        - education_level.each do |level|
-                          option= level
-                      small.form-text.text-muted Máximo nivel de estudios terminado.
-                    .col-md-6
-                      label for="inputIncome" NIVEL DE INGRESOS
-                      input#inputIncome.form-control placeholder="15000" type="number"
-                      small.form-text.text-muted Sueldo mensual bruto (antes de impuestos).
-                  .form-group.row
-                    .col-md-6
-                      label for="select" EXPERIENCIA EN PROGRAMACIÓN
-                      select#selectExperience.custom-select.form-control
-                        option Sí
-                        option No
-                      small.form-text.text-muted
-                        | ¿Tienes experiecia previa programando? Tu respuesta no
-                        | afectará nuesta decisión, sólo queremos entender mejor
-                        | tus necesidades.
-                    .col-md-6
-                      label for="inputObjective" OBJETIVO PROFESIONAL
-                      select#selectObjective.custom-select.form-control
-                        - professional_objectives.each do |objective|
-                          option= objective
-                      small.form-text.text-muted Cuál es el motivo por el cuál estás aplicando a nuestro programa?
-                  .form-group.row
-                    .col-md-12
-                      label for="inputCurriculumVitae" CURRÍCULUM VITAE
-                      .row
-                        .col-md-12
-                          label.form-control.custom-file
-                            input.custom-file-input type="file" id="file"
-                            span.custom-file-control
-                      small.form-text.text-muted
-                        | Haz click en 'BUSCAR' y selecciona el archivo que
-                        | contiene tu currículum vitae.
-                  .form-group.row.button
-                    .col-md-12
-                      .text-right
-                        button.btn.btn-primary type="submit" GUARDAR EXPERIENCIA
+          = render 'applications/experience'
           .reference
             .card
               .card-block

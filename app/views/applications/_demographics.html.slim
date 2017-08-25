@@ -22,7 +22,7 @@
                 = render 'layouts/form_error', object: @demographic, attribute: :birthdate
           .col-md-6
             = f.label(:gender, 'GÉNERO')
-            = f.select(:gender, gender_options, { include_blank: 'Selecciona tu género' }, { class: 'custom-select form-control' })
+            = f.select(:gender, enum_options(@demographic, :genders), { include_blank: 'Selecciona tu género' }, { class: 'custom-select form-control' })
             = render 'layouts/form_error', object: @demographic, attribute: :gender
         .form-group.row.button
           .col-md-12

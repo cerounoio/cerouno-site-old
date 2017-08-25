@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170823144755) do
 
   create_table "demographics", force: :cascade do |t|
     t.date "birthdate"
-    t.integer "gender", default: 0
+    t.integer "gender"
     t.bigint "application_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 20170823144755) do
   end
 
   create_table "experiences", force: :cascade do |t|
-    t.integer "education", default: 0
-    t.decimal "income", precision: 15, scale: 2, default: "0.0"
+    t.integer "education"
+    t.decimal "income", precision: 15, scale: 2
     t.boolean "technical_experience"
-    t.integer "objective", default: 0
+    t.integer "objective"
     t.string "resume_id"
     t.bigint "application_id"
     t.datetime "created_at", null: false

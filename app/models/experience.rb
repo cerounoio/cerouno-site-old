@@ -19,7 +19,7 @@ class Experience < ApplicationRecord
     startup:   1,
     level_up:  2,
     manager:   3,
-    otro:      4
+    other:     4
   }
 
   def complete?

@@ -1,0 +1,58 @@
+.experience
+  .card
+    .card-block
+      - @experience = current_application.experience || Experience.new(application: current_application) unless @experience
+      - if @experience.complete?
+        .text-right
+          span.badge.badge-primary COMPLETADO
+      h5 PASO 3
+      h3 EXPERIENCIA
+      p
+        | Queremos conocer lo que has hecho y medir el impacto de nuestro
+        | programa. Por eso preguntamos tu nivel de ingreso mensual y tu
+        | nivel de estudios. En cuanto a tu currículum, no te preocupes
+        | en pulirlo. Sólo queremos conocerte.
+      = form_for @experience do |f|
+        .form-group.row
+          .col-md-6
+            = f.label(:education, 'NIVEL DE ESTUDIOS')
+            = f.select(:education, enum_options(@experience, :educations), { include_blank: 'Selecciona tu nivel de estudios' }, { class: 'custom-select form-control'})
+            small.form-text.text-muted Máximo nivel de estudios terminado.
+            = render 'layouts/form_error', object: @experience, attribute: :education
+          .col-md-6
+            = f.label(:income, 'NIVEL DE INGRESOS')
+            = f.number_field(:income, placeholder: 15000, class: 'form-control')
+            small.form-text.text-muted Sueldo mensual bruto (antes de impuestos).
+            = render 'layouts/form_error', object: @experience, attribute: :income
+        .form-group.row
+          .col-md-6
+            = f.label(:technical_experience, 'EXPERIENCIA EN PROGRAMACIÓN')
+            = f.select(:technical_experience, boolean_options, { include_blank: '¿Tienes experiecia previa programando?' }, { class: 'custom-select form-control'})
+            small.form-text.text-muted
+              | Tu respuesta no afectará nuesta decisión,
+              | sólo queremos entender mejor tus necesidades.
+            = render 'layouts/form_error', object: @experience, attribute: :technical_experience
+          .col-md-6
+            = f.label(:objective, 'OBJETIVO PROFESIONAL')
+            = f.select(:objective, professional_objective_options, { include_blank: 'Selecciona tu objetivo profesional' }, { class: 'custom-select form-control'})
+            small.form-text.text-muted Cuál es el motivo por el cuál estás aplicando a nuestro programa?
+            = render 'layouts/form_error', object: @experience, attribute: :objective
+        .form-group.row
+          .col-md-12
+            label for="inputCurriculumVitae" CURRÍCULUM VITAE
+            .row
+              .col-md-12
+                label.form-control.custom-file
+                  input.custom-file-input type="file" id="file"
+                  span.custom-file-control
+            small.form-text.text-muted
+              | Haz click en 'BUSCAR' y selecciona el archivo que
+              | contiene tu currículum vitae.
+            = render 'layouts/form_error', object: @experience, attribute: :resume_id
+        .form-group.row.button
+          .col-md-12
+            .text-right
+              - if @experience.complete?
+                = f.submit('ACTUALIZAR EXPERIENCIA', class: 'btn btn-secondary')
+              - else
+                = f.submit('GUARDAR EXPERIENCIA', class: 'btn btn-primary')
