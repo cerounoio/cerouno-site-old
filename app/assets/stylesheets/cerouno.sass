@@ -2,7 +2,11 @@ $color-blue: #0C2340
 $color-pink: #EF426F
 $color-dark-pink: #CC2952
 $color-gray: #ADADAD
-$font: NeueHaasGrotesk, sans-serif
+$font: NeueHaasGrotesk-regular, sans-serif
+$font-lighter: NeueHaasGrotesk-lighter
+$font-regular: NeueHaasGrotesk-regular
+$font-bold: NeueHaasGrotesk-bold
+$font-bolder: NeueHaasGrotesk-bolder
 
 $color-danger: #A21D3F
 $color-success: #0CA221
@@ -16,35 +20,35 @@ body
 h1
   font-size: 3em
   line-height: 1.05em
-  font-weight: bolder
+  font-family: $font-bolder
 
 h2
   font-size: 2.25em
   line-height: 1.25em
-  font-weight: bold
+  font-family: $font-bolder
 
 h3
   font-size: 1.75em
   line-height: 1.25em
-  font-weight: bold
+  font-family: $font-bolder
 
 h4
   font-size: 1.125em
   line-height: 1.222222em
-  font-weight: bold
+  font-family: $font-bolder
 
 h5
   font-size: 1em
   line-height: 1.375em
-  font-weight: bold
+  font-family: $font-bolder
 
 p
   font-size: 1em
   line-height: 1.375em
-  font-weight: lighter
+  font-family: $font-lighter
 
 b
-  font-weight: bold
+  font-family: $font-bold
 
 a
   color: $color-pink
@@ -53,10 +57,10 @@ a:hover, a:focus
   color: $color-gray
 
 label
-  font-weight: bold
+  font-family: $font-bold
 
 input
-  font-weight: lighter
+  font-family: $font-lighter
   color: $color-gray
 
 body, h1, h2, h3, h4, h5, h6
@@ -67,7 +71,7 @@ body, h1, h2, h3, h4, h5, h6
   border-radius: 0
   margin: 0
   color: white
-  font-weight: lighter
+  font-family: $font-lighter
   font-size: 1em
 .alert.alert-danger
   background-color: $color-danger
@@ -85,30 +89,30 @@ small.form-text.text-alert
   color: white
   background-color: $color-pink
   border-color: $color-dark-pink
-  font-weight: bold
+  font-family: $font-bold
 .btn.btn-primary:hover, .btn.btn-primary:focus
   color: $color-gray
   background-color: $color-dark-pink
   border-color: $color-dark-pink
-  font-weight: bold
+  font-family: $font-bold
 .btn.disabled
   background-color: $color-gray
-  font-weight: bold
+  font-family: $font-bold
 .btn.btn-secondary
   color: $color-pink
   background-color: white
   border-color: $color-pink
-  font-weight: bold
+  font-family: $font-bold
 .btn.btn-secondary:hover, .btn.btn-link:focus
   color: white
   background-color: $color-pink
   border-color: $color-pink
-  font-weight: bold
+  font-family: $font-bold
 
 .badge.badge-primary
   color: white
   background-color: $color-success
-  font-weight: lighter
+  font-family: $font-lighter
   padding: .5em
 
 .nav
