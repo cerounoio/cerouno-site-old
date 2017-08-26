@@ -30,7 +30,7 @@
             = f.select(:technical_experience, boolean_options, { include_blank: '¿Tienes experiecia previa programando?' }, { class: 'custom-select form-control'})
             small.form-text.text-muted
               | Tu respuesta no afectará nuesta decisión,
-              | sólo queremos entender mejor tus necesidades.
+              |  sólo queremos entender mejor tus necesidades.
             = render 'layouts/form_error', object: @experience, attribute: :technical_experience
           .col-md-6
             = f.label(:objective, 'OBJETIVO PROFESIONAL')
