@@ -39,11 +39,11 @@
             = render 'layouts/form_error', object: @experience, attribute: :objective
         .form-group.row
           .col-md-12
-            label for="inputCurriculumVitae" CURRÍCULUM VITAE
+            = f.label(:resume, 'CURRÍCULUM VITAE')
             .row
               .col-md-12
                 label.form-control.custom-file
-                  input.custom-file-input type="file" id="file"
+                  = f.attachment_field(:resume, class: 'custom-file-input')
                   span.custom-file-control
             small.form-text.text-muted
               | Haz click en 'BUSCAR' y selecciona el archivo que

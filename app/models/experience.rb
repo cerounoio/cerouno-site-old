@@ -1,4 +1,6 @@
 class Experience < ApplicationRecord
+  attachment :resume
+
   belongs_to :application
 
   validates :education,            presence: true
