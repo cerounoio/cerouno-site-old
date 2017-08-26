@@ -22,8 +22,7 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'jquery-rails'
 gem 'foreman'
-gem 'refile', github: 'refile/refile', require: 'refile/rails'
-gem 'sinatra', github: 'sinatra/sinatra', ref: "88a1ba7bfb2262b68391d2490dbb440184b9f838"
+gem 'refile', require: 'refile/rails'
 gem 'refile-s3'
 gem 'figaro'
 
