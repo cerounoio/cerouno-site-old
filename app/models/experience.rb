@@ -1,5 +1,5 @@
 class Experience < ApplicationRecord
-  attachment :resume
+  attachment :resume, extension: ['pdf', 'doc', 'docx']
 
   belongs_to :application
 
@@ -7,7 +7,8 @@ class Experience < ApplicationRecord
   validates :income,               presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :technical_experience, inclusion: { in: [true, false] }
   validates :objective,            presence: true
-  validates :resume_id,            presence: true
+
+  validate :presence_of_resume
 
   enum education: {
     high_school: 0,
@@ -30,5 +31,11 @@ class Experience < ApplicationRecord
     [true,false].include?(technical_experience) &&
     objective.present?                          &&
     resume_id.present?
+  end
+
+  private
+
+  def presence_of_resume
+    errors.add(:resume, 'no puede estar en blanco') unless resume.present?
   end
 end

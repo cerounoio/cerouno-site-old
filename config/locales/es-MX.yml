@@ -31,7 +31,7 @@ es-MX:
   income: 'el nivel de ingresos'
   technical experience: 'la experiencia técnica'
   objective: 'el objetivo'
-  resume id: 'el currículum'
+  resume: 'el currículum'
   high school: 'Preparatoria'
   college: 'Universidad'
   masters: 'Maestría'

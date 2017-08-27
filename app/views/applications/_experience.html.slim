@@ -21,8 +21,8 @@
             = render 'layouts/form_error', object: @experience, attribute: :education
           .col-md-6
             = f.label(:income, 'NIVEL DE INGRESOS')
-            = f.number_field(:income, placeholder: 15000, class: 'form-control')
-            small.form-text.text-muted Sueldo mensual bruto (antes de impuestos).
+            = f.number_field(:income, placeholder: 15000, min: 0, class: 'form-control')
+            small.form-text.text-muted Sueldo mensual bruto aproximado (antes de impuestos).
             = render 'layouts/form_error', object: @experience, attribute: :income
         .form-group.row
           .col-md-6
@@ -40,15 +40,23 @@
         .form-group.row
           .col-md-12
             = f.label(:resume, 'CURRÍCULUM VITAE')
+            - if @experience.resume_filename.present?
+              .row
+                .col-md-12
+                  small.form-text.text-muted
+                    | Tu currículum actual es
+                    |  <b>#{@experience.resume_filename}</b>
+                    | .
             .row
               .col-md-12
                 label.form-control.custom-file
                   = f.attachment_field(:resume, class: 'custom-file-input')
                   span.custom-file-control
             small.form-text.text-muted
-              | Haz click en 'BUSCAR' y selecciona el archivo que
-              | contiene tu currículum vitae.
-            = render 'layouts/form_error', object: @experience, attribute: :resume_id
+              | Haz click en <b>BUSCAR</b> y selecciona el archivo que
+              |  contiene tu currículum vitae. El archivo tiene que tener
+              |  la extensión <b>pdf</b>, <b>doc</b> o <b>docx</b>.
+            = render 'layouts/form_error', object: @experience, attribute: :resume
         .form-group.row.button
           .col-md-12
             .text-right
