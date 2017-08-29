@@ -5,6 +5,7 @@ class Application < ApplicationRecord
   has_one    :demographic
   has_one    :address
   has_one    :experience
+  has_one    :recruitment
 
   validate :valid_steps
 

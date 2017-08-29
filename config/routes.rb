@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :demographics, only: [:create, :update]
   resources :addresses,    only: [:create, :update]
   resources :experiences,  only: [:create, :update]
+  resources :recruitments, only: [:create, :update]
 
   root 'home#show'
 end

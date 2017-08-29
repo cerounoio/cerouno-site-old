@@ -5,55 +5,8 @@
     .col-md-10
       .row.info
         .col-md-12
-          .title
-            .card
-              .card-block
-                .row
-                  .col-md-12
-                    h1 APLICACIÓN
-                .row
-                  .col-md-12
-                    p
-                      | Gracias por iniciar tu proceso de admisiónes con <b>CEROUNO</b>.
-                      |  Por favor, completa la siguiente información antes de enviar tu
-                      | aplicación. Puedes modificar la información en cualquier momento
-                      | antes de enviarla.
-                      | Una vez enviada, revisaremos tu solicitud y te
-                      | contactaremos para agendar tu entrevista presencial.
-                .row
-                  .col-md-6
-                    h5 ESTATUS
-                    p= I18n.translate(current_application.status).capitalize
-                  .col-md-6
-                    h5 INFORMACIÓN PENDIENTE
-                    p= format_steps(current_application.pending_steps)
-                .row.button
-                  .col-md-12
-                    .text-right
-                      button.btn.disabled ENVIAR APLICACIÓN
+          = render 'applications/status'
           = render 'applications/demographics'
           = render 'applications/address'
           = render 'applications/experience'
-          .reference
-            .card
-              .card-block
-                h5 PASO 4
-                h3 RECLUTAMIENTO
-                p
-                  | Nos gustaría saber cómo te enteraste de nosotros. Esto nos permite
-                  | mejorar nuestra estrategia de reclutamiento y crear mejores alianzas
-                  | para ofrecer nuestro programa a perfiles no tradicionales.
-                form
-                  .form-group.row
-                    .col-md-6
-                      label for="select" CÓMO ESCUCHASTE DE NOSOTROS
-                      select#selectReferral.custom-select.form-control
-                        - referral_options.each do |option|
-                          option= option
-                    .col-md-6
-                      label for="inputPromoCode" CÓDIGO PROMOCIONAL
-                      input#inputIncome.form-control placeholder="Cupón" type="text"
-                  .form-group.row.button
-                    .col-md-12
-                      .text-right
-                        button.btn.btn-primary type="submit" GUARDAR RECLUTAMIENTO
+          = render 'applications/recruitment'

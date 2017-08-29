@@ -1,0 +1,30 @@
+.reference
+  .card
+    .card-block
+      - @recruitment = current_application.recruitment || Recruitment.new(application: current_application) unless @recruitment
+      - if @recruitment.complete?
+        .text-right
+          span.badge.badge-primary COMPLETADO
+      h5 PASO 4
+      h3 RECLUTAMIENTO
+      p
+        | Nos gustaría saber cómo te enteraste de nosotros. Esto nos permite
+        |  mejorar nuestra estrategia de reclutamiento y crear mejores alianzas
+        |  para ofrecer nuestro programa a perfiles no tradicionales.
+      = form_for @recruitment do |f|
+        .form-group.row
+          .col-md-6
+            = f.label(:referral, 'CÓMO ESCUCHASTE DE NOSOTROS')
+            = f.select(:referral, enum_options(@recruitment, :referrals).sort, { include_blank: '¿A través de quién te enteraste primero del programa?' }, { class: 'custom-select form-control' })
+            = render 'layouts/form_error', object: @recruitment, attribute: :referral
+          .col-md-6
+            = f.label(:coupon, 'CÓDIGO PROMOCIONAL')
+            = f.text_field(:coupon, placeholder: 'LISA100', class: 'form-control')
+            = render 'layouts/form_error', object: @recruitment, attribute: :coupon
+        .form-group.row.button
+          .col-md-12
+            .text-right
+              - if @recruitment.complete?
+                = f.submit('ACTUALIZAR RECLUTAMIENTO', class: 'btn btn-secondary')
+              - else
+                = f.submit('GUARDAR RECLUTAMIENTO', class: 'btn btn-primary')

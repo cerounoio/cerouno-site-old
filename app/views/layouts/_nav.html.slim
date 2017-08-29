@@ -8,6 +8,6 @@
       = render 'layouts/section_indicator', section: current_application.demographic || Demographic.new
       = render 'layouts/section_indicator', section: current_application.address     || Address.new
       = render 'layouts/section_indicator', section: current_application.experience  || Experience.new
-      h6.completed REFERENCIA
+      = render 'layouts/section_indicator', section: current_application.recruitment || Recruitment.new
     .logout
       h6= link_to 'SALIR', logout_path
