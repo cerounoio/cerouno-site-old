@@ -1,0 +1,20 @@
+.reference
+  .card
+    .card-block
+      - @recruitment = current_application.recruitment
+      .text-right
+        span.badge.badge-primary COMPLETADO
+      h5 PASO 4
+      h3 RECLUTAMIENTO
+      p
+        | Nos gustaría saber cómo te enteraste de nosotros. Esto nos permite
+        |  mejorar nuestra estrategia de reclutamiento y crear mejores alianzas
+        |  para ofrecer nuestro programa a perfiles no tradicionales.
+      = form_for @recruitment do |f|
+        .form-group.row
+          .col-md-6
+            = f.label(:referral, 'CÓMO ESCUCHASTE DE NOSOTROS')
+            = f.text_field(:referral, value: I18n.translate(@recruitment.referral).capitalize, class: 'custom-select form-control', readonly: '')
+          .col-md-6
+            = f.label(:coupon, 'CÓDIGO PROMOCIONAL')
+            = f.text_field(:coupon, class: 'form-control', readonly: '')

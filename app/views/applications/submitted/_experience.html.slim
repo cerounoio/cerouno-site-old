@@ -1,0 +1,42 @@
+.experience
+  .card
+    .card-block
+      - @experience = current_application.experience
+      .text-right
+        span.badge.badge-primary COMPLETADO
+      h5 PASO 3
+      h3 EXPERIENCIA
+      p
+        | Queremos conocer lo que has hecho y medir el impacto de nuestro
+        |  programa. Por eso preguntamos tu nivel de ingreso mensual y tu
+        |  nivel de estudios. En cuanto a tu currículum, no te preocupes
+        |  en pulirlo. Sólo queremos conocerte.
+      = form_for @experience do |f|
+        .form-group.row
+          .col-md-6
+            = f.label(:education, 'NIVEL DE ESTUDIOS')
+            = f.text_field(:education, value: I18n.translate(@experience.education), class: 'custom-select form-control', readonly: '')
+            small.form-text.text-muted Máximo nivel de estudios terminado.
+          .col-md-6
+            = f.label(:income, 'NIVEL DE INGRESOS')
+            = f.text_field(:income, class: 'form-control', readonly: '')
+            small.form-text.text-muted Sueldo mensual bruto aproximado (antes de impuestos).
+        .form-group.row
+          .col-md-6
+            = f.label(:technical_experience, 'EXPERIENCIA EN PROGRAMACIÓN')
+            = f.text_field(:technical_experience, value: boolean_options.invert[@experience.technical_experience], class: 'custom-select form-control', readonly: '')
+            small.form-text.text-muted
+              | Tu respuesta no afectará nuesta decisión,
+              |  sólo queremos entender mejor tus necesidades.
+          .col-md-6
+            = f.label(:objective, 'OBJETIVO PROFESIONAL')
+            = f.text_field(:objective, value: professional_objective_options.invert[@experience.objective.to_sym], class: 'custom-select form-control', readonly: '')
+            small.form-text.text-muted Cuál es el motivo por el cuál estás aplicando a nuestro programa?
+        .form-group.row
+          .col-md-12
+            = f.label(:resume_filename, 'CURRÍCULUM VITAE')
+            = f.text_field(:resume_filename, class: 'form-control', readonly: '')
+            small.form-text.text-muted
+              | Haz click en <b>BUSCAR</b> y selecciona el archivo que
+              |  contiene tu currículum vitae. El archivo tiene que tener
+              |  la extensión <b>pdf</b>, <b>doc</b> o <b>docx</b>.

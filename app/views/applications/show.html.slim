@@ -6,7 +6,7 @@
       .row.info
         .col-md-12
           = render 'applications/status'
-          = render 'applications/demographics'
-          = render 'applications/address'
-          = render 'applications/experience'
-          = render 'applications/recruitment'
+          = render "applications/#{application_template(current_application)}/demographics"
+          = render "applications/#{application_template(current_application)}/address"
+          = render "applications/#{application_template(current_application)}/experience"
+          = render "applications/#{application_template(current_application)}/recruitment"

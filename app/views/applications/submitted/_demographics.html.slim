@@ -1,0 +1,21 @@
+.demographics
+  .card
+    .card-block
+      - @demographic = current_application.demographic
+      .text-right
+        span.badge.badge-primary COMPLETADO
+      h5 PASO 1
+      h3 DEMOGRAFÍA
+      p
+        | Nuestro objetivo es dar oportunidades a grupos que tradicionalmente
+        |  no están representados en el sector de tecnología. Estos datos nos
+        |  ayudarán a mejorar nuestro proceso de admisiones para atraer a gente
+        |  diversa y altamente calificada.
+      = form_for @demographic do |f|
+        .form-group.row
+          .col-md-6
+            = f.label(:birthdate, 'NACIMIENTO')
+            = f.text_field(:birthdate, value: format_time(@demographic.birthdate), class: 'form-control', readonly: '')
+          .col-md-6
+            = f.label(:gender, 'GÉNERO')
+            = f.text_field(:gender, value: I18n.translate(@demographic.gender).capitalize, class: 'custom-select form-control', readonly: '')

@@ -6,13 +6,30 @@
           h1 APLICACIÓN
       .row
         .col-md-12
-          p
-            | Gracias por iniciar tu proceso de admisiónes con <b>CEROUNO</b>.
-            |  Por favor, completa la siguiente información antes de enviar tu
-            |  aplicación. Puedes modificar la información en cualquier momento
-            |  antes de enviarla.
-            |  Una vez enviada, revisaremos tu solicitud y te
-            |  contactaremos para agendar tu entrevista presencial.
+          - if current_application.complete? && current_application.started?
+            p
+              | Estás listo para enviar tu aplicación a <b>CEROUNOO</b>?
+              |  Revisa tu información antes de mandar tu aplicación. Una
+              |  vez enviada, no podrás realizar cambios.
+              |  Cuando revisemos tu solicitud y te
+              |  contactaremos para agendar tu entrevista presencial.
+              |  Si tienes alguna duda escríbenos a #{mail_to('admisiones@cerouno.io')}.
+          - elsif current_application.started?
+            p
+              | Gracias por iniciar tu proceso de admisiónes con <b>CEROUNO</b>.
+              |  Por favor, completa la siguiente información antes de enviar tu
+              |  aplicación. Puedes modificar la información en cualquier momento
+              |  antes de enviarla.
+              |  Una vez enviada, revisaremos tu solicitud y te
+              |  contactaremos para agendar tu entrevista presencial.
+              |  Si tienes alguna duda escríbenos a #{mail_to('admisiones@cerouno.io')}.
+          - elsif current_application.submitted?
+            p
+              | Gracias por enviar tu aplicación a <b>CEROUNO</b>.
+              |  Revisaremos tu solicitud en las siguientes dos semanas
+              |  y te contactaremos para agendar una entrevista presencial.
+              |  Recuerda revisar tu email y asegúrate de checar tu folder de spam.
+              |  Si tienes alguna duda escríbenos a #{mail_to('admisiones@cerouno.io')}.
       .row
         .col-md-6
           h5 ESTATUS
@@ -23,11 +40,13 @@
       .row.button
         .col-md-12
           .text-right
-            - if current_application.complete?
+            - if current_application.complete? && current_application.started?
               = form_for current_application do |f|
                 - f.submit('ENVIAR APLICACIÓN', class: 'btn btn-primary')
-            - else
+            - elsif current_application.started?
               button.btn.disabled ENVIAR APLICACIÓN
               small.form-text.text-muted
                 | Completa tu aplicación
                 |  antes de mandarla.
+            - else
+              button.btn.disabled APLICACIÓN ENVIADA

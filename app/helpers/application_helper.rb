@@ -1,4 +1,12 @@
 module ApplicationHelper
+  def format_time(time)
+    "#{time.day} de #{I18n.translate(time.strftime("%B"))} de #{time.year}"
+  end
+
+  def application_template(application)
+    application.started? ? application.status : 'submitted'
+  end
+
   def enum_options(object, enum)
     object.class.send(enum).collect { |key, value| [ I18n.translate(key.gsub('_', ' ')).capitalize, key ] }
   end
@@ -55,16 +63,6 @@ module ApplicationHelper
       "Manejar a un equipo de desarrollo de software" => :manager,
       "Otro"                                          => :other
     }
-  end
-
-  def referral_options
-    [
-      "Facebook",
-      "Familiares / Amigos",
-      "Empresa",
-      "Universidad",
-      "Otro"
-    ]
   end
 
   def format_steps(steps)

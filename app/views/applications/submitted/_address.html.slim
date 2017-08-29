@@ -1,0 +1,31 @@
+.address
+  .card
+    .card-block
+      - @address = current_application.address
+      .text-right
+        span.badge.badge-primary COMPLETADO
+      h5 PASO 2
+      h3 DIRECCIÓN
+      p
+        | El darnos tu dirección nos ayuda a entrar en contacto contigo
+        |  para poderte enviar correspondecia como certificados y darle
+        |  seguimiento a tu trayectoria profesional una vez que te gradúes.
+      = form_for @address do |f|
+        .form-group.row
+          .col-md-6
+            = f.label(:line_1, 'CALLE Y NÚMERO')
+            = f.text_field(:line_1, class: 'form-control', readonly: '')
+          .col-md-6
+            = f.label(:line_2, 'COLONIA')
+            = f.text_field(:line_2, class: 'form-control', readonly: '')
+        .form-group.row
+          .col-md-6
+            = f.label(:city, 'CIUDAD')
+            = f.text_field(:city, class: 'form-control', readonly: '')
+          .col-md-6
+            = f.label(:state, 'ESTADO')
+            = f.text_field(:state, class: 'custom-select form-control', readonly: '')
+        .form-group.row
+          .col-md-6
+            = f.label(:zipcode, 'CÓDIGO POSTAL')
+            = f.text_field(:zipcode, class: 'form-control', readonly: '')
