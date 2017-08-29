@@ -23,4 +23,11 @@
       .row.button
         .col-md-12
           .text-right
-            button.btn.disabled ENVIAR APLICACIÓN
+            - if current_application.complete?
+              = form_for current_application do |f|
+                - f.submit('ENVIAR APLICACIÓN', class: 'btn btn-primary')
+            - else
+              button.btn.disabled ENVIAR APLICACIÓN
+              small.form-text.text-muted
+                | Completa tu aplicación
+                |  antes de mandarla.

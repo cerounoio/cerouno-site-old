@@ -21,6 +21,13 @@ class Application < ApplicationRecord
     rejected:                 8
   }
 
+  def complete?
+    demographic.complete? &&
+    address.complete?     &&
+    experience.complete?  &&
+    recruitment.complete?
+  end
+
   def pending_steps
     STEPS - steps
   end

@@ -36,11 +36,15 @@ class RecruitmentsController < ApplicationController
 
     case
     when coupon_is_valid?(recruitment) || can_save?(recruitment)
+      current_application.add_step('recruitment')
+
       flash.clear
       flash[:success] = 'Tu información de reclutamiento fue actualizada exitosamente.'
 
       render 'applications/show'
     when coupon_is_invalid?(recruitment)
+      current_application.add_step('recruitment')
+
       flash.clear
       flash[:danger] = 'Tu cupón es inválido.'
 

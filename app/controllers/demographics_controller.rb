@@ -23,6 +23,8 @@ class DemographicsController < ApplicationController
     demographic = current_application.demographic
 
     if demographic.update(demographic_params)
+      current_application.add_step('demographic')
+
       flash.clear
       flash[:success] = 'Tu información demográfica fue actualizada exitosamente.'
 

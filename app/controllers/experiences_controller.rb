@@ -23,6 +23,8 @@ class ExperiencesController < ApplicationController
     experience = current_application.experience
 
     if experience.update(experience_params)
+      current_application.add_step('experience')
+
       flash.clear
       flash[:success] = 'Tu experiencia fue actualizada exitosamente.'
 

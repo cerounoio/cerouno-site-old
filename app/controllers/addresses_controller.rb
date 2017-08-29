@@ -23,6 +23,8 @@ class AddressesController < ApplicationController
     address = current_application.address
 
     if address.update(address_params)
+      current_application.add_step('address')
+
       flash.clear
       flash[:success] = 'Tu dirección fue actualizada exitosamente.'
 
