@@ -22,10 +22,10 @@ class Application < ApplicationRecord
   }
 
   def complete?
-    demographic.complete? &&
-    address.complete?     &&
-    experience.complete?  &&
-    recruitment.complete?
+    demographic.try(:complete?) &&
+    address.try(:complete?)     &&
+    experience.try(:complete?)  &&
+    recruitment.try(:complete?)
   end
 
   def pending_steps
