@@ -31,6 +31,16 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.sparkpostmail.com',
+    port:                 587,
+    domain:               'cerouno.io',
+    user_name:            ENV['sparkpost_user_name'],
+    password:             ENV['sparkpost_password'],
+    authentication:       'auth login',
+    enable_starttls_auto: true
+  }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
