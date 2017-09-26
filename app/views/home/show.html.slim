@@ -4,7 +4,12 @@
       = image_tag('cerouno-logo-horizontal.png')
       h1 Aprende a programar en tres meses
       h3 <b>CEROUNO</b> es el primer programa de aprendizaje acelerado en México para aprender a programar <b>sin experiencia previa</b>
-      h3.opening-date Octubre 2017
+      = link_to 'EMPIEZA TU APLICACIÓN', register_path, class: 'btn btn-primary'
+      small.form-text.text-muted La aplicación toma menos de 15 minutos.
+      h5.opening-date 23 OCTUBRE 2017
+  .row.partnership
+    .col-md-12
+      h6 EN ALIANZA CON #{link_to 'TURING SCHOOL', 'http://turing.io'}
   .row.value
     .col-md-4
       h3 EXPERIENCIA
@@ -50,10 +55,10 @@
     .col-md-8
       h4 NEWSLETTER
       p ¿Quieres más información sobre <b>CEROUNO</b>? Inscríbete a nuestro newsletter.
-      form.form-inline action="//cerouno.us15.list-manage.com/subscribe/post?u=a702e3835beed93f059881b5a&amp;id=4cc2c3f97d" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank" 
+      form.form-inline action="//cerouno.us15.list-manage.com/subscribe/post?u=a702e3835beed93f059881b5a&amp;id=4cc2c3f97d" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank"
         label.sr-only for="mce-EMAIL" Email
         input#inlineFormInput.form-control.mb-2.mr-sm-2.mb-sm-0 name="EMAIL" placeholder=("EMAIL") required="" type="email" value=""
-        div aria-hidden="true" style=("position: absolute; left: -5000px;") 
+        div aria-hidden="true" style=("position: absolute; left: -5000px;")
           input name="b_a702e3835beed93f059881b5a_4cc2c3f97d" tabindex="-1" type="text" value=""
         button.btn.btn-primary.form-control#registerButton name="subscribe" type="submit" <b>ENVIAR</b>
     .col-md-4
