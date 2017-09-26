@@ -27,7 +27,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
 
@@ -37,7 +37,7 @@ Rails.application.configure do
     domain:               'cerouno.io',
     user_name:            ENV['sparkpost_user_name'],
     password:             ENV['sparkpost_password'],
-    authentication:       'auth login',
+    authentication:       'plain',
     enable_starttls_auto: true
   }
 

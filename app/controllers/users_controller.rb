@@ -15,6 +15,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       application       = @user.create_application(status: :started)
 
+      UserMailer.welcome(@user).deliver_now
+
       redirect_to application_path(application), success: 'Tu cuenta fue creada exitosamente. Bienvenido/a.'
     else
       flash.now[:danger] = 'Tu cuenta no pudo ser creada. Por favor intenta de nuevo.'

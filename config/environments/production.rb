@@ -62,7 +62,6 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "cerouno-site_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.sparkpostmail.com',
@@ -70,7 +69,7 @@ Rails.application.configure do
     domain:               'cerouno.io',
     user_name:            ENV['sparkpost_user_name'],
     password:             ENV['sparkpost_password'],
-    authentication:       'auth login',
+    authentication:       'plain',
     enable_starttls_auto: true
   }
 

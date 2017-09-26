@@ -7,6 +7,8 @@ class ApplicationsController < ApplicationController
   def update
     current_application.submitted!
 
+    UserMailer.application_submitted(current_user).deliver_now
+
     flash.clear
     flash[:success] = 'Tu aplicación ha sido enviada exitosamente.'
 
