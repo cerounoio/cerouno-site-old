@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   resources :experiences,  only: [:create, :update]
   resources :recruitments, only: [:create, :update]
 
+  namespace :admin do
+    resources :applications, only: [:show, :index]
+  end
+
   root 'home#show'
 end

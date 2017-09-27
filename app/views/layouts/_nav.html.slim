@@ -9,5 +9,9 @@
       = render 'layouts/section_indicator', section: current_application.address     || Address.new
       = render 'layouts/section_indicator', section: current_application.experience  || Experience.new
       = render 'layouts/section_indicator', section: current_application.recruitment || Recruitment.new
+    - if current_user.admin
+      .dashboard
+        h4 DASHBOARD
+        h6= link_to 'APLICACIONES', admin_applications_path
     .logout
       h6= link_to 'SALIR', logout_path

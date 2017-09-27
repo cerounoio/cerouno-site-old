@@ -1,0 +1,21 @@
+.col-md-4
+  .card
+    .card-bloc
+      .row.card-top
+        .col-md-6
+          .text-left
+            h6= format_time(application.updated_at)
+        .col-md-6
+          .text-right
+            h6= application.id
+      .row.card-middle
+        .col-md-12
+          h5= application.user.full_name.upcase
+          h6= mail_to application.user.email
+      .row.card-bottom
+        .col-md-6
+          .text-left
+            h6= I18n.translate(current_application.status).upcase
+        .col-md-6
+          .text-right
+            h6= link_to 'REVISAR', admin_application_path(application)

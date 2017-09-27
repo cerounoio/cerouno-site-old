@@ -1,0 +1,7 @@
+.container-fluid.platform
+  .row.dashboard
+    .col-md-2
+      = render 'layouts/nav'
+    .col-md-10
+      .row.info
+        = render partial: 'application', collection: @applications

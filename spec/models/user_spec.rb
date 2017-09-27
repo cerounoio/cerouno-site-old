@@ -9,13 +9,15 @@ RSpec.describe User, type: :model do
         last_name:             'Téllez',
         email:                 'jorge@example.com',
         password:              'password',
-        password_confirmation: 'password'
+        password_confirmation: 'password',
+        admin:                 false
         )
 
       expect(user).to be_valid
       expect(user.first_name).to eq  'Jorge'
       expect(user.last_name).to eq 'Téllez'
       expect(user.email).to eq 'jorge@example.com'
+      expect(user.admin).to eq false
     end
   end
 
