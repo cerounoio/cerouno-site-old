@@ -3,6 +3,88 @@
     .col-md-2
       = render 'layouts/nav'
     .col-md-10
-      .card
-        .card-bloc
-          h5 Jorge Téllez
+      .row.info
+        .col-md-12
+          .row
+            .col-md-12.applications
+              h1 DASHBOARD
+              h3 APLICACIONES
+          .row
+            .col-md-12.application
+              .card
+                .card-block
+                  .row.application-top
+                    .col-md-6
+                      .text-left
+                        h5= format_card_time(@application.updated_at)
+                    .col-md-6
+                      .text-right
+                        h5= @application.id
+                  .row.application-name
+                    .col-md-12.application-name
+                      h3= @application.user.first_name.upcase
+                      h3= @application.user.last_name.upcase
+                  .row.application-demographics
+                    .col-md-12
+                      h4 DEMOGRAFÍA
+                    .col-md-6
+                      h6 NACIMIENTO
+                      p= format_time(@application.demographic.birthdate)
+                    .col-md-6
+                      h6 GÉNERO
+                      p= I18n.translate(@application.demographic.gender).capitalize
+                  .row.application-address
+                    .col-md-12
+                      h4 DIRECCIÓN
+                    .col-md-6
+                      h6 CALLE Y NÚMERO
+                      p= @application.address.line_1
+                    .col-md-6
+                      h6 COLONIA
+                      p= @application.address.line_2
+                    .col-md-6
+                      h6 CIUDAD
+                      p= @application.address.city
+                    .col-md-6
+                      h6 ESTADO
+                      p= @application.address.state
+                    .col-md-6
+                      h6 CÓDIGO POSTAL
+                      p= @application.address.zipcode
+                  .row.application-experience
+                    .col-md-12
+                      h4 EXPERIENCIA
+                    .col-md-6
+                      h6 NIVEL DE ESTUDIOS
+                      p= I18n.translate(@application.experience.education)
+                    .col-md-6
+                      h6 NIVEL DE INGRESOS
+                      p= number_to_currency(@application.experience.income)
+                    .col-md-6
+                      h6 EXPERIENCIA EN PROGRAMACIÓN
+                      p= boolean_options.invert[@application.experience.technical_experience]
+                    .col-md-6
+                      h6 OBJETIVO PROFESIONAL
+                      p= professional_objective_options.invert[@application.experience.objective.to_sym]
+                    .col-md-6
+                      h6 CURRÍCULUM VITAE
+                      p= link_to @application.experience.resume_filename, attachment_url(@application.experience, :resume)
+                  .row.application-recruitment
+                    .col-md-12
+                      h4 RECLUTAMIENTO
+                    .col-md-6
+                      h6 CÓMO ESCUCHASTE DE NOSOTROS
+                      p= I18n.translate(@application.recruitment.referral).capitalize
+                    .col-md-6
+                      h6 CÓDIGO PROMOCIONAL
+                      - if @application.recruitment.coupon
+                        p= @application.recruitment.coupon.code
+                      - else
+                        p Ninguno
+                  .row.application-bottom
+                    .col-md-6
+                      .text-left
+                        h5= I18n.translate(@application.status).upcase
+                    .col-md-6
+                      .text-right
+                        h5= link_to 'AGENDAR ENTREVISTA', '#'
