@@ -10,7 +10,8 @@
             h6= application.id
       .row.card-middle
         .col-md-12
-          h5= application.user.full_name.upcase
+          h5= application.user.first_name.upcase
+          h5= application.user.last_name.upcase
           h6= mail_to application.user.email
       .row.card-bottom
         .col-md-6
