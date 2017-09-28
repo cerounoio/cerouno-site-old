@@ -29,58 +29,58 @@
                       h4 DEMOGRAFÍA
                     .col-md-6
                       h6 NACIMIENTO
-                      p= format_time(@application.demographic.birthdate)
+                      = render 'application_field', message: format_time(@application.demographic.try(:birthdate))
                     .col-md-6
                       h6 GÉNERO
-                      p= I18n.translate(@application.demographic.gender).capitalize
+                      = render 'application_field', message: I18n.translate(@application.demographic.try(:gender)).capitalize
                   .row.application-address
                     .col-md-12
                       h4 DIRECCIÓN
                     .col-md-6
                       h6 CALLE Y NÚMERO
-                      p= @application.address.line_1
+                      = render 'application_field', message: @application.address.try(:line_1).to_s.titleize
                     .col-md-6
                       h6 COLONIA
-                      p= @application.address.line_2
+                      = render 'application_field', message: @application.address.try(:line_2).to_s.titleize
                     .col-md-6
                       h6 CIUDAD
-                      p= @application.address.city
+                      = render 'application_field', message: @application.address.try(:city).to_s.titleize
                     .col-md-6
                       h6 ESTADO
-                      p= @application.address.state
+                      = render 'application_field', message: @application.address.try(:state).to_s.titleize
                     .col-md-6
                       h6 CÓDIGO POSTAL
-                      p= @application.address.zipcode
+                      = render 'application_field', message: @application.address.try(:zipcode).to_s
                   .row.application-experience
                     .col-md-12
                       h4 EXPERIENCIA
                     .col-md-6
                       h6 NIVEL DE ESTUDIOS
-                      p= I18n.translate(@application.experience.education)
+                      = render 'application_field', message: I18n.translate(@application.experience.try(:education)).titleize
                     .col-md-6
                       h6 NIVEL DE INGRESOS
-                      p= number_to_currency(@application.experience.income)
+                      = render 'application_field', message: number_to_currency(@application.experience.try(:income))
                     .col-md-6
                       h6 EXPERIENCIA EN PROGRAMACIÓN
-                      p= boolean_options.invert[@application.experience.technical_experience]
+                      = render 'application_field', message: boolean_options.invert[@application.experience.try(:technical_experience)]
                     .col-md-6
                       h6 OBJETIVO PROFESIONAL
-                      p= professional_objective_options.invert[@application.experience.objective.to_sym]
+                      = render 'application_field', message: professional_objective_options.invert[@application.experience.try(:objective).to_s.to_sym]
                     .col-md-6
                       h6 CURRÍCULUM VITAE
-                      p= link_to @application.experience.resume_filename, attachment_url(@application.experience, :resume)
+                      - if @application.experience.try(:resume_filename)
+                        p= link_to @application.experience.resume_filename, attachment_url(@application.experience, :resume)
+                      - else
+                        p N/A
                   .row.application-recruitment
                     .col-md-12
                       h4 RECLUTAMIENTO
                     .col-md-6
                       h6 CÓMO ESCUCHASTE DE NOSOTROS
-                      p= I18n.translate(@application.recruitment.referral).capitalize
+                      = render 'application_field', message: I18n.translate(@application.recruitment.try(:referral)).capitalize
                     .col-md-6
                       h6 CÓDIGO PROMOCIONAL
-                      - if @application.recruitment.coupon
-                        p= @application.recruitment.coupon.code
-                      - else
-                        p Ninguno
+                      = render 'application_field', message: @application.recruitment.try(:coupon).try(:code).to_s
                   .row.application-bottom
                     .col-md-6
                       .text-left

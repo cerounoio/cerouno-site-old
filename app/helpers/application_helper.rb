@@ -1,9 +1,13 @@
 module ApplicationHelper
   def format_card_time(time)
+    return nil unless time
+
     "#{time.day} #{I18n.translate(time.strftime("%b")).upcase} #{time.year}"
   end
 
   def format_time(time)
+    return nil unless time
+
     "#{time.day} de #{I18n.translate(time.strftime("%B"))} de #{time.year}"
   end
 
