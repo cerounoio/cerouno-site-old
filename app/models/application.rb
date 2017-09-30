@@ -12,13 +12,12 @@ class Application < ApplicationRecord
   enum status: {
     started:                  0,
     submitted:                1,
-    needs_schedule_interview: 2,
-    needs_interview_scores:   3,
-    needs_invitation:         4,
-    accepted_invitation:      5,
-    declined_invitation:      6,
-    needs_rejection:          7,
-    rejected:                 8
+    needs_interview_scores:   2,
+    needs_invitation:         3,
+    accepted_invitation:      4,
+    declined_invitation:      5,
+    needs_rejection:          6,
+    rejected:                 7
   }
 
   def complete?

@@ -33,7 +33,7 @@
       .row
         .col-md-6
           h5 ESTATUS
-          p= I18n.translate(current_application.status).capitalize
+          p= I18n.translate(format_status(current_application.status)).capitalize
         .col-md-6
           h5 INFORMACIÓN PENDIENTE
           p= format_steps(current_application.pending_steps)

@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def format_status(status)
+    status.gsub('_', ' ')
+  end
+  
   def format_card_time(time)
     return nil unless time
 
