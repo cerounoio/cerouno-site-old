@@ -19,7 +19,7 @@ class Admin::ApplicationsController < AdminController
       render 'admin/applications/show'
     else
       flash.clear
-      flash[:success] = 'La aplicación no pudo ser actualizada.'
+      flash[:danger] = 'La aplicación no pudo ser actualizada.'
 
       render 'admin/applications/show'
     end

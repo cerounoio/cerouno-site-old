@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :applications, only: [:show, :index, :update]
+    resources :evaluations,  except: [:index]
   end
 
   root 'home#show'
