@@ -34,6 +34,26 @@ RSpec.describe Evaluation, type: :model do
 
       expect(evaluation.complete?).to be true
     end
+
+    it 'knows it\'s total' do
+      evaluation = build(:evaluation)
+
+      expect(evaluation.total).to be 19
+    end
+
+    it 'knows when it passed' do
+      evaluation = build(:evaluation)
+
+      expect(evaluation.passed?).to be true
+      expect(evaluation.failed?).to be false
+    end
+
+    it 'knows when it failed' do
+      evaluation = build(:evaluation, logic: 1, resilience: 1)
+
+      expect(evaluation.failed?).to be true
+      expect(evaluation.passed?).to be false
+    end
   end
 
   context 'when evaluation is invalid' do
