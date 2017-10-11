@@ -6,6 +6,7 @@ class Application < ApplicationRecord
   has_one    :address
   has_one    :experience
   has_one    :recruitment
+  has_one    :evaluation
 
   validate :valid_steps
 

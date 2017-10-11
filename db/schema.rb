@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927144431) do
+ActiveRecord::Schema.define(version: 20171010144749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,19 @@ ActiveRecord::Schema.define(version: 20170927144431) do
     t.index ["application_id"], name: "index_demographics_on_application_id"
   end
 
+  create_table "evaluations", force: :cascade do |t|
+    t.integer "initiative"
+    t.integer "collaboration"
+    t.integer "organization"
+    t.integer "diversity"
+    t.integer "resilience"
+    t.integer "logic"
+    t.bigint "application_id"
+    t.bigint "evaluator_id"
+    t.index ["application_id"], name: "index_evaluations_on_application_id"
+    t.index ["evaluator_id"], name: "index_evaluations_on_evaluator_id"
+  end
+
   create_table "experiences", force: :cascade do |t|
     t.integer "education"
     t.decimal "income", precision: 15, scale: 2
@@ -90,6 +103,8 @@ ActiveRecord::Schema.define(version: 20170927144431) do
   add_foreign_key "applications", "users"
   add_foreign_key "coupons", "recruitments"
   add_foreign_key "demographics", "applications"
+  add_foreign_key "evaluations", "applications"
+  add_foreign_key "evaluations", "users", column: "evaluator_id"
   add_foreign_key "experiences", "applications"
   add_foreign_key "recruitments", "applications"
 end
