@@ -1,0 +1,12 @@
+.row.evaluation-top
+  .col-md-12
+    .text-right
+      - if evaluation.complete? && evaluation.passed?
+        span.badge.badge-success.badge-lg
+          = "EVALUACIÓN APROBADA"
+      - if evaluation.complete? && evaluation.failed?
+        span.badge.badge-danger.badge-lg
+          = "EVALUACIÓN REPROBADA"
+      - unless evaluation.complete?
+        span.badge.badge-info.badge-lg
+          = "EVALUACIÓN PENDIENTE"

@@ -1,5 +1,5 @@
 class Evaluation < ApplicationRecord
-  MINIMUM_SCORE = 15
+  MINIMUM_SCORE = 18
 
   belongs_to :application
   belongs_to :evaluator, class_name: 'User'

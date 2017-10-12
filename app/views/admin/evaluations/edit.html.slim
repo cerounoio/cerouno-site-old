@@ -1,0 +1,18 @@
+.container-fluid.platform
+  .row.dashboard
+    .col-md-2
+      = render 'layouts/nav'
+    .col-md-10
+      .row.info
+        .col-md-12
+          .row
+            .col-md-12.header
+              h1 DASHBOARD
+              h3 APLICACIONES
+          .row
+            .col-md-12.evaluation
+              .card
+                .card-block
+                  = render 'status', evaluation: @evaluation
+                  = render 'applicant_name', evaluation: @evaluation
+                  = render 'form', back_url: admin_evaluation_path(id: @evaluation.id)

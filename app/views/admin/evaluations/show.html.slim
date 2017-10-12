@@ -1,0 +1,61 @@
+.container-fluid.platform
+  .row.dashboard
+    .col-md-2
+      = render 'layouts/nav'
+    .col-md-10
+      .row.info
+        .col-md-12
+          .row
+            .col-md-12.header
+              h1 DASHBOARD
+              h3 APLICACIONES
+          .row
+            .col-md-12.evaluation
+              .card
+                .card-block
+                  = render 'status', evaluation: @evaluation
+                  = render 'applicant_name', evaluation: @evaluation
+                  = form_for [:admin, @evaluation] do |f|
+                    .form-group.row
+                      .col-md-12
+                        h4 EVALUACIÓN DE ENTREVISTA
+                        p
+                          | Evalúa al aplicante utilizando la información de la entrevista
+                          |  y los criterios de evaluación. Trata de ser lo más objetivo/a
+                          |  posible para que podamos garantizar un proceso de admisión
+                          |  justo e incluyente.
+                    .form-group.row
+                      .col-md-6
+                        = f.label(:application_id, 'NÚMERO DE APLICACIÓN')
+                        = f.text_field(:application_id, class: 'form-control', value: @evaluation.application.id, readonly: '')
+                      .col-md-6
+                        = f.label(:evaluator_id, 'EVALUADOR')
+                        = f.text_field(:evaluator_name, class: 'form-control', value: @evaluation.evaluator.full_name, readonly: '')
+                    .form-group.row
+                      .col-md-6
+                        = f.label(:initiative, 'INICIATIVA')
+                        = f.text_field(:initiative, class: 'form-control', value: @evaluation.initiative, readonly: '')
+                      .col-md-6
+                        = f.label(:collaboration, 'COLABORACIÓN')
+                        = f.text_field(:collaboration, class: 'form-control', value: @evaluation.collaboration, readonly: '')
+                    .form-group.row
+                      .col-md-6
+                        = f.label(:organization, 'ORGANIZACIÓN')
+                        = f.text_field(:organization, class: 'form-control', value: @evaluation.organization, readonly: '')
+                      .col-md-6
+                        = f.label(:diversity, 'DIVERSIDAD')
+                        = f.text_field(:diversity, class: 'form-control', value: @evaluation.diversity, readonly: '')
+                    .form-group.row
+                      .col-md-6
+                        = f.label(:resilience, 'RESILIENCIA')
+                        = f.text_field(:resilience, class: 'form-control', value: @evaluation.resilience, readonly: '')
+                      .col-md-6
+                        = f.label(:logic, 'LÓGICA')
+                        = f.text_field(:logic, class: 'form-control', value: @evaluation.logic, readonly: '')
+                    .form-group.row.evaluation-bottom
+                      .col-md-12
+                        .text-right
+                          .btn-group
+                            h5= link_to 'REGRESAR', admin_application_path(id: @evaluation.application.id), class: 'btn btn-secondary'
+                            h5= link_to 'ELIMINAR', admin_evaluation_path(id: @evaluation.id), method: :delete, data: { confirm: '¿Estás seguro/a de destruir esta evaluación?' }, class: 'btn btn-secondary'
+                            h5= link_to 'EDITAR', edit_admin_evaluation_path(id: @evaluation.id), class: 'btn btn-primary'

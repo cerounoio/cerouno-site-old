@@ -1,0 +1,50 @@
+= form_for [:admin, @evaluation] do |f|
+  .form-group.row
+    .col-md-12
+      h4 EVALUACIÓN DE ENTREVISTA
+      p
+        | Evalúa al aplicante utilizando la información de la entrevista
+        |  y los criterios de evaluación. Trata de ser lo más objetivo/a
+        |  posible para que podamos garantizar un proceso de admisión
+        |  justo e incluyente.
+  .form-group.row
+    .col-md-6
+      = f.label(:application_id, 'NÚMERO DE APLICACIÓN')
+      = f.text_field(:application_id, class: 'form-control', value: @evaluation.application.id, readonly: '')
+    .col-md-6
+      = f.label(:evaluator_id, 'EVALUADOR')
+      = f.text_field(:evaluator_name, class: 'form-control', value: @evaluation.evaluator.full_name, readonly: '')
+      = f.hidden_field(:evaluator_id, value: @evaluation.evaluator.id)
+  .form-group.row
+    .col-md-6
+      = f.label(:initiative, 'INICIATIVA')
+      = f.select(:initiative, 1.upto(5).to_a, { include_blank: 'Selecciona el puntaje' }, { class: 'custom-select form-control'})
+      = render 'layouts/form_error', object: @evaluation, attribute: :initiative
+    .col-md-6
+      = f.label(:collaboration, 'COLABORACIÓN')
+      = f.select(:collaboration, 1.upto(5).to_a, { include_blank: 'Selecciona el puntaje' }, { class: 'custom-select form-control'})
+      = render 'layouts/form_error', object: @evaluation, attribute: :collaboration
+  .form-group.row
+    .col-md-6
+      = f.label(:organization, 'ORGANIZACIÓN')
+      = f.select(:organization, 1.upto(5).to_a, { include_blank: 'Selecciona el puntaje' }, { class: 'custom-select form-control'})
+      = render 'layouts/form_error', object: @evaluation, attribute: :organization
+    .col-md-6
+      = f.label(:diversity, 'DIVERSIDAD')
+      = f.select(:diversity, 1.upto(5).to_a, { include_blank: 'Selecciona el puntaje' }, { class: 'custom-select form-control'})
+      = render 'layouts/form_error', object: @evaluation, attribute: :diversity
+  .form-group.row
+    .col-md-6
+      = f.label(:resilience, 'RESILIENCIA')
+      = f.select(:resilience, 1.upto(5).to_a, { include_blank: 'Selecciona el puntaje' }, { class: 'custom-select form-control'})
+      = render 'layouts/form_error', object: @evaluation, attribute: :resilience
+    .col-md-6
+      = f.label(:logic, 'LÓGICA')
+      = f.select(:logic, 1.upto(5).to_a, { include_blank: 'Selecciona el puntaje' }, { class: 'custom-select form-control'})
+      = render 'layouts/form_error', object: @evaluation, attribute: :logic
+  .form-group.row.evaluation-bottom
+    .col-md-12
+      .text-right
+        .btn-group
+          h5= link_to 'REGRESAR', back_url, class: 'btn btn-secondary'
+          h5= f.submit 'GUARDAR', class: 'btn btn-primary'

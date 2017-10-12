@@ -6,7 +6,7 @@
       .row.info
         .col-md-12
           .row
-            .col-md-12.applications
+            .col-md-12.header
               h1 DASHBOARD
               h3 APLICACIONES
           .row
@@ -14,16 +14,30 @@
               .card
                 .card-block
                   .row.application-top
-                    .col-md-6
-                      .text-left
-                        h5= format_card_time(@application.updated_at)
-                    .col-md-6
+                    .col-md-12
                       .text-right
-                        h5= @application.id
+                        - if @application.rejected?
+                          span.badge.badge-danger.badge-lg
+                            = I18n.translate(format_status(@application.status)).upcase
+                        - elsif @application.accepted_invitation?
+                          span.badge.badge-success.badge-lg
+                            = I18n.translate(format_status(@application.status)).upcase
+                        - else
+                          span.badge.badge-info.badge-lg
+                            = I18n.translate(format_status(@application.status)).upcase
                   .row.application-name
-                    .col-md-12.application-name
+                    .col-md-12
                       h3= @application.user.first_name.upcase
                       h3= @application.user.last_name.upcase
+                  .row.application-registration
+                    .col-md-12
+                      h4 REGISTRO
+                    .col-md-6
+                      h6 NÚMERO DE APLICACIÓN
+                      p= @application.id
+                    .col-md-6
+                      h6 FECHA
+                      p= format_time(@application.updated_at)
                   .row.application-demographics
                     .col-md-12
                       h4 DEMOGRAFÍA
@@ -82,21 +96,14 @@
                       h6 CÓDIGO PROMOCIONAL
                       = render 'application_field', message: @application.recruitment.try(:coupon).try(:code).to_s
                   .row.application-bottom
-                    .col-md-6
-                      .text-left
-                        - if @application.rejected?
-                          span.badge.badge-danger.badge-lg
-                            = I18n.translate(format_status(@application.status)).upcase
-                        - elsif @application.accepted_invitation?
-                          span.badge.badge-success.badge-lg
-                            = I18n.translate(format_status(@application.status)).upcase
-                        - else
-                          span.badge.badge-info.badge-lg
-                            = I18n.translate(format_status(@application.status)).upcase
-                    .col-md-6
+                    .col-md-12
                       .text-right
                         .btn-group
                           - unless @application.rejected?
                             h5= link_to 'RECHAZAR', admin_application_path(id: @application.id, status: :rejected, email_message: :send_rejection), method: :patch, class: 'btn btn-secondary', data: { confirm: '¿Estás seguro/a de rechazar a este estudiante?' }
                           - if @application.submitted?
                             h5= link_to 'AGENDAR ENTREVISTA', admin_application_path(id: @application.id, status: :needs_interview_scores, email_message: :schedule_interview), method: :patch, class: 'btn btn-primary'
+                          - if @application.needs_interview_scores?
+                            h5= link_to 'EVALUAR ENTREVISTA', new_admin_evaluation_path(application_id: @application.id), class: 'btn btn-primary'
+                          - if @application.evaluation.present?
+                            h5= link_to 'VER EVALUACIÓN', admin_evaluation_path(id: @application.evaluation.id), class: 'btn btn-secondary'

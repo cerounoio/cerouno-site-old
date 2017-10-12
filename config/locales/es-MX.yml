@@ -11,7 +11,7 @@ es-MX:
   needs invitation: 'necesita recibir invitación'
   accepted invitation: 'invitación aceptada'
   declined invitation: 'invitación declinada'
-  needs rejection: 'necesita recibir no aceptación'
+  needs rejection: 'necesita recibir notificación de rechazo'
   rejected: 'rechazada'
   demographic: 'demografía'
   address: 'dirección'
@@ -71,3 +71,9 @@ es-MX:
   Oct: 'oct'
   Nov: 'nov'
   Dec: 'dec'
+  initiative: la iniciativa
+  collaboration: la colaboración
+  organization: la organización
+  diversity: la diversidad
+  resilience: la resiliencia
+  logic: la lógica
