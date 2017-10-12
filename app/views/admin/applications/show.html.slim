@@ -16,6 +16,8 @@
                   .row.application-top
                     .col-md-12
                       .text-right
+                        - if @application.hidden?
+                          span.badge.badge-warning.badge-lg APLICACIÓN OCULTA
                         - if @application.rejected?
                           span.badge.badge-danger.badge-lg
                             = I18n.translate(format_status(@application.status)).upcase
@@ -117,7 +119,11 @@
                     .col-md-12
                       .text-right
                         .btn-group
-                          - unless @application.rejected?
+                          - if @application.visible?
+                            h5= link_to 'OCULTAR', toggle_admin_application_path(id: @application.id), class: 'btn btn-secondary', method: :patch, data: { confirm: '¿Estás seguro/a de ocultar esta aplicación?' }
+                          - if @application.hidden?
+                            h5= link_to 'MOSTRAR', toggle_admin_application_path(id: @application.id), class: 'btn btn-secondary', method: :patch
+                          - if @application.needs_rejection?
                             h5= link_to 'RECHAZAR', admin_application_path(id: @application.id, status: :rejected, email_message: :send_rejection), method: :patch, class: 'btn btn-secondary', data: { confirm: '¿Estás seguro/a de rechazar a este estudiante?' }
                           - if @application.submitted?
                             h5= link_to 'AGENDAR ENTREVISTA', admin_application_path(id: @application.id, status: :needs_interview_scores, email_message: :schedule_interview), method: :patch, class: 'btn btn-primary'

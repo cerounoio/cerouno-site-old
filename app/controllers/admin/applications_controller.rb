@@ -4,7 +4,7 @@ class Admin::ApplicationsController < AdminController
   end
 
   def index
-    @applications = Application.all
+    @applications = Application.visible.order(updated_at: :desc)
   end
 
   def update
@@ -23,5 +23,22 @@ class Admin::ApplicationsController < AdminController
 
       render 'admin/applications/show'
     end
+  end
+
+  def toggle
+    @application = Application.find(params[:id])
+    @application.toggle
+
+    flash.clear
+
+    if @application.visible?
+      flash.clear
+      flash[:success] = 'La aplicación se ha vuelto visible exitosamente.'
+    else
+      flash.clear
+      flash[:success] = 'La aplicación se ha ocultado exitosamente.'
+    end
+
+    render 'admin/applications/show'
   end
 end

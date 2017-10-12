@@ -21,6 +21,8 @@ class Application < ApplicationRecord
     rejected:                 7
   }
 
+  scope :visible, -> { where(hidden: false) }
+
   def complete?
     demographic.try(:complete?) &&
     address.try(:complete?)     &&
@@ -40,6 +42,18 @@ class Application < ApplicationRecord
   def remove_step(step)
     self.steps = self.steps.reject { |step| step == step }
     save
+  end
+
+  def hidden?
+    hidden
+  end
+
+  def visible?
+    !hidden
+  end
+
+  def toggle
+    update_column(:hidden, !hidden)
   end
 
   private

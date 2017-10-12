@@ -8,12 +8,14 @@ RSpec.describe Application, type: :model do
       application = build(
         :application,
         status: 'started',
+        hidden: false,
         steps:  ['demographic', 'address'],
         user:   user
         )
 
       expect(application).to                    be_valid
       expect(application.status).to             eq 'started'
+      expect(application.hidden).to             eq false
       expect(application.steps).to              eq ['demographic', 'address']
       expect(application.pending_steps.sort).to eq ['experience', 'recruitment'].sort
       expect(application.user).to               eq user
@@ -31,6 +33,33 @@ RSpec.describe Application, type: :model do
       application.remove_step('demographic')
 
       expect(application.steps).not_to include 'demographic'
+    end
+
+    it 'knows it is visible' do
+      application = build(:application)
+
+      expect(application.visible?).to eq true
+    end
+
+    it 'knows it is hidden' do
+      application = build(:application, hidden: true)
+
+      expect(application.hidden?).to eq true
+    end
+
+    it 'can toggle it\'s visibility' do
+      application = create(:application)
+      application.toggle
+
+      expect(application.hidden?).to eq true
+    end
+
+    it 'displays only visible applications' do
+      visible_application = create(:application)
+      hidden_application  = create(:application, hidden: true)
+
+      expect(Application.visible).to     include visible_application
+      expect(Application.visible).not_to include hidden_application
     end
   end
 
