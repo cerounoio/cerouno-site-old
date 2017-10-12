@@ -20,8 +20,20 @@ class Evaluation < ApplicationRecord
     logic.present?
   end
 
+  def pending?
+    !complete?
+  end
+
   def total
+    return nil if pending?
+
     initiative + collaboration + organization + diversity + resilience + logic
+  end
+
+  def status
+    return 'pending' if pending?
+    return 'passed'  if passed?
+    return 'failed'  if failed?
   end
 
   def passed?

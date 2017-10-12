@@ -78,3 +78,6 @@ es-MX:
   resilience: la resiliencia
   logic: la lógica
   whatsapp: el número de WhatsApp
+  passed: aprobada
+  failed: reprobada
+  pending: pendiente

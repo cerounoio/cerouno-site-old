@@ -29,6 +29,15 @@
                     .col-md-12
                       h3= @application.user.first_name.upcase
                       h3= @application.user.last_name.upcase
+                  .row.application-contact
+                    .col-md-12
+                      h4 CONTACTO
+                    .col-md-6
+                      h6 EMAIL
+                      p= mail_to @application.user.email
+                    .col-md-6
+                      h6 WHATSAPP
+                      p= render 'application_field', message: @application.user.whatsapp
                   .row.application-registration
                     .col-md-12
                       h4 REGISTRO
@@ -95,6 +104,15 @@
                     .col-md-6
                       h6 CÓDIGO PROMOCIONAL
                       = render 'application_field', message: @application.recruitment.try(:coupon).try(:code).to_s
+                  .row.application-evaluation
+                    .col-md-12
+                      h4 EVALUACIÓN
+                    .col-md-6
+                      h6 EVALUADOR
+                      = render 'application_field', message: @application.evaluation.try(:evaluator).try(:full_name)
+                    .col-md-6
+                      h6 ESTATUS
+                      = render 'application_field', message: I18n.translate(@application.evaluation.try(:status)).capitalize
                   .row.application-bottom
                     .col-md-12
                       .text-right

@@ -83,5 +83,16 @@ RSpec.describe Evaluation, type: :model do
         expect(evaluation).not_to be_valid
       end
     end
+
+    it 'knows it\'s status' do
+      pending_application = build(:evaluation, logic: nil)
+      expect(pending_application.status).to eq 'pending'
+
+      passed_application  = build(:evaluation)
+      expect(passed_application.status).to eq 'passed'
+
+      failed_application  = build(:evaluation, logic: 1, initiative: 1)
+      expect(failed_application.status).to eq 'failed'
+    end
   end
 end
