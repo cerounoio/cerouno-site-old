@@ -4,7 +4,14 @@ class Admin::ApplicationsController < AdminController
   end
 
   def index
-    @applications = Application.visible.order(updated_at: :desc)
+    case
+    when params[:status] == 'hidden'
+      @applications = Application.hidden.order(updated_at: :desc)
+    when params[:status].present?
+      @applications = Application.where(status: params[:status]).order(updated_at: :desc)
+    when
+      @applications = Application.visible.order(updated_at: :desc)
+    end
   end
 
   def update

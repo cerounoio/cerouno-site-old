@@ -3,6 +3,19 @@
     .col-md-2
       = render 'layouts/nav'
     .col-md-10
+      .row.records-nav
+        .nav
+          = link_to 'TODOS', admin_applications_path, class: 'nav-link'
+          = link_to 'ACEPTADOS', admin_applications_path(status: 'accepted_invitation'), class: 'nav-link'
+          = link_to 'DECLINADOS', admin_applications_path(status: 'declined_invitation'), class: 'nav-link'
+          = link_to 'RECHAZADOS', admin_applications_path(status: 'rejected'), class: 'nav-link'
+          = link_to 'OCULTOS', admin_applications_path(status: 'hidden'), class: 'nav-link'
+      .row.actions-nav
+        .nav
+          = link_to 'APLICACIÓN ENVIADA', admin_applications_path(status: 'submitted'), class: 'nav-link'
+          = link_to 'EVALUACIÓN PENDIENTE', admin_applications_path(status: 'needs_interview_scores'), class: 'nav-link'
+          = link_to 'INVITACIÓN PENDIENTE', admin_applications_path(status: 'needs_invitation'), class: 'nav-link'
+          = link_to 'RECHAZO PENDIENTE', admin_applications_path(status: 'needs_rejection'), class: 'nav-link'
       .row.info
         .col-md-12.header
           h1 DASHBOARD

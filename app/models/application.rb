@@ -22,6 +22,7 @@ class Application < ApplicationRecord
   }
 
   scope :visible, -> { where(hidden: false) }
+  scope :hidden,  -> { where(hidden: true) }
 
   def complete?
     demographic.try(:complete?) &&
