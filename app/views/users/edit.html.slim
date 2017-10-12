@@ -31,7 +31,7 @@
                           = render 'layouts/form_error', object: @user, attribute: :email
                         .col-md-6
                           = f.label(:whatsapp, 'WHATSAPP')
-                          = f.text_field(:whatsapp, placeholder: '1234567890', class: 'form-control')
+                          = f.text_field(:whatsapp, placeholder: '10 dígitos sin guiones, espacios o símbolos', class: 'form-control')
                           small#emailHelp.form-text.text-muted Nunca compartiremos tu información de WhatsApp con terceros sin tu permiso.
                           = render 'layouts/form_error', object: @user, attribute: :whatsapp
                       .form-group.row
