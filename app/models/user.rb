@@ -11,6 +11,10 @@ class User < ApplicationRecord
                     format:     { with: /\A.+@.+[.].+{2,}\z/ },
                     uniqueness: true
 
+  validates :whatsapp, presence: true,
+                       format: { with: /\A[\d]+\z/ },
+                       length: { is: 10 }
+
   validates :password, presence:     true,
                        confirmation: true
 

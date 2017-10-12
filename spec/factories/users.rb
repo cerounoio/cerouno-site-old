@@ -5,6 +5,7 @@ FactoryGirl.define do
     email                 { Faker::Internet.unique.email }
     password              'password'
     password_confirmation 'password'
+    whatsapp              '1234567890'
     admin                 false
   end
 end

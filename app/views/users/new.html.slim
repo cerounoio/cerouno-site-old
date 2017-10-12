@@ -22,6 +22,11 @@
           small#emailHelp.form-text.text-muted Nunca compartiremos tu email con terceros sin tu permiso.
           = render 'layouts/form_error', object: @user, attribute: :email
         .form-group
+          = f.label(:whatsapp, 'WHATSAPP')
+          = f.text_field(:whatsapp, placeholder: '1234567890', class: 'form-control')
+          small#emailHelp.form-text.text-muted Nunca compartiremos tu información de WhatsApp con terceros sin tu permiso.
+          = render 'layouts/form_error', object: @user, attribute: :whatsapp
+        .form-group
           = f.label(:password, 'PASSWORD')
           = f.password_field(:password, placeholder: 'Password', class: 'form-control')
           = render 'layouts/form_error', object: @user, attribute: :password

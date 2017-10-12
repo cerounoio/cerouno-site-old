@@ -79,5 +79,19 @@ RSpec.describe User, type: :model do
 
       expect(user).not_to be_valid
     end
+
+    it 'does not create user without whatsapp number' do
+      user = build(:user, whatsapp: '')
+
+      expect(user).not_to be_valid
+    end
+
+    it 'does not create user without a valid whatsapp number format' do
+      ['1 21312312', '12', 'asdfghjklo', '1-234-2122', '12345678901'].each do |number|
+        user = build(:user, whatsapp: number)
+
+        expect(user).not_to be_valid
+      end
+    end
   end
 end
