@@ -12,6 +12,6 @@
     - if current_user.admin
       .dashboard
         h4 DASHBOARD
-        h6= link_to 'APLICACIONES', admin_applications_path
+        h6= link_to 'APLICACIONES', admin_applications_path(status: 'all')
     .logout
       h6= link_to 'SALIR', logout_path

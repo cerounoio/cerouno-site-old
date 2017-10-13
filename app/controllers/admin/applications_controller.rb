@@ -7,10 +7,10 @@ class Admin::ApplicationsController < AdminController
     case
     when params[:status] == 'hidden'
       @applications = Application.hidden.order(updated_at: :desc)
+    when params[:status] == 'all'
+      @applications = Application.visible.order(updated_at: :desc)
     when params[:status].present?
       @applications = Application.visible.where(status: params[:status]).order(updated_at: :desc)
-    when
-      @applications = Application.visible.order(updated_at: :desc)
     end
   end
 

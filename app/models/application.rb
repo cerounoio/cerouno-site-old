@@ -11,14 +11,15 @@ class Application < ApplicationRecord
   validate :valid_steps
 
   enum status: {
-    started:                  0,
-    submitted:                1,
-    needs_interview_scores:   2,
-    needs_invitation:         3,
-    accepted_invitation:      4,
-    declined_invitation:      5,
-    needs_rejection:          6,
-    rejected:                 7
+    started:                   0,
+    submitted:                 1,
+    needs_interview_scores:    2,
+    needs_invitation:          3,
+    needs_invitation_response: 8,
+    accepted_invitation:       4,
+    declined_invitation:       5,
+    needs_rejection:           6,
+    rejected:                  7
   }
 
   scope :visible, -> { where(hidden: false) }

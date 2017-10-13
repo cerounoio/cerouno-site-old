@@ -1,0 +1,4 @@
+- if params[:status] == status
+  = link_to message, admin_applications_path(status: status), class: 'nav-link active'
+- else
+  = link_to message, admin_applications_path(status: status), class: 'nav-link'

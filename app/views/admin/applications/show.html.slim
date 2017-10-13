@@ -3,6 +3,7 @@
     .col-md-2
       = render 'layouts/nav'
     .col-md-10
+      = render 'applications_nav'
       .row.info
         .col-md-12
           .row
@@ -125,6 +126,8 @@
                             h5= link_to 'MOSTRAR', toggle_admin_application_path(id: @application.id), class: 'btn btn-secondary', method: :patch
                           - if @application.needs_rejection?
                             h5= link_to 'RECHAZAR', admin_application_path(id: @application.id, status: :rejected, email_message: :send_rejection), method: :patch, class: 'btn btn-secondary', data: { confirm: '¿Estás seguro/a de rechazar a este estudiante?' }
+                          - if @application.needs_invitation?
+                            h5= link_to 'ACEPTAR', admin_application_path(id: @application.id, status: :rejected, email_message: :send_invitation), method: :patch, class: 'btn btn-secondary', data: { confirm: '¿Estás seguro/a de aceptar a este estudiante?' }
                           - if @application.submitted?
                             h5= link_to 'AGENDAR ENTREVISTA', admin_application_path(id: @application.id, status: :needs_interview_scores, email_message: :schedule_interview), method: :patch, class: 'btn btn-primary'
                           - if @application.needs_interview_scores?

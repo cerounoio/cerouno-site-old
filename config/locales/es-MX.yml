@@ -9,6 +9,7 @@ es-MX:
   needs schedule interview: 'entrevista pendiente'
   needs interview scores: 'evaluación pendiente'
   needs invitation: 'invitación pendiente'
+  needs invitation response: 'aceptación pendiente'
   accepted invitation: 'invitación aceptada'
   declined invitation: 'invitación declinada'
   needs rejection: 'rechazo pendiente'
