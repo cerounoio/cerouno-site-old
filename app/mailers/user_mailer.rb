@@ -11,19 +11,20 @@ class UserMailer < ApplicationMailer
     mail(to: format_to_field(user), subject: 'Entrevista')
   end
 
-  def send_invitation(user)
+  def invitation(user)
+    @user = user
     mail(to: format_to_field(user), subject: 'Decisión de Admisiones')
   end
 
-  def send_acceptance_message(user)
-    mail(to: format_to_field(user), subject: 'Siguiente Paso')
+  def acceptance(user)
+    mail(to: format_to_field(user), cc: gerente_de_operaciones, subject: 'Bienvenido/a')
   end
 
-  def send_declination_message(user)
+  def declination(user)
     mail(to: format_to_field(user), subject: 'Mucho Éxito')
   end
 
-  def send_rejection(user)
+  def rejection(user)
     mail(to: format_to_field(user), subject: 'Decisión de Admisiones')
   end
 
@@ -31,5 +32,9 @@ class UserMailer < ApplicationMailer
 
   def format_to_field(user)
     "\"#{user.full_name}\" <#{user.email}>"
+  end
+
+  def gerente_de_operaciones
+    '"Cris Flores" <cris@cerouno.io>'
   end
 end

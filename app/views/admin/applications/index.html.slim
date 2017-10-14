@@ -14,3 +14,8 @@
             .col-md-12
               .row
                 = render partial: 'application', collection: @applications
+              - if @applications.count == 0
+                col-md-12
+                  .card
+                    .card-bloc
+                      h5 NO HAY APLICACIONES EN ESTA ETAPA

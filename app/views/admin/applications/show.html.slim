@@ -124,13 +124,13 @@
                             h5= link_to 'OCULTAR', toggle_admin_application_path(id: @application.id), class: 'btn btn-secondary', method: :patch, data: { confirm: '¿Estás seguro/a de ocultar esta aplicación?' }
                           - if @application.hidden?
                             h5= link_to 'MOSTRAR', toggle_admin_application_path(id: @application.id), class: 'btn btn-secondary', method: :patch
+                          - if @application.evaluation.present?
+                            h5= link_to 'VER EVALUACIÓN', admin_evaluation_path(id: @application.evaluation.id), class: 'btn btn-secondary'
                           - if @application.needs_rejection?
-                            h5= link_to 'RECHAZAR', admin_application_path(id: @application.id, status: :rejected, email_message: :send_rejection), method: :patch, class: 'btn btn-secondary', data: { confirm: '¿Estás seguro/a de rechazar a este estudiante?' }
+                            h5= link_to 'RECHAZAR', admin_application_path(id: @application.id, status: :rejected, email_message: :rejection), method: :patch, class: 'btn btn-secondary', data: { confirm: '¿Estás seguro/a de rechazar a este estudiante?' }
                           - if @application.needs_invitation?
-                            h5= link_to 'ACEPTAR', admin_application_path(id: @application.id, status: :rejected, email_message: :send_invitation), method: :patch, class: 'btn btn-secondary', data: { confirm: '¿Estás seguro/a de aceptar a este estudiante?' }
+                            h5= link_to 'ENVIAR INVITACIÓN', admin_application_path(id: @application.id, status: :needs_invitation_response, email_message: :invitation), method: :patch, class: 'btn btn-primary', data: { confirm: '¿Estás seguro/a de aceptar a este estudiante?' }
                           - if @application.submitted?
                             h5= link_to 'AGENDAR ENTREVISTA', admin_application_path(id: @application.id, status: :needs_interview_scores, email_message: :schedule_interview), method: :patch, class: 'btn btn-primary'
                           - if @application.needs_interview_scores?
                             h5= link_to 'EVALUAR ENTREVISTA', new_admin_evaluation_path(application_id: @application.id), class: 'btn btn-primary'
-                          - if @application.evaluation.present?
-                            h5= link_to 'VER EVALUACIÓN', admin_evaluation_path(id: @application.evaluation.id), class: 'btn btn-secondary'

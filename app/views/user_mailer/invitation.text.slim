@@ -1,0 +1,17 @@
+| DECISIÓN DE ADMISIONES
+= "\r\n"
+= "\r\n"
+| Después de revisar tu aplicación queremos <b>ofrecerte admisión</b> en <b>CEROUNO</b>.
+= "\r\n"
+= "\r\n"
+| Estamos emocionados de la oportunidad de tenerte entre nuestros estudiantes. Nuestros graduados
+|  nos dicen que este programa ha sido una de las más retadoras y más satisfactorias experiencias de su vida.
+= "\r\n"
+= "\r\n"
+| Cómo siguiente paso nos gustaría confirmar contigo tu asistencia.
+|  Da click en una de las siguientes opciones para confirmar tu registro.
+= "\r\n"
+= "\r\n"
+| Rechazar Registro: #{ decide_application_url(id: @user.application.id, token: @user.token, status: :declined_invitation) }
+= "\r\n"
+| Confirmar Registro: #{ decide_application_url(id: @user.application.id, token: @user.token, status: :accepted_invitation) }

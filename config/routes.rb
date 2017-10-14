@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get 'register', to: 'users#new'
   resources :users, only: [:show, :create, :edit, :update]
 
-  resources :applications, only: [:show, :update]
+  resources :applications, only: [:show, :update] do
+    get 'decide', on: :member
+  end
+
   resources :demographics, only: [:create, :update]
   resources :addresses,    only: [:create, :update]
   resources :experiences,  only: [:create, :update]

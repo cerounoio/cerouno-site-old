@@ -1,4 +1,4 @@
-h1 style="text-align: center;" APLICACIÓN ENVIADA
+h1 style='text-align: center;' APLICACIÓN ENVIADA
 br
 br
 p
@@ -8,15 +8,15 @@ p
   |  una entrevista presencial en menos de dos semanas.
 p
   | Durante la entrevista presencial evaluaremos tus capacidades lógicas, así que mientras esperas,
-  |  trata de practicar tus habilidades lógicas #{link_to 'aquí', 'https://www.lsac.org/free-sample-test/sp/seccion-3.asp', style: "color: #EF426F;"} y
+  |  trata de practicar tus habilidades lógicas #{link_to 'aquí', 'http://curriculum.cerouno.io/interview_prep/logic_questions', style: 'color: #EF426F;'} y
   |  asegúrate de revisar tu folder de spam.
 p
   | Si tienes cualquier pregunta o comentario, no dudes en escribirnos a
-  |  #{mail_to 'admisiones@cerouno.io', nil, style: "color: #EF426F;"}
+  |  #{mail_to 'admisiones@cerouno.io', nil, style: 'color: #EF426F;'}
   | .
 p
   | Mucho éxito.
 br
 br
-.btn style="text-align: center"
-  a style="background-color: #EF426F !important; color: #FFFFFF !important; border-radius: 0.25rem; padding: 0.75rem 1rem; font-weight: 800 !important; border-color: #CC2952; text-align: center" href='http://cerouno.io/login' REVISAR MI APLICACIÓN
+.span style='text-align: center'
+  = link_to 'VER APLICACIÓN', login_url, { style: 'background-color: #EF426F !important; color: #FFFFFF !important; border-radius: 0.25rem; padding: 0.75rem 1rem; font-weight: 800 !important; border-color: #CC2952; text-align: center' }

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_secure_token
 
   validates :first_name, presence: true,
                          format:   { with: /\A[[:alpha:]\s\-]+\z/ }

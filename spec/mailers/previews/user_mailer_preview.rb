@@ -12,20 +12,20 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.schedule_interview(user)
   end
 
-  def send_invitation
-    UserMailer.send_invitation(user)
+  def invitation
+    UserMailer.invitation(user)
   end
 
-  def send_acceptance_message
-    UserMailer.send_acceptance_message(user)
+  def acceptance
+    UserMailer.acceptance(user)
   end
 
-  def send_declination_message
-    UserMailer.send_declination_message(user)
+  def declination
+    UserMailer.declination(user)
   end
 
-  def send_rejection
-    UserMailer.send_rejection(user)
+  def rejection
+    UserMailer.rejection(user)
   end
 
   private
@@ -33,7 +33,13 @@ class UserMailerPreview < ActionMailer::Preview
   def user
     OpenStruct.new({
       full_name: 'Fernanda Sosa',
-      email:     'fernanda@example.com'
+      email:     'fernanda@example.com',
+      token:     'supersecrettoken',
+      application: application
     })
+  end
+
+  def application
+    OpenStruct.new({ id: 1 })
   end
 end

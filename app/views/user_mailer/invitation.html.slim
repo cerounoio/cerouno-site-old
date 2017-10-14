@@ -1,0 +1,16 @@
+h1 style='text-align: center;' DECISIÓN DE ADMISIONES
+br
+br
+p
+  | Después de revisar tu aplicación queremos <b>ofrecerte admisión</b> en <b>CEROUNO</b>.
+p
+  | Estamos emocionados de la oportunidad de tenerte entre nuestros estudiantes. Nuestros graduados
+  |  nos dicen que este programa ha sido una de las más retadoras y más satisfactorias experiencias de su vida.
+p
+  | Cómo siguiente paso nos gustaría confirmar contigo tu asistencia.
+  |  Da click en una de las siguientes opciones para confirmar tu registro.
+br
+br
+.span style='text-align: center'
+  = link_to 'RECHAZAR REGISTRO', decide_application_url(id: @user.application.id, token: @user.token, status: :declined_invitation), { style: 'background-color: #FFFFFF !important; color: #EF426F !important; border-radius: 0.25rem; padding: 0.75rem 1rem; font-weight: 800 !important; border-color: #CC2952; text-align: center' }
+  = link_to 'CONFIRMAR REGISTRO', decide_application_url(id: @user.application.id, token: @user.token, status: :accepted_invitation), { style: 'background-color: #EF426F !important; color: #FFFFFF !important; border-radius: 0.25rem; padding: 0.75rem 1rem; font-weight: 800 !important; border-color: #CC2952; text-align: center' }
