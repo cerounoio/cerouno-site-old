@@ -1,5 +1,5 @@
 class ApplicationsController < ApplicationController
-  before_action :authenticate!
+  before_action :authenticate!, except: [:decide]
 
   def show
   end
