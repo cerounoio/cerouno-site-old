@@ -26,7 +26,7 @@ class ApplicationsController < ApplicationController
       UserMailer.acceptance(user).deliver_now  if application.accepted_invitation?
       Usermailer.declination(user).deliver_now if application.declined_invitation?
 
-      redirect_to application_path(id: application.id), success: 'Tu respuesta ha sido registrada exitosamente. Te hemos enviado un correo.'
+      redirect_to root_path, success: 'Tu respuesta ha sido registrada exitosamente. Te hemos enviado un correo.'
     else
       redirect_to root_path, warning: 'Lo sentimos. Para actualizar tu aplicación necesitas tener una cuenta válida.'
     end
