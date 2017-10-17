@@ -1,6 +1,7 @@
 .row.records-nav
   .nav
     = render 'applications_nav_link', status: 'all', message: 'TODOS'
+    = render 'applications_nav_link', status: 'started', message: 'INICIADAS'
     = render 'applications_nav_link', status: 'accepted_invitation', message: 'ACEPTADOS'
     = render 'applications_nav_link', status: 'declined_invitation', message: 'DECLINADOS'
     = render 'applications_nav_link', status: 'rejected', message: 'RECHAZADOS'
