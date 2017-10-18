@@ -9,15 +9,13 @@ RSpec.describe Coupon, type: :model do
         :coupon,
         code:        'SIMON500',
         amount:      20_000,
-        expiration:  DateTime.new(1981,4,23),
-        recruitment: recruitment
+        expiration:  DateTime.new(1981,4,23)
         )
 
       expect(coupon).to be_valid
       expect(coupon.code).to eq 'SIMON500'
       expect(coupon.amount).to eq 20_000
       expect(coupon.expiration).to eq DateTime.new(1981,4,23)
-      expect(coupon.recruitment).to eq recruitment
     end
 
     it 'knows when it expired' do

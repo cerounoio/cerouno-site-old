@@ -1,6 +1,6 @@
 class Recruitment < ApplicationRecord
   belongs_to :application
-  has_one :coupon
+  belongs_to :coupon, optional: true
 
   validates :referral, presence: true
 
