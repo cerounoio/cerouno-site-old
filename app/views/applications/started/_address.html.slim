@@ -4,7 +4,7 @@
       - @address = current_application.address || Address.new(application: current_application) unless @address
       - if @address.complete?
         .text-right
-          span.badge.badge-primary COMPLETADO
+          span.badge.badge-success COMPLETADO
       h5 PASO 2
       h3 DIRECCIÓN
       p

@@ -4,7 +4,7 @@
       - @experience = current_application.experience || Experience.new(application: current_application) unless @experience
       - if @experience.complete?
         .text-right
-          span.badge.badge-primary COMPLETADO
+          span.badge.badge-success COMPLETADO
       h5 PASO 3
       h3 EXPERIENCIA
       p

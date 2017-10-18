@@ -4,7 +4,7 @@
       - @demographic = current_application.demographic || Demographic.new(application: current_application) unless @demographic
       - if @demographic.complete?
         .text-right
-          span.badge.badge-primary COMPLETADO
+          span.badge.badge-success COMPLETADO
       h5 PASO 1
       h3 DEMOGRAFÍA
       p
