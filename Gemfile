@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.11'
 
 gem 'slim', '>= 3.0'
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', '~> 4.0.0.beta2'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'jquery-rails'
 gem 'foreman'
