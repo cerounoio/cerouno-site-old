@@ -1,0 +1,13 @@
+.col-md-12
+  .text-right
+    - if application.hidden?
+      span.badge.badge-warning.badge-lg APLICACIÓN OCULTA
+    - if application.rejected?
+      span.badge.badge-danger.badge-lg
+        = I18n.translate(format_status(application.status)).upcase
+    - elsif application.accepted_invitation?
+      span.badge.badge-success.badge-lg
+        = I18n.translate(format_status(application.status)).upcase
+    - else
+      span.badge.badge-info.badge-lg
+        = I18n.translate(format_status(application.status)).upcase

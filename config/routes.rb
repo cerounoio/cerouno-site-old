@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :recruitments, only: [:create, :update]
 
   namespace :admin do
-    resources :applications, only: [:show, :index, :update] do
+    resources :applications, only: [:show, :index, :update, :edit] do
       patch 'toggle', on: :member
     end
 

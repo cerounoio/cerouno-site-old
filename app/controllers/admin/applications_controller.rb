@@ -14,11 +14,15 @@ class Admin::ApplicationsController < AdminController
     end
   end
 
+  def edit
+    @application = Application.find(params[:id])
+  end
+
   def update
     @application = Application.find(params[:id])
 
-    if @application.update(status: params[:status])
-      UserMailer.send(params[:email_message], @application.user).deliver_now
+    if ApplicationUpdaterService.new(@application, application_params).update
+      UserMailer.send(params[:email_message], @application.user).deliver_now if params[:email_message].present?
 
       flash.clear
       flash[:success] = 'La aplicación se ha actualizado exitosamente.'
@@ -47,5 +51,18 @@ class Admin::ApplicationsController < AdminController
     end
 
     render 'admin/applications/show'
+  end
+
+  private
+
+  def application_params
+    params.require(:application).permit(
+      :status,
+      user:        [:email, :whatsapp],
+      demographic: [:birthday, :gender],
+      address:     [:line_1, :line_2, :city, :state, :zipcode],
+      experience:  [:education, :income, :technical_experience, :objective, :resume],
+      recruitment: [:referral, :coupon]
+    )
   end
 end

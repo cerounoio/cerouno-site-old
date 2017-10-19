@@ -32,9 +32,4 @@ class Recruitment < ApplicationRecord
       false
     end
   end
-
-  private
-
-  def valid_coupon
-  end
 end

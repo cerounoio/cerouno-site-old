@@ -15,19 +15,7 @@
               .card
                 .card-block
                   .row.application-top
-                    .col-md-12
-                      .text-right
-                        - if @application.hidden?
-                          span.badge.badge-warning.badge-lg APLICACIÓN OCULTA
-                        - if @application.rejected?
-                          span.badge.badge-danger.badge-lg
-                            = I18n.translate(format_status(@application.status)).upcase
-                        - elsif @application.accepted_invitation?
-                          span.badge.badge-success.badge-lg
-                            = I18n.translate(format_status(@application.status)).upcase
-                        - else
-                          span.badge.badge-info.badge-lg
-                            = I18n.translate(format_status(@application.status)).upcase
+                    = render 'application_status', application: @application
                   .row.application-name
                     .col-md-12
                       h3= @application.user.first_name.upcase
@@ -124,13 +112,14 @@
                             h5= link_to 'OCULTAR', toggle_admin_application_path(id: @application.id), class: 'btn btn-secondary', method: :patch, data: { confirm: '¿Estás seguro/a de ocultar esta aplicación?' }
                           - if @application.hidden?
                             h5= link_to 'MOSTRAR', toggle_admin_application_path(id: @application.id), class: 'btn btn-secondary', method: :patch
+                          h5= link_to 'EDITAR', edit_admin_application_path(id: @application.id), class: 'btn btn-secondary'
                           - if @application.evaluation.present?
                             h5= link_to 'VER EVALUACIÓN', admin_evaluation_path(id: @application.evaluation.id), class: 'btn btn-secondary'
                           - if @application.needs_rejection?
-                            h5= link_to 'RECHAZAR', admin_application_path(id: @application.id, status: :rejected, email_message: :rejection), method: :patch, class: 'btn btn-secondary', data: { confirm: '¿Estás seguro/a de rechazar a este estudiante?' }
+                            h5= link_to 'RECHAZAR', admin_application_path(id: @application.id, application: { status: :rejected }, email_message: :rejection), method: :patch, class: 'btn btn-secondary', data: { confirm: '¿Estás seguro/a de rechazar a este estudiante?' }
                           - if @application.needs_invitation?
-                            h5= link_to 'ENVIAR INVITACIÓN', admin_application_path(id: @application.id, status: :needs_invitation_response, email_message: :invitation), method: :patch, class: 'btn btn-primary', data: { confirm: '¿Estás seguro/a de aceptar a este estudiante?' }
+                            h5= link_to 'ENVIAR INVITACIÓN', admin_application_path(id: @application.id, application: { status: :needs_invitation_response }, email_message: :invitation), method: :patch, class: 'btn btn-primary', data: { confirm: '¿Estás seguro/a de aceptar a este estudiante?' }
                           - if @application.submitted?
-                            h5= link_to 'AGENDAR ENTREVISTA', admin_application_path(id: @application.id, status: :needs_interview_scores, email_message: :schedule_interview), method: :patch, class: 'btn btn-primary'
+                            h5= link_to 'AGENDAR ENTREVISTA', admin_application_path(id: @application.id, application: { status: :needs_interview_scores }, email_message: :schedule_interview), method: :patch, class: 'btn btn-primary'
                           - if @application.needs_interview_scores?
                             h5= link_to 'EVALUAR ENTREVISTA', new_admin_evaluation_path(application_id: @application.id), class: 'btn btn-primary'

@@ -1,0 +1,127 @@
+.container-fluid.platform
+  .row.dashboard
+    .col-md-2
+      = render 'layouts/nav'
+    .col-md-10
+      = render 'applications_nav'
+      .row.info
+        .col-md-12
+          .row
+            .col-md-12.header
+              h1 DASHBOARD
+              h3 APLICACIONES
+          .row
+            .col-md-12.application_edit
+              .card
+                .card-block
+                  .row.application-top
+                    = render 'application_status', application: @application
+                  .row.application-name
+                    .col-md-12
+                      h3= @application.user.first_name.upcase
+                      h3= @application.user.last_name.upcase
+                  = form_for [:admin, @application] do |f|
+                    = f.fields_for @application.user do |user_fields|
+                      .form-group.row
+                        .col-md-12
+                          h4 CONTACTO
+                        .col-md-6
+                          h6 EMAIL
+                          = user_fields.text_field(:email, class: 'form-control')
+                        .col-md-6
+                          h6 WHATSAPP
+                          = user_fields.text_field(:whatsapp, class: 'form-control')
+                    .form-group.row.application-registration
+                      .col-md-12
+                        h4 REGISTRO
+                      .col-md-6
+                        h6 NÚMERO DE APLICACIÓN
+                        = f.text_field(:id, class: 'form-control', readonly: '')
+                      .col-md-6
+                        h6 FECHA
+                        = f.text_field(:updated_at, value: format_time(@application.updated_at), class: 'form-control', readonly: '')
+                    = f.fields_for (@application.demographic || Demographic.new) do |demographic_fields|
+                      .form-group.row.application-demographics
+                        .col-md-12
+                          h4 DEMOGRAFÍA
+                        .col-md-6
+                          h6 NACIMIENTO
+                          = demographic_fields.date_select(:birthdate, { default: 18.years.ago, start_year: 100.years.ago.year, end_year: 18.years.ago.year }, { class: 'custom-select' })
+                        .col-md-6
+                          h6 GÉNERO
+                          = demographic_fields.select(:gender, enum_options(Demographic.new, :genders), { include_blank: 'Selecciona el género' }, { class: 'custom-select form-control' })
+                    = f.fields_for (@application.address || Address.new) do |address_fields|
+                      .form-group.row.application-address
+                        .col-md-12
+                          h4 DIRECCIÓN
+                        .col-md-6
+                          h6 CALLE Y NÚMERO
+                          = address_fields.text_field(:line_1, placeholder: 'N/A', class: 'form-control')
+                        .col-md-6
+                          h6 COLONIA
+                          = address_fields.text_field(:line_2, placeholder: 'N/A', class: 'form-control')
+                        .col-md-6
+                          h6 CIUDAD
+                          = address_fields.text_field(:city, placeholder: 'N/A', class: 'form-control')
+                        .col-md-6
+                          h6 ESTADO
+                          = address_fields.select(:state, mexican_states, { include_blank: 'Selecciona el estado' }, { class: 'custom-select form-control'})
+                        .col-md-6
+                          h6 CÓDIGO POSTAL
+                          = address_fields.text_field(:zipcode, placeholder: 'N/A', class: 'form-control')
+                    = f.fields_for (@application.experience || Experience.new) do |experience_fields|
+                      .form-group.row.application-experience
+                        .col-md-12
+                          h4 EXPERIENCIA
+                        .col-md-6
+                          h6 NIVEL DE ESTUDIOS
+                          = experience_fields.select(:education, enum_options(Experience.new, :educations), { include_blank: 'Selecciona tu nivel de estudios' }, { class: 'custom-select form-control'})
+                        .col-md-6
+                          h6 NIVEL DE INGRESOS
+                          = experience_fields.number_field(:income, placeholder: 'N/A', min: 0, class: 'form-control')
+                        .col-md-6
+                          h6 EXPERIENCIA EN PROGRAMACIÓN
+                          = experience_fields.select(:technical_experience, boolean_options, { include_blank: '¿Tiene experiecia previa programando?' }, { class: 'custom-select form-control'})
+                        .col-md-6
+                          h6 OBJETIVO PROFESIONAL
+                          = experience_fields.select(:objective, professional_objective_options, { include_blank: 'Selecciona el objetivo profesional' }, { class: 'custom-select form-control'})
+                        .col-md-6.curriculum
+                          h6 CURRÍCULUM VITAE
+                          - if @application.try(:experience).try(:resume_filename).present?
+                            .row
+                              .col-md-12
+                                small.form-text.text-muted
+                                  | Tu currículum actual es
+                                  |  <b>#{@application.experience.resume_filename}</b>
+                                  | .
+                          .row
+                            .col-md-12
+                              label.form-control.custom-file
+                                = experience_fields.attachment_field(:resume, class: 'custom-file-input')
+                                span.custom-file-control
+                    = f.fields_for (@application.recruitment || Recruitment.new) do |recruitment_fields|
+                      .form-group.row.application-recruitment
+                        .col-md-12
+                          h4 RECLUTAMIENTO
+                        .col-md-6
+                          h6 CÓMO ESCUCHASTE DE NOSOTROS
+                          = recruitment_fields.select(:referral, enum_options(Recruitment.new, :referrals).sort, { include_blank: '¿A través de quién te enteraste primero del programa?' }, { class: 'custom-select form-control' })
+                        .col-md-6
+                          h6 CÓDIGO PROMOCIONAL
+                          = recruitment_fields.text_field(:coupon, placeholder: 'N/A', class: 'form-control')
+                    = f.fields_for (@application.evaluation || Evaluation.new) do |evaluation_fields|
+                      .form-group.row.application-evaluation
+                        .col-md-12
+                          h4 EVALUACIÓN
+                        .col-md-6
+                          h6 EVALUADOR
+                          = evaluation_fields.text_field(:evaluator, placeholder: 'N/A', value: @application.evaluation.try(:evaluator).try(:full_name), class: 'form-control', readonly: '')
+                        .col-md-6
+                          h6 ESTATUS
+                          = evaluation_fields.text_field(:status, value: I18n.translate(@application.evaluation.try(:status), default: 'N/A').upcase, class: 'form-control', readonly: '')
+                    .form-group.row.application-bottom
+                      .col-md-12
+                        .text-right
+                          .btn-group
+                            h5= link_to 'REGRESAR', admin_application_path(id: @application.id), class: 'btn btn-secondary'
+                            h5= f.submit 'GUARDAR', class: 'btn btn-primary', data: { confirm: '¿Estás seguro/a de querer guardar esta aplicación?'}
