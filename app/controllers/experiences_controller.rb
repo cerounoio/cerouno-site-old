@@ -7,14 +7,10 @@ class ExperiencesController < ApplicationController
     if experience.save
       current_application.add_step('experience')
 
-      flash.clear
       flash[:success] = 'Tu experiencia fue guardada exitosamente.'
-
       render 'applications/show'
     else
-      flash.clear
       flash[:danger] = 'Tu experiencia no pudo ser guardada.'
-
       render 'applications/show'
     end
   end
@@ -25,16 +21,12 @@ class ExperiencesController < ApplicationController
     if experience.update(experience_params)
       current_application.add_step('experience')
 
-      flash.clear
       flash[:success] = 'Tu experiencia fue actualizada exitosamente.'
-
       render 'applications/show'
     else
       current_application.remove_step('experience')
 
-      flash.clear
       flash[:danger] = 'Tu experiencia no pudo ser actualizada.'
-
       render 'applications/show'
     end
   end

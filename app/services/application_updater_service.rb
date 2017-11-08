@@ -7,18 +7,19 @@ class ApplicationUpdaterService
   end
 
   def update
-    update_status      if params[:status]
-    update_user        if params[:user]
-    update_demographic if params[:demographic]
-    update_address     if params[:address]
-    update_experience  if params[:experience]
-    update_recruitment if params[:recruitment]
+    params[:status].present?      ? update_status      : true
+    params[:user].present?        ? update_user        : true
+    params[:demographic].present? ? update_demographic : true
+    params[:address].present?     ? update_address     : true
+    params[:experience].present?  ? update_experience  : true
+    params[:recruitment].present? ? update_recruitment : true
   end
 
   private
 
   def update_status
-    application.update(status: params[:status]) if params[:status].present?
+    application.status = params[:status] if params[:status].present?
+    application.save(validate: false)
   end
 
   def update_user

@@ -7,14 +7,10 @@ class DemographicsController < ApplicationController
     if demographic.save
       current_application.add_step('demographic')
 
-      flash.clear
       flash[:success] = 'Tu información demográfica fue guardada exitosamente.'
-
       render 'applications/show'
     else
-      flash.clear
       flash[:danger] = 'Tu información demográfica no pudo ser guardada.'
-
       render 'applications/show'
     end
   end
@@ -25,16 +21,12 @@ class DemographicsController < ApplicationController
     if demographic.update(demographic_params)
       current_application.add_step('demographic')
 
-      flash.clear
       flash[:success] = 'Tu información demográfica fue actualizada exitosamente.'
-
       render 'applications/show'
     else
       current_application.remove_step('demographic')
 
-      flash.clear
       flash[:danger] = 'Tu información demográfica no pudo ser actualizada.'
-
       render 'applications/show'
     end
   end

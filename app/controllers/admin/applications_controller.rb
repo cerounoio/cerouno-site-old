@@ -24,14 +24,10 @@ class Admin::ApplicationsController < AdminController
     if ApplicationUpdaterService.new(@application, application_params).update
       UserMailer.send(params[:email_message], @application.user).deliver_now if params[:email_message].present?
 
-      flash.clear
       flash[:success] = 'La aplicación se ha actualizado exitosamente.'
-
       render 'admin/applications/show'
     else
-      flash.clear
       flash[:danger] = 'La aplicación no pudo ser actualizada.'
-
       render 'admin/applications/show'
     end
   end
@@ -43,10 +39,8 @@ class Admin::ApplicationsController < AdminController
     flash.clear
 
     if @application.visible?
-      flash.clear
       flash[:success] = 'La aplicación se ha vuelto visible exitosamente.'
     else
-      flash.clear
       flash[:success] = 'La aplicación se ha ocultado exitosamente.'
     end
 

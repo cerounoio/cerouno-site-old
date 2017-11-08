@@ -9,9 +9,7 @@ class ApplicationsController < ApplicationController
 
     UserMailer.application_submitted(current_user).deliver_now
 
-    flash.clear
     flash[:success] = 'Tu aplicación ha sido enviada exitosamente.'
-
     render 'applications/show'
   end
 

@@ -15,14 +15,10 @@ class Admin::EvaluationsController < AdminController
       application.needs_invitation! if @evaluation.passed?
       application.needs_rejection!  if @evaluation.failed?
 
-      flash.clear
       flash[:success] = 'La evaluación se ha creado exitosamente.'
-
       render 'admin/evaluations/show'
     else
-      flash.clear
       flash[:danger] = 'La evaluación no pudo ser creada.'
-
       render 'admin/evaluations/new'
     end
   end
@@ -39,14 +35,10 @@ class Admin::EvaluationsController < AdminController
       application.needs_invitation! if @evaluation.passed?
       application.needs_rejection!  if @evaluation.failed?
 
-      flash.clear
       flash[:success] = 'La evaluación se ha actualizado exitosamente.'
-
       render 'admin/evaluations/show'
     else
-      flash.clear
       flash[:danger] = 'La evaluación no pudo ser actualizada.'
-
       render 'admin/evaluations/edit'
     end
   end
@@ -59,7 +51,6 @@ class Admin::EvaluationsController < AdminController
     application.needs_interview_scores!
 
     flash[:success] = 'La evaluación ha sido destruída exitosamente.'
-
     redirect_to admin_application_path(id: application.id)
   end
 
