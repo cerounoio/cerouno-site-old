@@ -1,71 +1,111 @@
-.container-fluid.home
-  .row.hero
-    .col-md-12
-      = image_tag('cerouno-logo-horizontal.png')
-      h1 Aprende a programar en tres meses
-      h3 <b>CEROUNO</b> es el primer programa de aprendizaje acelerado en México para aprender a programar <b>sin experiencia previa</b>
-      = link_to 'EMPIEZA TU APLICACIÓN', register_path, class: 'btn btn-primary'
-      small.form-text.text-muted La aplicación toma menos de 15 minutos.
-  .row.partnership
-    .col-md-12
-      h6 EN ALIANZA CON #{link_to 'TURING SCHOOL', 'http://turing.io'}
-  .row.value
-    .col-md-4
-      h3 EXPERIENCIA
-      p El equipo de <b>CEROUNO</b> ha entrenado a más de 300 programadores en EUA. Ninguno de ellos sabía programar antes de empezar el programa.
-    .col-md-4
-      h3 EMPRENDE
-      p La mejor manera de empezar tu empresa de tecnología es aprendiendo a programar. ¿No te interesa? También te ayudamos a conseguir empleo.
-    .col-md-4
-      h3 FINANCIA
-      p Aprende sin preocupaciones. Empieza ahora tu carrera como programador con nosotros y obtén una beca-crédito a través de #{link_to "Laudex", "https://www.laudex.mx/"} desde <b>$1,470 al mes</b>.
-  .row.program
-    .col-md-12
-      h3 PROGRAMA
-      .module
-        h4 01 / PROGRAMACIÓN ORIENTADA A OBJETOS
-        p En este módulo, desarrollarás programas en la terminal utilizando programación orientada a objetos. También aprenderás a resolver problemas creando algoritmos y comprendiendo estructuras de datos. Al finalizar este módulo, podrás escribir código usando Test-Driven Development, pair-programming y refactoring.
-      .module
-        h4 02 / DESARROLLO DE APLICACIONES WEB
-        p En este módulo, aprenderás a construir aplicaciones web con bases de datos relacionales utilizando Sinatra y Ruby on Rails. También aprenderás a incorporar datos externos de servicios como Facebook y Twitter mediante APIs. Al finalizar este módulo, podrás desarrollar una aplicación web que resuelva una necesidad de negocio utilizando metodologías de desarrollo ágil.
-      .module
-        h4 03 / APLICACIONES CLIENT-SIDE
-        p En este módulo, aprenderás a desarrollar aplicaciones client-side. Aprenderás a usar JavaScript para hacer sus aplicaciones interactivas y crear interfaces que se actualicen en tiempo real mediante APIs. Al finalizar este módulo, podrás utilizar front-end frameworks como React y jQuery.
-  .row.admissions
-    .col-md-12
-      h3 ADMISIONES
-  .row.admissions-steps
-    .col-md-4
-      h5 PASO 1
-      h4 ANTECEDENTES
-      p Queremos conocerte. Proporciona tu información demográfica y currículum para que podamos ver quien eres. No tienes que pulirlo, sólo queremos tener una idea de lo que has hecho.
-    .col-md-4
-      h5 PASO 2
-      h4 PRUEBA LÓGICA
-      p Para aprender a programar no tienes que haber estudiado ingeniería, lo que necesitas son habilidades lógicas. En esta etapa resolverás un exámen lógico en persona con un instructor.
-    .col-md-4
-      h5 PASO 3
-      h4 ENTREVISTA
-      p Nos importa tener una cultura incluyente. Durante esta etapa, te entrevistarás con un instructor para asegurarnos de que tus habilidades personales sean las más adecuadas para nuestra comunidad.
-  .row.info
-    .col-md-12
-      h3 INFORMACIÓN
-  .row.info-sections
-    .col-md-8
-      h4 NEWSLETTER
-      p ¿Quieres más información sobre <b>CEROUNO</b>? Inscríbete a nuestro newsletter.
-      form.form-inline action="//cerouno.us15.list-manage.com/subscribe/post?u=a702e3835beed93f059881b5a&amp;id=4cc2c3f97d" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank"
-        label.sr-only for="mce-EMAIL" Email
-        input#inlineFormInput.form-control.mb-2.mr-sm-2.mb-sm-0 name="EMAIL" placeholder=("EMAIL") required="" type="email" value=""
-        div aria-hidden="true" style=("position: absolute; left: -5000px;")
-          input name="b_a702e3835beed93f059881b5a_4cc2c3f97d" tabindex="-1" type="text" value=""
-        button.btn.btn-primary.form-control#registerButton name="subscribe" type="submit" <b>ENVIAR</b>
-    .col-md-4
-      h4 REDES SOCIALES
-      h6= link_to 'FACEBOOK', 'https://www.facebook.com/cerounoio'
-      h6= link_to 'TWITTER', 'https://www.twitter.com/cerounoio'
-      h6= link_to 'INSTAGRAM', 'https://www.instagram.com/cerounoio'
-      h6= link_to 'MEDIUM', 'https://medium.com/@cerounoio'
-  .row.footer
-    .col-md-12
-      p Derechos Reservados © 2017 <b>CEROUNO VENTURES</b>
+header
+  .container
+    .logo=link_to image_tag('cerouno-logo.svg')
+    nav
+      =link_to 'Nosotros', '#'
+      =link_to 'Programas', '#'
+      =link_to 'Comunidad', '#'
+      =link_to 'Precios', '#'
+      =link_to 'Aplicar ahora →', '#'
+.content-wrapper
+  .top
+    .container
+      .row
+        .col-md-6
+          h1 Descubre tu potencial de cambiar al mundo a través de la tecnología.
+          p
+            strong → CEROUNO
+            |  es el primer programa de aprendizaje acelerado en México para aprender a programar sin experiencia previa
+          .btn.btn-outline
+            =link_to 'Aplicar ahora →', '#'
+        .col-md-6
+          =image_tag('home-hero.png')
+
+  .programs
+    .container
+      .section-title
+        .row
+          .col-md-3
+            span 02
+            label programas
+          .col-md-9
+            h3 Contamos con los programas <br>más avanzados del mercado impartidos <br>por los mejores profesionales del país.
+  .hero
+    .row
+      .col-md-5.picture
+        =image_tag('hero-01.jpg')
+        span.cero=image_tag('icons/cero.svg')
+      .col-md-7.bg-yellow
+        .text.right
+          h6 01
+          h2 Apprenticeship.
+          h3 Apende a construir una <br>aplicación web y lanza tu idea.
+          span.arrow →
+          p Ruby, Terminal, Github.
+
+    .row
+      .col-md-7.bg-purple
+        .text.left
+          h6 02
+          h2 Professional.
+          h3 Apende a construir una aplicación web y lanza tu idea.
+          span.arrow →
+          p Ruby, Terminal, Github.
+
+      .col-md-5.picture
+        =image_tag('hero-02.jpg')
+        span.uno=image_tag('icons/uno.svg')
+    .row
+      .col-md-5.picture
+        =image_tag('hero-03.jpg')
+        span.cerouno=image_tag('icons/cerouno.svg')
+      .col-md-7.bg-dark-gray
+        .text.right
+          h6 03
+          h2 Mastery.
+          h3 Apende a construir una aplicación web y lanza tu idea.
+          span.arrow →
+          p Ruby, Terminal, Github.
+  .alliances
+    .container
+      .section-title
+        .row
+          .col-md-3
+            span 03
+            label Alianzas
+          .col-md-9
+            h3 Nos unimos a empresas con un alto nivel técnico para brindarte el contenido más avanzado de programación.
+      .row
+        .col-md-3
+          .logo=image_tag('logos/hacker-school.png')
+          p La primer escuela de programación avanzada en México.
+          span.arrow →
+        .col-md-3
+          .logo=image_tag('logos/icalia-labs.png')
+          p Una de las empresas líderes en desarrollo de productos.
+          span.arrow →
+        .col-md-3
+          .logo=image_tag('logos/civica-digital.png')
+          p La primer plataforma de desarrollo para la ciudad.
+          span.arrow →
+        .col-md-3
+          .logo=image_tag('logos/innku.png')
+          p Pionera en las empresas de desarrollo.
+          span.arrow →
+  .testimonies
+    .container
+      .section-title
+        .row
+          .col-md-3
+            span 04
+            label Mentores
+          .col-md-9
+            h3 Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
+    .row
+      .col-md-6
+        .picture
+          =image_tag('testimonies/large.jpg')
+      .col-md-6
+        text
+
+

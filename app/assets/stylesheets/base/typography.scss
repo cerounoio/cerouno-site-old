@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700|Roboto+Mono:400,300i,700');
+
+body{
+  font-family: $poppins;
+  background-color: #fafafa;
+  color: $dark-gray;
+}
+
+h1{
+  color: $main;
+  font:700 44px/44px $poppins;
+  letter-spacing: 1pt;
+}
+h2{
+  font-size: 70px;
+  letter-spacing: 2pt;
+  font-weight: 700;
+}
+h3{
+  font:700 36px/48px $poppins;
+  letter-spacing: 1pt;
+}
+p{
+  font-family: $roboto-mono;
+  line-height: 1.3em;
+}
+
