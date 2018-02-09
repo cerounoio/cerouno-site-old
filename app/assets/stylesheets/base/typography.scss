@@ -10,6 +10,21 @@ h1{
   color: $main;
   font:700 44px/44px $poppins;
   letter-spacing: 1pt;
+  &.call-to-action{
+    font-size: 52px;
+    line-height: 58px;
+    color: darken($dark-gray, 10%);
+    padding: 150px 150px 50px 150px;
+    a {
+      color: darken($dark-gray, 10%);
+      border-bottom: 5px solid $main;
+      margin-left: 20px;
+      &:hover{
+        text-decoration: none;
+        color: $main;
+      }
+    }
+  }
 }
 h2{
   font-size: 70px;
@@ -25,3 +40,9 @@ p{
   line-height: 1.3em;
 }
 
+a {
+  color: $main;
+  &:hover {
+    color: $main;
+  }
+}

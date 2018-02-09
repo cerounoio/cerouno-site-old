@@ -1,0 +1,25 @@
+.contact{
+  padding-bottom: 90px;
+  margin: 90px 0 0 0;
+  background-color: $dark-gray;
+  font: 600 18px/30px $poppins;
+  letter-spacing: .5pt;
+  color:#fff;
+  h4 {
+    color: #fff;
+    font-size: 18px;
+    line-height: 27px;
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  a {
+    display: block;
+    color: #fff;
+  }
+  hr{
+    border: none;
+    margin: 40px;
+  }
+}

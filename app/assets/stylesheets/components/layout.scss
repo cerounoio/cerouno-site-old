@@ -19,3 +19,13 @@
     text-decoration:underline;
   }
 }
+.section-title-white{
+  @extend .section-title;
+  color: #fff;
+  span, label {
+    color: #fff;
+  }
+  h3 {
+    text-decoration: none;
+  }
+}

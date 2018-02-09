@@ -1,13 +1,13 @@
-.testimonies{
+.team{
   margin: 90px 0 40px 0;
   .col-md-6{
     padding: 0!important;
   }
   .text{
     display: flex;
-   flex-direction:column;
-   justify-content: space-between;
-   height: 100%;
+    flex-direction:column;
+    justify-content: space-between;
+    height: 100%;
     h4{
       font-size: 16px;
       font-weight: 600;
@@ -18,11 +18,8 @@
     h3 span{
       color:$main;
     }
-    .name{
-      padding: 70px 0 0 40px;
-    }
     .content{
-      padding: 0 20% 0 40px;
+      padding: 200px 20% 0 40px;
       .icons{
         a {
           padding: 40px 40px 40px 0;
@@ -32,16 +29,8 @@
     }
     .more{
       align-self:flex-end;
-      .more-link{
-        text-align: right;
-        padding: 40px;
-        a {
-          color:$main;
-          font-weight: 600;
-        }
-      }
     }
-    .more-testimonies{
+    .more-team{
       display: flex;
       flex-wrap:wrap;
       a{

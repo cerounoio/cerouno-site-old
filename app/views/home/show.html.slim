@@ -106,6 +106,90 @@ header
         .picture
           =image_tag('testimonies/large.jpg')
       .col-md-6
-        text
+        .text
+          .name
+            h4 Braulio Dominguez
+            p 26 Años -- Engineer
+          .content
+            h3
+              | Yo comence a programar en el cuarto de mi hermano.<br>
+              span Ahora trabajo en Google
+            .icons
+              =link_to image_tag('icons/github.svg'), '#'
+              =link_to image_tag('icons/twitter.svg'), '#'
+          .more
+            .more-link
+              =link_to 'Ver todos →', '#'
+            .more-testimonies
+              -8.times do
+                =link_to image_tag('testimonies/small.png'), '#'
+  .container
+    h1.call-to-action
+      | Descubre tu talento como desarrollador, aprende con los mejores.
+      =link_to 'Aplicar ya →', '#'
+  .team
+    .container
+      .section-title
+        .row
+          .col-md-3
+            span 05
+            label Equipo
+          .col-md-9
+            h3 Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
+    .row
+      .col-md-6
+        .text
+          .content
+            h3
+              | Eduardo lópez.<br>
+              span Co-Founder
+            .icons
+              =link_to image_tag('icons/github.svg'), '#'
+              =link_to image_tag('icons/twitter.svg'), '#'
+          .more
+            .more-team
+              -4.times do
+                =link_to image_tag('team/small.png'), '#'
+      .col-md-6
+        .picture
+          =image_tag('team/large.jpg')
+  .contact
+    .container
+      .section-title-white
+        .row
+          .col-md-3
+            span 06
+            label Contacto
+          .col-md-9
+            h3 Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
+      .row
+        .col-md-6
+          h4 Admisiones
+          =link_to 'admisiones@cerouno.io', '#'
+          811 652 0878
+          hr
+          h4 Alianzas
+          =link_to 'alianzas@cerouno.io', '#'
+          811 652 0878
+        .col-md-6
+          h4 Redes Sociales
+          =link_to 'Facebook', '#'
+          =link_to 'Twitter', '#'
+          =link_to 'Medium', '#'
+          =link_to 'Instagram', '#'
+          =link_to 'Github', '#'
+  .newsletter
+    .row
+      .col-md-6
+        .form
+          h4 NEWSLETTER
+          | ¿Quieres más información sobre CEROUNO?
+          br
+          | Inscríbete a nuestro newsletter.
+          form
+            input
+      .col-md-6
+        .iso
+          =image_tag('icons/cerouno-iso.svg')
 
 

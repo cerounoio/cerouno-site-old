@@ -1,0 +1,17 @@
+.newsletter{
+  .iso{
+    position: absolute;
+    width: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .form{
+    width: 100%;
+    background-color: $main;
+    padding: 50px 100px;
+    font: 600 16px/24px $poppins;
+    letter-spacing: .5pt;
+    color:#fff;
+  }
+}
