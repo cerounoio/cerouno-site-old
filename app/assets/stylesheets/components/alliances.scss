@@ -4,7 +4,7 @@
     margin-bottom: 20px;
     height: 70px;
     img{
-      max-width: 60%;
+      max-width: 140px;
     }
   }
   p{
@@ -16,5 +16,17 @@
     text-align: right;
     display: block;
     color: $main;
+  }
+  @media (max-width: 767px) {
+    padding-left: 10%;
+    padding-right: 10%;
+    .logo{
+      margin-top: 40px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    span.arrow{
+      text-align: center;
+    }
   }
 }

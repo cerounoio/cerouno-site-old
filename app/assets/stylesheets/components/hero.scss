@@ -50,4 +50,32 @@
       display: block;
     }
   }
+  @media (max-width: 1199px) {
+
+    h2{
+      font-size: 48px;
+    }
+  }
+  @media (max-width: 991px) {
+    .picture span{
+      display: none;
+    }
+    .text{
+      position: relative;
+      &.right{
+        padding: 20px;
+      }
+      &.left{
+        padding: 20px;
+      }
+    }
+  }
+  @media (max-width: 575px) {
+    h2{
+      font-size: 28px;
+    }
+    h3{
+      font-size: 18px!important;
+    }
+  }
 }

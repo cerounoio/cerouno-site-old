@@ -1,5 +1,9 @@
 .testimonies{
   margin: 90px 0 40px 0;
+  .row{
+    margin-right: auto;
+    margin-left: auto;
+  }
   .col-md-6{
     padding: 0!important;
   }
@@ -47,6 +51,25 @@
       a{
         display: block;
         flex-basis:25%;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+
+    .text{
+      .name{
+        padding: 20px 0 0 20px;
+      }
+      .content{
+        padding: 0 15px 0 20px;
+        h3{
+          font-size: 18px;
+          line-height: 22px;
+          letter-spacing: .05pt;
+        }
+        .icons a{
+          padding:  20px 20px 20px 0;
+        }
       }
     }
   }

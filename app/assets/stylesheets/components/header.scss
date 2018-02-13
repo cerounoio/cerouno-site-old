@@ -30,4 +30,17 @@ header{
       }
     }
   }
+  @media (max-width: 991px) {
+    nav a {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 767px) {
+    nav a{
+      display: none;
+      &:last-child {
+        display: block;
+      }
+    }
+  }
 }

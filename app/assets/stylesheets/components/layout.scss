@@ -18,6 +18,15 @@
   h3 {
     text-decoration:underline;
   }
+  @media (max-width: 991px) {
+    padding: 50px 0 50px 0;
+    span{
+      padding-right: 10px;
+    }
+    label{
+      transform: none;
+    }
+  }
 }
 .section-title-white{
   @extend .section-title;

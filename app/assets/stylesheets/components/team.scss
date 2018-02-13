@@ -1,5 +1,9 @@
 .team{
   margin: 90px 0 40px 0;
+  .row{
+    margin-left: auto;
+    margin-right: auto;
+  }
   .col-md-6{
     padding: 0!important;
   }
@@ -39,4 +43,13 @@
       }
     }
   }
+  @media (max-width: 991px) {
+    .text .content{
+      padding: 40px 20% 0 40px;
+        .icons a{
+          padding:  20px 20px 20px 0;
+        }
+    }
+  }
+
 }

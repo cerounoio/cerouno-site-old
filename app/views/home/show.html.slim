@@ -11,31 +11,31 @@ header
   .top
     .container
       .row
-        .col-md-6
+        .col-md-6.order-lg-2.order-md-2
+          =image_tag('home-hero.png')
+        .col-md-6.order-lg-1.order-md-1
           h1 Descubre tu potencial de cambiar al mundo a través de la tecnología.
           p
             strong → CEROUNO
             |  es el primer programa de aprendizaje acelerado en México para aprender a programar sin experiencia previa
           .btn.btn-outline
             =link_to 'Aplicar ahora →', '#'
-        .col-md-6
-          =image_tag('home-hero.png')
 
   .programs
     .container
       .section-title
         .row
-          .col-md-3
+          .col-lg-3
             span 02
             label programas
-          .col-md-9
+          .col-lg-9
             h3 Contamos con los programas <br>más avanzados del mercado impartidos <br>por los mejores profesionales del país.
   .hero
     .row
-      .col-md-5.picture
+      .col-lg-5.picture
         =image_tag('hero-01.jpg')
         span.cero=image_tag('icons/cero.svg')
-      .col-md-7.bg-yellow
+      .col-lg-7.bg-yellow
         .text.right
           h6 01
           h2 Apprenticeship.
@@ -44,7 +44,10 @@ header
           p Ruby, Terminal, Github.
 
     .row
-      .col-md-7.bg-purple
+      .col-lg-5.picture.order-lg-2
+        =image_tag('hero-02.jpg')
+        span.uno=image_tag('icons/uno.svg')
+      .col-lg-7.bg-purple.order-lg-1
         .text.left
           h6 02
           h2 Professional.
@@ -52,14 +55,12 @@ header
           span.arrow →
           p Ruby, Terminal, Github.
 
-      .col-md-5.picture
-        =image_tag('hero-02.jpg')
-        span.uno=image_tag('icons/uno.svg')
+
     .row
-      .col-md-5.picture
+      .col-lg-5.picture
         =image_tag('hero-03.jpg')
         span.cerouno=image_tag('icons/cerouno.svg')
-      .col-md-7.bg-dark-gray
+      .col-lg-7.bg-dark-gray
         .text.right
           h6 03
           h2 Mastery.
@@ -70,25 +71,25 @@ header
     .container
       .section-title
         .row
-          .col-md-3
+          .col-lg-3
             span 03
             label Alianzas
-          .col-md-9
+          .col-lg-9
             h3 Nos unimos a empresas con un alto nivel técnico para brindarte el contenido más avanzado de programación.
       .row
-        .col-md-3
+        .col-md-3.col-sm-6
           .logo=image_tag('logos/hacker-school.png')
           p La primer escuela de programación avanzada en México.
           span.arrow →
-        .col-md-3
+        .col-md-3.col-sm-6
           .logo=image_tag('logos/icalia-labs.png')
           p Una de las empresas líderes en desarrollo de productos.
           span.arrow →
-        .col-md-3
+        .col-md-3.col-sm-6
           .logo=image_tag('logos/civica-digital.png')
           p La primer plataforma de desarrollo para la ciudad.
           span.arrow →
-        .col-md-3
+        .col-md-3.col-sm-6
           .logo=image_tag('logos/innku.png')
           p Pionera en las empresas de desarrollo.
           span.arrow →
@@ -96,10 +97,10 @@ header
     .container
       .section-title
         .row
-          .col-md-3
+          .col-lg-3
             span 04
             label Mentores
-          .col-md-9
+          .col-lg-9
             h3 Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
     .row
       .col-md-6
@@ -131,13 +132,16 @@ header
     .container
       .section-title
         .row
-          .col-md-3
+          .col-lg-3
             span 05
             label Equipo
-          .col-md-9
+          .col-lg-9
             h3 Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
     .row
-      .col-md-6
+      .col-md-6.order-md-2
+        .picture
+          =image_tag('team/large.jpg')
+      .col-md-6.order-md-1
         .text
           .content
             h3
@@ -150,17 +154,14 @@ header
             .more-team
               -4.times do
                 =link_to image_tag('team/small.png'), '#'
-      .col-md-6
-        .picture
-          =image_tag('team/large.jpg')
   .contact
     .container
       .section-title-white
         .row
-          .col-md-3
+          .col-lg-3
             span 06
             label Contacto
-          .col-md-9
+          .col-lg-9
             h3 Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
       .row
         .col-md-6
@@ -183,13 +184,27 @@ header
       .col-md-6
         .form
           h4 NEWSLETTER
-          | ¿Quieres más información sobre CEROUNO?
+          | ¿Quieres más información <br>sobre CEROUNO?
           br
-          | Inscríbete a nuestro newsletter.
+          br
+          | Inscríbete a nuestro <br> newsletter.
           form
-            input
+            input placeholder="email" type="text"
+            .submit
+              input type="submit"
       .col-md-6
         .iso
           =image_tag('icons/cerouno-iso.svg')
-
+footer
+  .container
+    .iso
+      =image_tag('icons/cerouno-iso.svg', size: '60')
+    | Derechos Reservados
+    strong  Cerouno Ventures
+    |  2018©
+    .social
+      =link_to image_tag('icons/facebook.svg')
+      =link_to image_tag('icons/instagram.svg')
+      =link_to image_tag('icons/twitter.svg')
+      =link_to image_tag('icons/github.svg')
 
