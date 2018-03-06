@@ -1,11 +1,19 @@
 .btn.btn-outline{
-  border:1px solid $main;
-  font-size: 14px;
+  border: 4px solid $main;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: .5pt;
   border-radius: 1px;
   padding: 20px 70px;
   a{
     color: $main;
+  }
+  margin: 30px 0;
+}
+
+.btn-white{
+  border-color: white !important;
+  a{
+    color: white !important;
   }
 }
