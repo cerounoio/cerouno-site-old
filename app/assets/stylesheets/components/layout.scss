@@ -1,0 +1,41 @@
+.content-wrapper{
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.section-title {
+  padding: 90px 0 50px 0;
+  font-weight: 700;
+  letter-spacing: .5pt;
+  font-size: 19px;
+  span {
+    display: inline-block;
+    color:$main;
+  }
+  label {
+    transform: rotate(-90deg) translate(-45%, -50%);
+    color:$main;
+    width: 160px;
+    text-align: right;
+  }
+  h3 {
+    text-decoration:underline;
+  }
+  @media (max-width: 991px) {
+    padding: 50px 0 50px 0;
+    span{
+      padding-right: 10px;
+    }
+    label{
+      transform: none;
+      width:auto;
+      text-align: left;
+    }
+  }
+}
+.section-title-white{
+  @extend .section-title;
+  color: #fff;
+  span, label {
+    color: #fff;
+  }
+}

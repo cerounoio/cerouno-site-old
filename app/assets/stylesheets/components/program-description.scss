@@ -1,0 +1,26 @@
+.program-description{
+  background-color: #fafafa;
+  margin-top: 60px;
+  .program-description-content{
+    @extend .team;
+    margin-top: 0;
+
+    @media (max-width: 991px) {
+      .text .content{
+        padding: 0 20px;
+        font-size: 14px;
+        h6{
+          font-size: 14px;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      .text{
+        padding: 20px 0px;
+        .content{
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+}

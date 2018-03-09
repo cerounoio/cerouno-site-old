@@ -1,0 +1,236 @@
+.program-view
+  header
+    .container
+      .logo=link_to image_tag('cerouno-logo.svg')
+      nav
+        =link_to 'Nosotros', '#'
+        =link_to 'Programas', '#'
+        =link_to 'Comunidad', '#'
+        =link_to 'Precios', '#'
+        =link_to 'Aplicar ahora →', '#'
+  .programs-content
+    .top
+      .container
+        .row
+          .col-md-6
+            =image_tag('programs-hero.png')
+          .col-md-6
+            h6 Programa
+            h1 MSCI
+            h3 Data Science para la Industria Financiera
+            .row
+              .col-sm-6
+                p Duración
+                h6 4 semanas
+              .col-sm-6
+                p Fechas
+                h6 Abril 2 - Abril 26
+            .row
+              .col-sm-6
+                p Horarios
+                h6 Lunes a Jueves <br> 7:00 PM - 10:00 PM
+              .col-sm-6
+                p Precio
+                h6 15,000
+  .program-description
+    .container
+      .section-title
+        .row
+          .col-lg-3
+            span 01
+            label descripción
+          .col-lg-9
+            h3 El camino a seguir <br>del mejor Data Science financiero:
+    .content-wrapper
+      .program-description-content
+        .row
+          .col-md-6.order-md-2
+            .picture
+              =image_tag('team/large.jpg')
+          .col-md-6.order-md-1
+            .text
+              .content
+                h6 El programa de <strong>Data Science</strong> para la industria Financiera tiene como objetivo preparar a profesionistas en la industria financiera en la recolección de datos, estadística, visualización de datos y bases de datos para identificar patrones, desarrollar modelos y crear herramientas visuales que le permitan a los clientes comprender sus datos.
+                h6 Algunos temas propuestos para el trabajo de fin de cursos son:
+                ul.big-arrows
+                  li Consumo de datos financieros en tiempo real
+                  li Análisis de series de tiempo aplicado a forecasting
+                  li Visualización y comunicación de la información de valores y cripto valores
+                h6 Al finalizar el curso, a los graduados del programa se les entregará una certificación que comprueba las habilidades adquiridas en el curso.
+  .program-modules
+    .container
+      .section-title
+        .row
+          .col-lg-3
+            span 02
+            label módulos
+          .col-lg-9
+            h3 El camino a seguir <br>del mejor Data Science financiero:
+      .row.m-t-lg
+        .col-md-6
+          p Semana 1: Abril 2 - 5, 2018
+          h3
+            span.text-main 1.-
+            | Python científico y análisis exploratorio de datos.
+          p
+            =link_to 'Ricardo Alanís', '#'
+        .col-md-6
+          p Semana 2: Abril 9 - 12, 2018
+          h3
+            span.text-main 2.-
+            | Almacenamiento y consumo de grandes datos.
+          p
+            =link_to 'Israel Zúñiga', '#'
+      .row.m-t-lg
+        .col-md-6
+          p Semana 3: Abril 16 - 19, 2018
+          h3
+            span.text-main 3.-
+            | Análisis de datos y Aprendizaje Automático.
+          p
+            =link_to 'Carl Wallace', '#'
+        .col-md-6
+          p Semana 2: Abril 9 - 12, 2018
+          h3
+            span.text-main 4.-
+            | Visualización y Comunicación de la Información.
+          p
+            =link_to 'Eduardo Ramirez', '#'
+            |  y&nbsp;
+            =link_to 'Ricardo Alanís', '#'
+      .row.m-t-lg
+        .col-12.text-right
+          =link_to 'Descarga Temario ↓', '#', class: 'btn btn-lg btn-primary'
+  .testimonies
+    .container
+      .section-title
+        .row
+          .col-lg-3
+            span 03
+            label Mentores
+          .col-lg-9
+            h3 Conoce a tus mentores <br>en el camino
+    .content-wrapper
+      .row
+        .col-md-6
+          .picture
+            =image_tag('testimonies/large.jpg')
+        .col-md-6
+          .text
+            .name
+              h4 Ricardo Alaniz
+              p Program Lead
+            .content
+              h3 “Aprender a leer y buscar información en los datos en bruto es uno de los mejores skills para un  financiero”
+              .icons
+                =link_to image_tag('icons/github.svg'), '#'
+                =link_to image_tag('icons/twitter.svg'), '#'
+              h6
+                | Ricardo ha encontrado en la ciencia de datos la posibilidad de entender las necesidades de la ciudadanía.
+                | &nbsp;
+                =link_to 'Leer más', '#'
+            .more
+              .more-testimonies
+                -4.times do
+                  =link_to image_tag('testimonies/small.png'), '#'
+  .program-requirements
+    .container
+      .section-title
+        .row
+          .col-lg-3
+            span 04
+            label Requerimientos
+          .col-lg-9
+            h3 Este programa está dirigido a estudiantes de la industria financiera con las siguientes cualidades:
+            ul.big-arrows
+              li Nociones de programación básica.
+              li Conceptos de probabilidad y estadística.
+              li Interés por aprender alguna de las áreas periféricas de la ciencia de datos.
+        .row
+          .col-12.text-right
+            =link_to 'Aplicar ahora →', '#', class: 'btn btn-lg btn-primary'
+  .faqs
+    .container
+      .section-title
+        .row
+          .col-lg-3
+            span 06
+            label FAQs
+          .col-lg-9
+            .blockquote
+              h3 ¿Aún tienes dudas?<br> Nosotros las aclaramos.
+            dl.faqs-list
+              -3.times do
+                dt ¿Esta es una pregunta importante?
+                dd R: Claro que si, todas las preguntas aquí son importantes.
+  .quotes
+    .container
+      .section-title
+        .row
+          .col-lg-3
+            span 05
+            label Testimoniales
+          .col-lg-9
+            .blockquote
+              h3
+                | “Cerouno me brindó la oportunidad de avanzar en mi carrera y poder construir mi empresa."<br>
+                small.text-main Miguel Herrera
+
+        .row.m-t-lg
+          .col-12.text-right
+            =link_to 'Leer más →', '#', class: 'btn btn-lg btn-primary'
+
+
+  .contact
+    .container
+      .section-title-white
+        .row
+          .col-lg-3
+            span 06
+            label Contacto
+          .col-lg-9
+            h3 Nos unimos a empresas con un alto conocimiento y nivel técnico para brindarte el contenido más avanzado de programación.
+      .row
+        .col-md-6
+          h4 Admisiones
+          =link_to 'admisiones@cerouno.io', '#'
+          811 652 0878
+          hr
+          h4 Alianzas
+          =link_to 'alianzas@cerouno.io', '#'
+          811 652 0878
+        .col-md-6
+          h4 Redes Sociales
+          =link_to 'Facebook', '#'
+          =link_to 'Twitter', '#'
+          =link_to 'Medium', '#'
+          =link_to 'Instagram', '#'
+          =link_to 'Github', '#'
+  .newsletter
+    .row
+      .col-md-6
+        .form
+          h4 NEWSLETTER
+          | ¿Quieres más información <br>sobre CEROUNO?
+          br
+          br
+          | Inscríbete a nuestro <br> newsletter.
+          form
+            input placeholder="email" type="text"
+            .submit
+              input type="submit"
+      .col-md-6
+        .iso
+          =image_tag('icons/cerouno-iso.svg')
+  footer
+    .container
+      .iso
+        =image_tag('icons/cerouno-iso.svg', size: '60')
+      | Derechos Reservados
+      strong  Cerouno Ventures
+      |  2018©
+      .social
+        =link_to image_tag('icons/facebook.svg')
+        =link_to image_tag('icons/instagram.svg')
+        =link_to image_tag('icons/twitter.svg')
+        =link_to image_tag('icons/github.svg')

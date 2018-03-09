@@ -1,0 +1,73 @@
+.newsletter{
+  .iso{
+    position: absolute;
+    width: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .form{
+    width: 100%;
+    background-color: $main;
+    padding: 50px 100px;
+    font: 600 16px/24px $poppins;
+    letter-spacing: .5pt;
+    color:#fff;
+    h4{
+    font: 600 16px/24px $poppins;
+    }
+    form{
+      padding-top: 20px;
+      margin-right: 20%;
+      input{
+        width:100%;
+        height: 60px;
+        line-height: 30px;
+        padding: 10px 20px;
+        border: 4px solid #fff;
+        margin-bottom: 10px;
+      }
+      .submit {
+          position: relative;
+        input{
+          background-color: transparent;
+          color:#fff;
+          text-align:left;
+        }
+        &:after{
+          content: '→';
+          color:#fff;
+          position: absolute;
+          right: 25px;
+          top:18px;
+          z-index: 99;
+        }
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    .form{
+      padding: 50px 40px;
+      form{
+        margin-right: 0;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .iso {
+      position: relative;
+      width: 100%;
+      transform:none;
+      left: auto;
+      top:auto;
+      text-align: center;
+      padding: 100px;
+    }
+    .form{
+      padding: 40px;
+      form{
+        margin-right: 0;
+      }
+    }
+  }
+}

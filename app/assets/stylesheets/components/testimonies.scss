@@ -1,0 +1,76 @@
+.testimonies{
+  margin: 90px 0 40px 0;
+  .row{
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .col-md-6{
+    padding: 0!important;
+  }
+  .text{
+    display: flex;
+   flex-direction:column;
+   justify-content: space-between;
+   height: 100%;
+    h4{
+      font-size: 16px;
+      font-weight: 600;
+    }
+    p{
+      font-size: 14px;
+    }
+    h3 span{
+      color:$main;
+    }
+    .name{
+      padding: 70px 0 0 40px;
+    }
+    .content{
+      padding: 0 20% 0 40px;
+      .icons{
+        a {
+          padding: 40px 40px 40px 0;
+          display: inline-block;
+        }
+      }
+    }
+    .more{
+      align-self:flex-end;
+      .more-link{
+        text-align: right;
+        padding: 40px;
+        a {
+          color:$main;
+          font-weight: 600;
+        }
+      }
+    }
+    .more-testimonies{
+      display: flex;
+      flex-wrap:wrap;
+      a{
+        display: block;
+        flex-basis:25%;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+
+    .text{
+      .name{
+        padding: 20px 0 0 20px;
+      }
+      .content{
+        padding: 0 15px 0 20px;
+        h3{
+          font-size: 18px;
+          line-height: 22px;
+          letter-spacing: .05pt;
+        }
+        .icons a{
+          padding:  20px 20px 20px 0;
+        }
+      }
+    }
+  }
+}

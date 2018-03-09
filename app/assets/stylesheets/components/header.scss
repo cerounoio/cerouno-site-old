@@ -1,0 +1,46 @@
+header{
+  height: 60px;
+  .logo {
+    width: 60px;
+    padding-top: 10px;
+    display: inline-block;
+  }
+  nav {
+    float: right;
+    text-align: right;
+    a {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 60px;
+      color: $dark-gray;
+      display: inline-block;
+      padding: 0 10px;
+      letter-spacing: .5pt;
+      &:hover{
+        color: $main;
+      }
+      &:last-child{
+        background-color: $main;
+        color: #fff;
+        padding: 0 20px;
+        margin-left: 5px;
+        &:hover{
+          color: #fff;
+        }
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    nav a {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 767px) {
+    nav a{
+      display: none;
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}

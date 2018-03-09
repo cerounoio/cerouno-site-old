@@ -1,0 +1,30 @@
+.btn.btn-outline{
+  border: 4px solid $main;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .5pt;
+  border-radius: 1px;
+  padding: 20px 70px;
+  a{
+    color: $main;
+  }
+}
+.btn-primary{
+  background-color: $main;
+  border-radius: 1px;
+  border: none;
+  font-size: 18px;
+  padding: 20px 30px;
+  &:hover{
+    background-color: $main;
+    text-decoration: underline;
+  }
+}
+
+
+.btn-white{
+  border-color: white !important;
+  a{
+    color: white !important;
+  }
+}
