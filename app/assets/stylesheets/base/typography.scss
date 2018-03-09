@@ -35,6 +35,9 @@ h3{
   font:700 36px/48px $poppins;
   letter-spacing: 1pt;
 }
+h6{
+  line-height: 1.5em;
+}
 p{
   font-family: $roboto-mono;
   line-height: 1.3em;
@@ -46,6 +49,25 @@ a {
     color: $main;
   }
 }
+ul.big-arrows{
+    margin: 20px 0;
+    li{
+      padding-left: 30px;
+      list-style: none;
+      position: relative;
+      padding-bottom: 20px;
+
+      &:after{
+        content: '→';
+        font-size: 40px;
+        color: $main;
+        position: absolute;
+        left: -20px;
+        top:-10px;
+        height: 30px;
+      }
+    }
+  }
 @media (max-width: 991px) {
   h1{
     font:700 32px/32px $poppins;
@@ -75,4 +97,5 @@ a {
       }
     }
   }
+
 }

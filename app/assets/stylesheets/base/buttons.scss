@@ -9,3 +9,14 @@
     color: $main;
   }
 }
+.btn-primary{
+  background-color: $main;
+  border-radius: 1px;
+  border: none;
+  font-size: 18px;
+  padding: 20px 30px;
+  &:hover{
+    background-color: $main;
+    text-decoration: underline;
+  }
+}
