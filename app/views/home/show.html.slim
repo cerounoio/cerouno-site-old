@@ -2,11 +2,10 @@ header
   .container
     .logo=link_to image_tag('cerouno-logo.svg')
     nav
-      =link_to 'Nosotros', '#'
-      =link_to 'Programas', '#'
-      =link_to 'Comunidad', '#'
-      =link_to 'Precios', '#'
-      =link_to 'Aplicar ahora →', '#'
+      =link_to 'Programas', '#programas'
+      =link_to 'Alianzas', '#alianzas'
+      =link_to 'Contacto', '#contacto'
+      =link_to 'APLICA AHORA →', '#'
 .content-wrapper
   .top
     .container
@@ -17,57 +16,60 @@ header
           h1 Descubre tu potencial de cambiar al mundo a través de la tecnología.
           p
             strong → CEROUNO
-            |  es el primer programa de aprendizaje acelerado en México para aprender a programar sin experiencia previa
+            |  es el mejor programa para aprender desarrollo de software en México.
           .btn.btn-outline
-            =link_to 'Aplicar ahora →', '#'
+            =link_to 'APLICAR AHORA →', '#'
 
-  .programs
+  .programs id='programas'
     .container
       .section-title
         .row
           .col-lg-3
             span 02
-            label programas
+            label Programas
           .col-lg-9
-            h3 Contamos con los programas <br>más avanzados del mercado impartidos <br>por los mejores profesionales del país.
+            h3 Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
   .hero
     .row
       .col-lg-5.picture
         =image_tag('hero-01.jpg')
-        span.cero=image_tag('icons/cero.svg')
+        / span.cero=image_tag('icons/cero.svg')
       .col-lg-7.bg-yellow
         .text.right
           h6 01
-          h2 Apprenticeship.
-          h3 Apende a construir una <br>aplicación web y lanza tu idea.
-          span.arrow →
-          p Ruby, Terminal, Github.
+          h2 Apprenticeship
+          h3 Aprende a construir una aplicación web desde cero y lanza tu startup.
+          p Ruby, Ruby on Rails
+          .btn.btn-outline.btn-white
+            =link_to 'LEER MÁS →', '#'
 
     .row
       .col-lg-5.picture.order-lg-2
         =image_tag('hero-02.jpg')
-        span.uno=image_tag('icons/uno.svg')
+        / span.uno=image_tag('icons/uno.svg')
       .col-lg-7.bg-purple.order-lg-1
         .text.left
           h6 02
-          h2 Professional.
-          h3 Apende a construir una aplicación web y lanza tu idea.
-          span.arrow →
-          p Ruby, Terminal, Github.
-
+          h2 Professional
+          h3 Aprende lo último en programación y comienza tu carrera como desarrollador de software profesional.
+          p JavaScript, Node.js
+          .btn.btn-outline.btn-white
+            =link_to 'LEER MÁS →', '#'
 
     .row
       .col-lg-5.picture
         =image_tag('hero-03.jpg')
-        span.cerouno=image_tag('icons/cerouno.svg')
+        / span.cerouno=image_tag('icons/cerouno.svg')
       .col-lg-7.bg-dark-gray
         .text.right
           h6 03
-          h2 Mastery.
-          h3 Apende a construir una aplicación web y lanza tu idea.
-          span.arrow →
-          p Ruby, Terminal, Github.
-  .alliances
+          h2 Mastery
+          h3 Desarrolla una habilidad técnica y lleva tus habilidades de programación al siguiente nivel.
+          p .NET, Java, iOS, Android, Docker, React
+          .btn.btn-outline.btn-white
+            =link_to 'LEER MÁS →', '#'
+
+  .alliances id="alianzas"
     .container
       .section-title
         .row
@@ -78,21 +80,25 @@ header
             h3 Nos unimos a empresas con un alto nivel técnico para brindarte el contenido más avanzado de programación.
       .row
         .col-md-3.col-sm-6
-          .logo=image_tag('logos/hacker-school.png')
-          p La primer escuela de programación avanzada en México.
-          span.arrow →
+          = link_to 'http://cerouno.io'
+            .logo=image_tag('logos/hacker-school.png')
+          p Una de las primeras escuelas de programación profesional en México.
+          span.arrow =link_to '→', 'http://cerouno.io'
         .col-md-3.col-sm-6
-          .logo=image_tag('logos/icalia-labs.png')
-          p Una de las empresas líderes en desarrollo de productos.
-          span.arrow →
+          = link_to 'http://icalialabs.com'
+            .logo=image_tag('logos/icalia-labs.png')
+          p Una de las empresas líderes en desarrollo de productos de tecnología.
+          span.arrow =link_to '→'
         .col-md-3.col-sm-6
-          .logo=image_tag('logos/civica-digital.png')
-          p La primer plataforma de desarrollo para la ciudad.
-          span.arrow →
+          = link_to 'http://civica.digital'
+            .logo=image_tag('logos/civica-digital.png')
+          p La consultoría líder en el desarrollo de herramientas digitales para la ciudad.
+          span.arrow =link_to '→'
         .col-md-3.col-sm-6
-          .logo=image_tag('logos/innku.png')
-          p Pionera en las empresas de desarrollo.
-          span.arrow →
+          = link_to 'http://www.innku.com/'
+            .logo=image_tag('logos/innku.png')
+          p Uno de los company builders más exitosos de empresas de tecnología.
+          span.arrow =link_to '→', 'http://www.innku.com/'
   .testimonies
     .container
       .section-title
@@ -154,56 +160,56 @@ header
             .more-team
               -4.times do
                 =link_to image_tag('team/small.png'), '#'
-  .contact
+  .contact id="contacto"
     .container
-      .section-title-white
+      .section-title
         .row
           .col-lg-3
-            span 06
+            span 04
             label Contacto
           .col-lg-9
-            h3 Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
+            h3 Entra en contacto con nosotros y aprende a cambiar el mundo a través de la tecnología.
       .row
         .col-md-6
           h4 Admisiones
-          =link_to 'admisiones@cerouno.io', '#'
-          811 652 0878
+          =mail_to 'admisiones@cerouno.io', nil, subject: 'Información sobre Admisiones CeroUno'
+          span 81.1652.0878
           hr
           h4 Alianzas
-          =link_to 'alianzas@cerouno.io', '#'
-          811 652 0878
+          =mail_to 'alianzas@cerouno.io', nil, subject: 'Información sobre Alianzas CeroUno'
+          span 81.1652.0878
         .col-md-6
           h4 Redes Sociales
-          =link_to 'Facebook', '#'
-          =link_to 'Twitter', '#'
-          =link_to 'Medium', '#'
-          =link_to 'Instagram', '#'
-          =link_to 'Github', '#'
+          =link_to 'Facebook', 'http://facebook.com/cerounoio'
+          =link_to 'Twitter', 'http://twitter.com/cerounoio'
+          =link_to 'Medium', 'http://medium.com/@cerounoio'
+          =link_to 'Instagram', 'http://instagram.com/cerounoio'
+          =link_to 'Github', 'http://github.com/cerounoio'
   .newsletter
     .row
       .col-md-6
         .form
-          h4 NEWSLETTER
-          | ¿Quieres más información <br>sobre CEROUNO?
-          br
-          br
-          | Inscríbete a nuestro <br> newsletter.
+          h3 Newsletter
+          p ¿Quieres más información <br>sobre CEROUNO?
+          p Inscríbete a nuestro <br> newsletter.
           form
-            input placeholder="email" type="text"
+            input placeholder="Email" type="text"
             .submit
-              input type="submit"
+              input type="submit" value="REGÍSTRAR AHORA"
       .col-md-6
         .iso
           =image_tag('icons/cerouno-iso.svg')
 footer
   .container
     .iso
-      =image_tag('icons/cerouno-iso.svg', size: '60')
+      =image_tag('icons/cerouno-iso.svg', size: '45')
     | Derechos Reservados
     strong  Cerouno Ventures
-    |  2018©
+    |  2018 ©
     .social
-      =link_to image_tag('icons/facebook.svg')
-      =link_to image_tag('icons/instagram.svg')
-      =link_to image_tag('icons/twitter.svg')
-      =link_to image_tag('icons/github.svg')
+
+      =link_to image_tag('icons/facebook.svg'), 'http://facebook.com/cerounoio'
+      =link_to image_tag('icons/twitter.svg'), 'http://twitter.com/cerounoio'
+      =link_to image_tag('icons/medium.svg'), 'http://medium.com/@cerounoio'
+      =link_to image_tag('icons/instagram.svg'), 'http://instragram.com/cerounoio'
+      =link_to image_tag('icons/github.svg'), 'http://github.com/cerounoio'
