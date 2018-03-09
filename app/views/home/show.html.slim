@@ -5,7 +5,8 @@ header
       =link_to 'Programas', '#programas'
       =link_to 'Alianzas', '#alianzas'
       =link_to 'Contacto', '#contacto'
-      =link_to 'APLICA AHORA →', '#'
+      a href='javascript:void(0)' data-target=".apply-modal" data-toggle="modal"  APLICA AHORA →
+
 .content-wrapper
   .top
     .container
@@ -213,3 +214,22 @@ footer
       =link_to image_tag('icons/medium.svg'), 'http://medium.com/@cerounoio'
       =link_to image_tag('icons/instagram.svg'), 'http://instragram.com/cerounoio'
       =link_to image_tag('icons/github.svg'), 'http://github.com/cerounoio'
+.modal.apply-modal aria-hidden="true" aria-labelledby="AplicaAhora" role="dialog" tabindex="-1"
+  .modal-dialog
+    .modal-content
+      .container
+        .close aria-label="Close" data-dismiss="modal"
+          span aria-hidden="true"  &times;
+        form
+          h1 Bienvenido al primer paso <br>de tu próxima carrera
+          .row
+            .col-md-6
+              p Bienvenido/a a nuestro sistema de admisiones en línea. Llena la siguiente información para completar tu aplicación:
+              input type='text' placeholder='nombre'
+              input type='text' placeholder='email'
+              input type='text' placeholder='whatsapp'
+              input type='password' placeholder='contraseña'
+              input type='submit' value='Siguiente'
+            .col-md-6
+              .icon
+                =image_tag('icons/cerouno.svg')
