@@ -1,71 +1,156 @@
-.container-fluid.home
-  .row.hero
-    .col-md-12
-      = image_tag('cerouno-logo-horizontal.png')
-      h1 Aprende a programar en tres meses
-      h3 <b>CEROUNO</b> es el primer programa de aprendizaje acelerado en México para aprender a programar <b>sin experiencia previa</b>
-      = link_to 'EMPIEZA TU APLICACIÓN', register_path, class: 'btn btn-primary'
-      small.form-text.text-muted La aplicación toma menos de 15 minutos.
-  .row.partnership
-    .col-md-12
-      h6 EN ALIANZA CON #{link_to 'TURING SCHOOL', 'http://turing.io'}
-  .row.value
-    .col-md-4
-      h3 EXPERIENCIA
-      p El equipo de <b>CEROUNO</b> ha entrenado a más de 300 programadores en EUA. Ninguno de ellos sabía programar antes de empezar el programa.
-    .col-md-4
-      h3 EMPRENDE
-      p La mejor manera de empezar tu empresa de tecnología es aprendiendo a programar. ¿No te interesa? También te ayudamos a conseguir empleo.
-    .col-md-4
-      h3 FINANCIA
-      p Aprende sin preocupaciones. Empieza ahora tu carrera como programador con nosotros y obtén una beca-crédito a través de #{link_to "Laudex", "https://www.laudex.mx/"} desde <b>$1,470 al mes</b>.
-  .row.program
-    .col-md-12
-      h3 PROGRAMA
-      .module
-        h4 01 / PROGRAMACIÓN ORIENTADA A OBJETOS
-        p En este módulo, desarrollarás programas en la terminal utilizando programación orientada a objetos. También aprenderás a resolver problemas creando algoritmos y comprendiendo estructuras de datos. Al finalizar este módulo, podrás escribir código usando Test-Driven Development, pair-programming y refactoring.
-      .module
-        h4 02 / DESARROLLO DE APLICACIONES WEB
-        p En este módulo, aprenderás a construir aplicaciones web con bases de datos relacionales utilizando Sinatra y Ruby on Rails. También aprenderás a incorporar datos externos de servicios como Facebook y Twitter mediante APIs. Al finalizar este módulo, podrás desarrollar una aplicación web que resuelva una necesidad de negocio utilizando metodologías de desarrollo ágil.
-      .module
-        h4 03 / APLICACIONES CLIENT-SIDE
-        p En este módulo, aprenderás a desarrollar aplicaciones client-side. Aprenderás a usar JavaScript para hacer sus aplicaciones interactivas y crear interfaces que se actualicen en tiempo real mediante APIs. Al finalizar este módulo, podrás utilizar front-end frameworks como React y jQuery.
-  .row.admissions
-    .col-md-12
-      h3 ADMISIONES
-  .row.admissions-steps
-    .col-md-4
-      h5 PASO 1
-      h4 ANTECEDENTES
-      p Queremos conocerte. Proporciona tu información demográfica y currículum para que podamos ver quien eres. No tienes que pulirlo, sólo queremos tener una idea de lo que has hecho.
-    .col-md-4
-      h5 PASO 2
-      h4 PRUEBA LÓGICA
-      p Para aprender a programar no tienes que haber estudiado ingeniería, lo que necesitas son habilidades lógicas. En esta etapa resolverás un exámen lógico en persona con un instructor.
-    .col-md-4
-      h5 PASO 3
-      h4 ENTREVISTA
-      p Nos importa tener una cultura incluyente. Durante esta etapa, te entrevistarás con un instructor para asegurarnos de que tus habilidades personales sean las más adecuadas para nuestra comunidad.
-  .row.info
-    .col-md-12
-      h3 INFORMACIÓN
-  .row.info-sections
-    .col-md-8
-      h4 NEWSLETTER
-      p ¿Quieres más información sobre <b>CEROUNO</b>? Inscríbete a nuestro newsletter.
-      form.form-inline action="//cerouno.us15.list-manage.com/subscribe/post?u=a702e3835beed93f059881b5a&amp;id=4cc2c3f97d" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank"
-        label.sr-only for="mce-EMAIL" Email
-        input#inlineFormInput.form-control.mb-2.mr-sm-2.mb-sm-0 name="EMAIL" placeholder=("EMAIL") required="" type="email" value=""
-        div aria-hidden="true" style=("position: absolute; left: -5000px;")
-          input name="b_a702e3835beed93f059881b5a_4cc2c3f97d" tabindex="-1" type="text" value=""
-        button.btn.btn-primary.form-control#registerButton name="subscribe" type="submit" <b>ENVIAR</b>
-    .col-md-4
-      h4 REDES SOCIALES
-      h6= link_to 'FACEBOOK', 'https://www.facebook.com/cerounoio'
-      h6= link_to 'TWITTER', 'https://www.twitter.com/cerounoio'
-      h6= link_to 'INSTAGRAM', 'https://www.instagram.com/cerounoio'
-      h6= link_to 'MEDIUM', 'https://medium.com/@cerounoio'
-  .row.footer
-    .col-md-12
-      p Derechos Reservados © 2017 <b>CEROUNO VENTURES</b>
+section.intro
+  .container.intro__container.columns.is-vertical
+    .intro__info
+      h2.intro__title Descubre tu potencial de cambiar al mundo a través de la tecnología.
+      p.intro__text
+        strong → CEROUNO
+        | es el primer programa de aprendizaje acelerado en México para aprender a programar sin experiencia previa
+      = link_to 'Aplicar ahora →', register_path, class: 'btn btn-alpha btn-alpha--primary'
+    .intro__image
+      = image_tag('intro.png')
+section.programs
+  .container
+    .section__header
+      .section__header-sidebar
+        span.section__header-number 02
+        h3.section__header-title Programas
+      h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
+  article.program-item
+    .program-item__image style="background-image: url('assets/program-photo-1.jpg')"
+      = image_tag 'program-1.svg' ,class: 'program-item__icon is-left'
+    .program-item__info.is-apprenticeship
+      div
+        span.program-item__number 01
+        h3.program-item__title Apprenticeship
+        h4.program-item__text Aprende a construir una aplicación web y lanza tu idea.
+        .program-item__footer
+          span.program-item__tags Ruby, Terminal, Github
+          span.program-item__arrow →
+  article.program-item
+    .program-item__info.is-professional
+      div
+        span.program-item__number 02
+        h3.program-item__title Professional.
+        h4.program-item__text Aprende a construir una aplicación web y lanza tu idea.
+        .program-item__footer
+          span.program-item__tags Ruby, Terminal, Github
+          span.program-item__arrow →
+    .program-item__image style="background-image: url('assets/program-photo-2.jpg')"
+      = image_tag 'program-2.svg' ,class: 'program-item__icon is-right'
+  article.program-item
+    .program-item__image style="background-image: url('assets/program-photo-3.jpg')"
+      = image_tag 'program-3.svg' ,class: 'program-item__icon is-left'
+    .program-item__info.is-mastery
+      div
+        span.program-item__number 03
+        h3.program-item__title Mastery
+        h4.program-item__text Aprende a construir una aplicación web y lanza tu idea.
+        .program-item__footer
+          span.program-item__tags Ruby, Terminal, Github
+          span.program-item__arrow →
+section
+  .container
+    .section__header
+      .section__header-sidebar
+        span.section__header-number 03
+        h3.section__header-title Alianzas
+      h2.section__header-text Nos únimos a empresas con un alto nivel técnico para brindarte el contenido más avanzado de programación.
+    .partnerships
+      article.partnership
+        .partnership__image
+          = image_tag 'hacker-school.png'
+        p.partnership__text La primer escuela de programación avanzada en México.
+        a.partnership__link href="/" →
+      article.partnership
+        .partnership__image
+          = image_tag 'icalia-labs.png'
+        p.partnership__text La primer escuela de programación avanzada en México.
+        a.partnership__link href="/" →
+      article.partnership
+        .partnership__image
+          = image_tag 'civica.png'
+        p.partnership__text La primer escuela de programación avanzada en México.
+        a.partnership__link href="/" →
+      article.partnership
+        .partnership__image
+          = image_tag 'innku.png'
+        p.partnership__text La primer escuela de programación avanzada en México.
+        a.partnership__link href="/" →
+section
+  .container
+    .section__header
+      .section__header-sidebar
+        span.section__header-number 04
+        h3.section__header-title Mentores
+      h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
+  .slider.teachers.columns
+    .slider__column
+      .slider__image style="background-image: url(assets/profesor-1.jpg)"
+    .slider__column
+      .slider__info
+        div
+          h4.slider__title Braulio Dominguez
+          h5.slider__subtitle 26 Años — Engineer
+        div
+          h3.slider__quote
+            | Yo comence a programar en el cuarto de mi hermano.
+          h3.slider__quote-strong Ahora trabajo en Google
+          .slider__icons
+            a.github href="/"
+              .fab.fa-github
+            a.twitter href="/"
+              .fab.fa-twitter
+      .slider__avatars
+        .slider__avatar data-avatar="profesor-1.jpg" data-name="Braulio Dominguez" data-info="26 Años — Engineer" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Google" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-1.png)"
+
+        .slider__avatar data-avatar="profesor-2.jpg" data-name="Braulio Dominguez" data-info="26 Años — Engineer" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Facebook" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+
+        .slider__avatar data-avatar="profesor-2.jpg" data-name="Braulio Dominguez" data-info="26 Años — Engineer" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Facebook" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+
+        .slider__avatar data-avatar="profesor-2.jpg" data-name="Braulio Dominguez" data-info="26 Años — Engineer" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Facebook" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+
+        .slider__avatar data-avatar="profesor-2.jpg" data-name="Braulio Dominguez" data-info="26 Años — Engineer" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Facebook" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+
+        .slider__avatar data-avatar="profesor-2.jpg" data-name="Braulio Dominguez" data-info="26 Años — Engineer" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Facebook" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+
+        .slider__avatar data-avatar="profesor-2.jpg" data-name="Braulio Dominguez" data-info="26 Años — Engineer" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Facebook" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+
+        .slider__avatar data-avatar="profesor-2.jpg" data-name="Braulio Dominguez" data-info="26 Años — Engineer" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Facebook" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+
+section.call-to
+  h2.call-to__text
+    | Descubre tu talento como
+    | desarrollador, aprende con
+    | los mejores.
+    a href="#"  Aplicar ya →
+
+section.team
+  .container
+    .section__header
+      .section__header-sidebar
+        span.section__header-number 05
+        h3.section__header-title Equipo
+      h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
+  .slider.columns
+    .slider__column
+      .slider__info
+        div
+          h3.slider__quote
+            | Eduardo López
+          h3.slider__quote-strong CEO
+          .slider__icons
+            a.github href="/"
+              .fab.fa-github
+            a.twitter href="/"
+              .fab.fa-twitter
+      .slider__avatars
+        .slider__avatar data-avatar="profesor-1.jpg" data-quote="Eduardo Lopez" data-quote-strong="CEO" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-1.png)"
+
+        .slider__avatar data-avatar="profesor-2.jpg" data-quote="Jorge Tellez" data-quote-strong="CEO" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+
+        .slider__avatar data-avatar="profesor-1.jpg" data-quote="Eduardo Lopez" data-quote-strong="CEO" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-1.png)"
+
+        .slider__avatar data-avatar="profesor-2.jpg" data-quote="Jorge Tellez" data-quote-strong="CEO" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+
+    .slider__column.is-secondary-on-mobile
+      .slider__image style="background-image: url(assets/profesor-1.jpg)"

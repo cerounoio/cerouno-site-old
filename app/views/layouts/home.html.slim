@@ -1,0 +1,76 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    title CEROUNO - CODING BOOTCAMP
+    = csrf_meta_tags
+    = stylesheet_link_tag    'landing', media: 'all',
+    'data-turbolinks-track': 'reload'
+    = render 'layouts/facebook'
+    = render 'layouts/favicon'
+
+    script crossorigin="anonymous" defer="" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+  body
+    header.main-header
+      .container.main-header__container
+        .main-header__brand
+          = image_tag('cerouno-logo-horizontal-color.png')
+        nav.main-header__nav
+          a Nosotros
+          a Programas
+          a Comunidad
+          a Precios
+          = link_to 'Aplicar ahora →', register_path, class: 'btn btn-primary'
+    = render 'layouts/alert'
+    = yield
+    section.contact
+      .container
+        .section__header
+            .section__header-sidebar
+              span.section__header-number 04
+              h3.section__header-title Contacto
+            h2.section__header-text Nos únimos a empresas con un alto conocimiento y nivel técnico para brindarte el contenido más avanzado de programación.
+        .columns
+          .contact__column
+            .contact__item
+              h4.contact__item-title Admisiones
+              a href="/" admisiones@cerouno.io
+              a href="/" 811 652 0878
+            .contact__item
+              h4.contact__item-title Alianzas
+              a href="/" admisiones@cerouno.io
+              a href="/" 811 652 0878
+          .contact__column
+            .contact__item
+              h4.contact__item-title Redes Sociales
+              a href="/" Facebook
+              a href="/" Twitter
+              a href="/" Medium
+              a href="/" Instagram
+              a href="/" Github
+    section.newsletter
+      .columns
+        .newsletter__column.newsletter__form
+          div
+            h3 NEWSLETTER
+            p ¿Quieres más información sobre CEROUNO?
+            p Inscríbete a nuestro newsletter.
+            input type="email" placeholder="Email"
+            button Enviar
+        .newsletter__column
+    footer.main-footer
+      .container.main-footer__container
+        .main-footer__brand
+          = image_tag('cerouno-logo-horizontal-grayscale.png')
+          span.copyright | Derechos Reservados Cerouno Ventures 2018©
+        nav.main-footer__social
+          a href="/"
+            i.fab.fa-facebook
+          a href="/"
+            i.fab.fa-instagram
+          a href="/"
+            i.fab.fa-twitter
+          a href="/"
+            i.fab.fa-github
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

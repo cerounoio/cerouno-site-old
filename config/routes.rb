@@ -26,4 +26,7 @@ Rails.application.routes.draw do
   end
 
   root 'home#show'
+
+  get '/program', to: 'home#program'
+  get '/programs', to: 'home#programs'
 end
