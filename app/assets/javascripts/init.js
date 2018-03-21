@@ -1,6 +1,9 @@
 $(document).on('ready turbolinks:load', function(){
   trackRegistration();
   changeFileInputContent();
+  changeTeachersDataOnClick();
+  changeTeamDataOnClick();
+  changeProgramMentorsDataOnClick();
 });
 
 function trackRegistration() {

@@ -4,7 +4,7 @@ section.intro
       h2.intro__title Descubre tu potencial de cambiar al mundo a través de la tecnología.
       p.intro__text
         strong → CEROUNO
-        | es el primer programa de aprendizaje acelerado en México para aprender a programar sin experiencia previa
+        |  es la escuela de programación con los programas más actualizados y la mejor red de instructores de todo México.
       = link_to 'Aplicar ahora →', register_path, class: 'btn btn-alpha btn-alpha--primary'
     .intro__image
       = image_tag('intro.png')
@@ -22,7 +22,7 @@ section.programs
       div
         span.program-item__number 01
         h3.program-item__title Apprenticeship
-        h4.program-item__text Aprende a construir una aplicación web y lanza tu idea.
+        h4.program-item__text Aprende a construir una aplicación web desde cero y lanza tu idea.
         .program-item__footer
           span.program-item__tags Ruby, Terminal, Github
           span.program-item__arrow →
@@ -31,9 +31,9 @@ section.programs
       div
         span.program-item__number 02
         h3.program-item__title Professional.
-        h4.program-item__text Aprende a construir una aplicación web y lanza tu idea.
+        h4.program-item__text Conviértete en desarrollador de software profesional.
         .program-item__footer
-          span.program-item__tags Ruby, Terminal, Github
+          span.program-item__tags JavaScript, Node.js
           span.program-item__arrow →
     .program-item__image style="background-image: url('assets/program-photo-2.jpg')"
       = image_tag 'program-2.svg' ,class: 'program-item__icon is-right'
@@ -44,9 +44,9 @@ section.programs
       div
         span.program-item__number 03
         h3.program-item__title Mastery
-        h4.program-item__text Aprende a construir una aplicación web y lanza tu idea.
+        h4.program-item__text Lleva tus habilidades profesionales al siguiente nivel.
         .program-item__footer
-          span.program-item__tags Ruby, Terminal, Github
+          span.program-item__tags Data Science, React, .NET, Java, iOS, Android, Docker
           span.program-item__arrow →
 section
   .container
@@ -59,23 +59,23 @@ section
       article.partnership
         .partnership__image
           = image_tag 'hacker-school.png'
-        p.partnership__text La primer escuela de programación avanzada en México.
-        a.partnership__link href="/" →
+        p.partnership__text Una de las primeras escuelas de programación profesional en México.
+        a.partnership__link href="http://cerouno.io" →
       article.partnership
         .partnership__image
           = image_tag 'icalia-labs.png'
-        p.partnership__text La primer escuela de programación avanzada en México.
-        a.partnership__link href="/" →
+        p.partnership__text Una de las empresas líderes en desarrollo de productos de tecnología.
+        a.partnership__link href="http://icalialabs.com" →
       article.partnership
         .partnership__image
           = image_tag 'civica.png'
-        p.partnership__text La primer escuela de programación avanzada en México.
-        a.partnership__link href="/" →
+        p.partnership__text La consultoría líder en el desarrollo de herramientas digitales para la ciudad.
+        a.partnership__link href="http://civica.digital" →
       article.partnership
         .partnership__image
           = image_tag 'innku.png'
-        p.partnership__text La primer escuela de programación avanzada en México.
-        a.partnership__link href="/" →
+        p.partnership__text Uno de los company builders más exitosos de empresas de tecnología.
+        a.partnership__link href="http://www.innku.com/" →
 section
   .container
     .section__header
@@ -85,23 +85,23 @@ section
       h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
   .slider.teachers.columns
     .slider__column
-      .slider__image style="background-image: url(assets/profesor-1.jpg)"
+      .slider__image style="background-image: url(assets/mike-salazar.jpg)"
     .slider__column
       .slider__info
         div
-          h4.slider__title Braulio Dominguez
-          h5.slider__subtitle 26 Años — Engineer
+          h4.slider__name Mike Salazar
+          h5.slider__subtitle Co-Founder, Devian Labs
         div
           h3.slider__quote
-            | Yo comence a programar en el cuarto de mi hermano.
-          h3.slider__quote-strong Ahora trabajo en Google
+            | Yo comence a programar por mi cuenta.
+          h3.slider__quote-strong Ahora tengo mi propia empresa.
           .slider__icons
-            a.github href="/"
+            a.github href="https://github.com/migsalazar"
               .fab.fa-github
-            a.twitter href="/"
+            a.twitter href="https://twitter.com/migsalazar_"
               .fab.fa-twitter
       .slider__avatars
-        .slider__avatar data-avatar="profesor-1.jpg" data-name="Braulio Dominguez" data-info="26 Años — Engineer" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Google" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-1.png)"
+        .slider__avatar data-avatar="mike-salazar.jpg" data-name="Mike Salazar" data-info="Co-Founder, Devian Labs" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Google" data-github="https://github.com/migsalazar" data-twitter="https://twitter.com/https://twitter.com/migsalazar_" style="background-image: url(assets/mike-salazar.png)"
 
         .slider__avatar data-avatar="profesor-2.jpg" data-name="Braulio Dominguez" data-info="26 Años — Engineer" data-quote="Yo comence a programar en el cuarto de mi hermano." data-quote-strong="Ahora trabajo en Facebook" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
 
@@ -120,9 +120,9 @@ section
 section.call-to
   h2.call-to__text
     | Descubre tu talento como
-    | desarrollador, aprende con
-    | los mejores.
-    a href="#"  Aplicar ya →
+    |  desarrollador, aprende con
+    |  los mejores.
+    a href="/register"  Aplicar ya →
 
 section.team
   .container
@@ -130,27 +130,29 @@ section.team
       .section__header-sidebar
         span.section__header-number 05
         h3.section__header-title Equipo
-      h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
+      h2.section__header-text Nuestro equipo está formado por líderes en la industria de tecnología. Sabemos lo que hacemos.
   .slider.columns
     .slider__column
       .slider__info
         div
           h3.slider__quote
-            | Eduardo López
-          h3.slider__quote-strong CEO
+            | Jorge Téllez
+          h3.slider__quote-strong Director General & Co-Founder
           .slider__icons
-            a.github href="/"
+            a.github href="https://github.com/novohispano"
               .fab.fa-github
-            a.twitter href="/"
+            a.twitter href="https://twitter.com/novohispano"
               .fab.fa-twitter
       .slider__avatars
-        .slider__avatar data-avatar="profesor-1.jpg" data-quote="Eduardo Lopez" data-quote-strong="CEO" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-1.png)"
+        .slider__avatar data-avatar="profesor-2.jpg" data-quote="Jorge Tellez" data-quote-strong="Director General & Co-Founder" data-github="https://github.com/novohispano" data-twitter="http://twitter.com/novohispano" style="background-image: url(assets/profesor-2.png)"
 
-        .slider__avatar data-avatar="profesor-2.jpg" data-quote="Jorge Tellez" data-quote-strong="CEO" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+        .slider__avatar data-avatar="mike-salazar.jpg" data-quote="Edo Lopez" data-quote-strong="Co-Founder" data-github="https://github.com/edolopez" data-twitter="https://twitter.com/edolopez" style="background-image: url(assets/mike-salazar.png)"
 
-        .slider__avatar data-avatar="profesor-1.jpg" data-quote="Eduardo Lopez" data-quote-strong="CEO" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-1.png)"
+        .slider__avatar data-avatar="mike-salazar.jpg" data-quote="JP Escobar" data-quote-strong="Co-Founder" data-github="https://github.com/juanpabloe" data-twitter="https://twitter.com/juanpabloe" style="background-image: url(assets/mike-salazar.png)"
 
-        .slider__avatar data-avatar="profesor-2.jpg" data-quote="Jorge Tellez" data-quote-strong="CEO" data-github="google.com" data-twitter="google.com" style="background-image: url(assets/profesor-2.png)"
+        .slider__avatar data-avatar="profesor-2.jpg" data-quote="Adrián Cuadros" data-quote-strong="Co-Founder" data-github="https://github.com/adriancuadros" data-twitter="https://twitter.com/adriancuadros" style="background-image: url(assets/profesor-2.png)"
+
+        .slider__avatar data-avatar="profesor-2.jpg" data-quote="Alice Aguirre" data-quote-strong="Business Development Manager" data-github="https://github.com/cerounoio" data-twitter="https://twitter.com/guerisalice" style="background-image: url(assets/profesor-2.png)"
 
     .slider__column.is-secondary-on-mobile
-      .slider__image style="background-image: url(assets/profesor-1.jpg)"
+      .slider__image style="background-image: url(assets/mike-salazar.jpg)"
