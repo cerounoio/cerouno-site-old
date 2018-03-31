@@ -16,7 +16,7 @@ function changeTeachersDataOnClick () {
     $('.teachers .slider__quote-strong').text(quoteStrong);
     $('.teachers .slider__icons .github').attr('href', github);
     $('.teachers .slider__icons .twitter').attr('href', twitter);
-    $('.teachers .slider__image').attr('style', 'background-image: url(assets/' + image + ');')
+    $('.teachers .slider__image').attr('style', 'background-image: url(' + image + ');')
   })
 }
 
@@ -34,7 +34,7 @@ function changeTeamDataOnClick () {
     $('.team .slider__quote-strong').text(quoteStrong);
     $('.team .slider__icons .github').attr('href', github);
     $('.team .slider__icons .twitter').attr('href', twitter);
-    $('.team .slider__image').attr('style', 'background-image: url(assets/' + image + ');')
+    $('.team .slider__image').attr('style', 'background-image: url(' + image + ');')
   })
 }
 
@@ -56,6 +56,6 @@ function changeProgramMentorsDataOnClick () {
     $('.teachers .slider__bio').text(bio);
     $('.teachers .slider__icons .github').attr('href', github);
     $('.teachers .slider__icons .twitter').attr('href', twitter);
-    $('.teachers .slider__image').attr('style', 'background-image: url(assets/' + image + ');')
+    $('.teachers .slider__image').attr('style', 'background-image: url(' + image + ');')
   })
 }
