@@ -17,10 +17,10 @@ html
         .main-header__brand
           = image_tag('cerouno-logo-horizontal-color.png')
         nav.main-header__nav
-          a Nosotros
-          a Programas
-          a Comunidad
-          a Precios
+          a href='#programs' Programas
+          a href='#partnerships' Alianzas
+          a href='#mentors' Mentores
+          a href='#team' Equipo
           = link_to 'Aplicar ahora →', register_path, class: 'btn btn-primary'
     = render 'layouts/alert'
     = yield
@@ -36,11 +36,11 @@ html
             .contact__item
               h4.contact__item-title Admisiones
               a href="mailto://admisiones@cerouno.io" admisiones@cerouno.io
-              a href="/" 811 652 0878
+              a href="/" 81.1652.0878
             .contact__item
               h4.contact__item-title Alianzas
               a href="mailto://alianzas@cerouno.io" alianzas@cerouno.io
-              a href="/" 811 652 0878
+              a href="/" 81.1652.0878
           .contact__column
             .contact__item
               h4.contact__item-title Redes Sociales
