@@ -3,7 +3,7 @@ html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
     meta content="width=device-width, initial-scale=1" name="viewport"
-    title CEROUNO - CODING BOOTCAMP
+    title CeroUno
     = csrf_meta_tags
     = stylesheet_link_tag    'landing', media: 'all',
     'data-turbolinks-track': 'reload'
@@ -15,12 +15,13 @@ html
     header.main-header
       .container.main-header__container
         .main-header__brand
-          = image_tag('cerouno-logo-horizontal-color.png')
+          a href='/'
+            = image_tag('cerouno-logo-horizontal-color.png')
         nav.main-header__nav
-          a href='#programs' Programas
-          a href='#partnerships' Alianzas
-          a href='#mentors' Mentores
-          a href='#team' Equipo
+          a href='/#programs' Programas
+          a href='/#partnerships' Alianzas
+          a href='/#mentors' Mentores
+          a href='/#team' Equipo
           = link_to 'Aplicar ahora →', register_path, class: 'btn btn-primary'
     = render 'layouts/alert'
     = yield
@@ -62,15 +63,16 @@ html
     footer.main-footer
       .container.main-footer__container
         .main-footer__brand
-          = image_tag('cerouno-logo-horizontal-grayscale.png')
-          span.copyright | Derechos Reservados Cerouno Ventures 2018 ©
+          a href="/"
+            = image_tag('cerouno-logo-horizontal-grayscale.png')
+          span.copyright | Derechos Reservados Cerouno Ventures SAPI de CV 2018 ©
         nav.main-footer__social
-          a href="/"
+          a href="https://facebook.com/cerounoio"
             i.fab.fa-facebook
-          a href="/"
-            i.fab.fa-instagram
-          a href="/"
+          a href="https://twitter.com/cerounoio"
             i.fab.fa-twitter
-          a href="/"
+          a href="https://instagram.com/cerounoio"
+            i.fab.fa-instagram
+          a href="https://github.com/cerounoio"
             i.fab.fa-github
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

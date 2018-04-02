@@ -224,13 +224,13 @@ img {
 
   @include mobile { flex-direction: column; }
 
+  a { color: white; }
+
   &:hover {
     cursor: pointer;
 
     .program-item__title { transform: translateX(-2rem); }
-
     .program-item__arrow { transform: translateY(-50%)translateX(50%); }
-
     .program-item__icon.is-left { transform: translate(50%, -50%)rotate(90deg); }
     .program-item__icon.is-right { transform: translate(-50%, -50%)rotate(90deg); }
   }

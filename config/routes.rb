@@ -22,11 +22,14 @@ Rails.application.routes.draw do
       patch 'toggle', on: :member
     end
 
-    resources :evaluations,  except: [:index]
+    resources :evaluations, except: [:index]
+  end
+
+  scope :programs do
+    get 'apprenticeship', to: 'programs#apprenticeship'
+    get 'professional',   to: 'programs#professional'
+    get 'mastery',        to: 'programs#mastery'
   end
 
   root 'home#show'
-
-  get '/program', to: 'home#program'
-  get '/programs', to: 'home#programs'
 end
