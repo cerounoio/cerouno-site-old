@@ -743,6 +743,7 @@ img {
     height: 100%;
     position: relative;
     right: -10vw;
+    background-position: center;
 
     @include mobile {
       height: 30rem;
