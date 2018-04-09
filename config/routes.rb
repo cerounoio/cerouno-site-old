@@ -29,6 +29,12 @@ Rails.application.routes.draw do
     get 'apprenticeship', to: 'programs#apprenticeship'
     get 'professional',   to: 'programs#professional'
     get 'mastery',        to: 'programs#mastery'
+
+    scope :mastery do
+        get 'escalabilidad-en-net',  to: 'programs#escalabilidad_en_net'
+        get 'escalabilidad-en-java', to: 'programs#escalabilidad_en_java'
+        get 'ciencia-de-datos',      to: 'programs#ciencia-de-datos'
+    end
   end
 
   root 'home#show'
