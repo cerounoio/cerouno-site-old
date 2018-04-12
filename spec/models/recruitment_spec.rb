@@ -26,7 +26,7 @@ RSpec.describe Recruitment, type: :model do
 
     it 'does not create recruitment with an invalid coupon' do
       coupon      = create(:coupon, code: 'DINO100')
-      recruitment = build(:recruitment)
+      recruitment = build(:recruitment, coupon: nil)
 
       expect(recruitment.add_coupon('DINO000')).to eq false
       expect(recruitment.coupon).to eq nil
@@ -38,7 +38,7 @@ RSpec.describe Recruitment, type: :model do
     it 'does not create recruitment without an expired coupon' do
       expired_coupon = create(:coupon, code: 'DINO100', expiration: DateTime.new(1981,4,23))
       valid_coupon   = create(:coupon, code: 'DINO200', expiration: DateTime.now + 1.day)
-      recruitment    = build(:recruitment)
+      recruitment    = build(:recruitment, coupon: nil)
 
       expect(recruitment.add_coupon('DINO100')).to eq false
       expect(recruitment.coupon).to eq nil

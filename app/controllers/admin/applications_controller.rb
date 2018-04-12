@@ -55,7 +55,7 @@ class Admin::ApplicationsController < AdminController
       user:        [:email, :whatsapp],
       demographic: [:birthday, :gender],
       address:     [:line_1, :line_2, :city, :state, :zipcode],
-      experience:  [:education, :income, :technical_experience, :objective, :resume],
+      experience:  [:education, :income, :technical_experience, :objective, :resume, :program],
       recruitment: [:referral, :coupon]
     )
   end

@@ -35,10 +35,10 @@
           .col-md-6
             = f.label(:objective, 'OBJETIVO PROFESIONAL')
             = f.select(:objective, professional_objective_options, { include_blank: 'Selecciona tu objetivo profesional' }, { class: 'custom-select form-control'})
-            small.form-text.text-muted Cuál es el motivo por el cuál estás aplicando a nuestro programa?
+            small.form-text.text-muted ¿Cuál es el motivo por el cuál estás aplicando a nuestro programa?
             = render 'layouts/form_error', object: @experience, attribute: :objective
         .form-group.row
-          .col-md-12
+          .col-md-6
             = f.label(:resume, 'CURRÍCULUM VITAE')
             - if @experience.resume_filename.present?
               .row
@@ -57,6 +57,11 @@
               |  contiene tu currículum vitae. El archivo tiene que tener
               |  la extensión <b>pdf</b>, <b>doc</b> o <b>docx</b>.
             = render 'layouts/form_error', object: @experience, attribute: :resume
+          .col-md-6
+            = f.label(:program, 'PROGRAMA')
+            = f.select(:program, enum_options(@experience, :programs), { include_blank: 'Selecciona el programa de tu interés' }, { class: 'custom-select form-control'})
+            small.form-text.text-muted ¿A qué programa estás aplicando?
+            = render 'layouts/form_error', object: @experience, attribute: :program
         .form-group.row.button
           .col-md-12
             .text-right

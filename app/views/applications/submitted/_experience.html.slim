@@ -31,12 +31,16 @@
           .col-md-6
             = f.label(:objective, 'OBJETIVO PROFESIONAL')
             = f.text_field(:objective, value: professional_objective_options.invert[@experience.objective.to_sym], class: 'custom-select form-control', readonly: '')
-            small.form-text.text-muted Cuál es el motivo por el cuál estás aplicando a nuestro programa?
+            small.form-text.text-muted ¿Cuál es el motivo por el cuál estás aplicando a nuestro programa?
         .form-group.row
-          .col-md-12
+          .col-md-6
             = f.label(:resume_filename, 'CURRÍCULUM VITAE')
             = f.text_field(:resume_filename, class: 'form-control', readonly: '')
             small.form-text.text-muted
               | Haz click en <b>BUSCAR</b> y selecciona el archivo que
               |  contiene tu currículum vitae. El archivo tiene que tener
               |  la extensión <b>pdf</b>, <b>doc</b> o <b>docx</b>.
+          .col-md-6
+            = f.label(:program, 'PROGRAMA')
+            = f.text_field(:program, value: I18n.translate(@experience.program).capitalize, class: 'custom-select form-control', readonly: '')
+            small.form-text.text-muted ¿A qué programa estás aplicando?

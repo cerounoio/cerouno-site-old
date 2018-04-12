@@ -42,7 +42,7 @@ class Application < ApplicationRecord
   end
 
   def remove_step(step)
-    self.steps = self.steps.reject { |step| step == step }
+    self.steps = self.steps.reject { |saved_step| saved_step == step }
     save
   end
 

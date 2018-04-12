@@ -6,6 +6,7 @@ FactoryGirl.define do
     objective 1
     resume_id '1'
     resume_filename 'Fernanda_Sosa.pdf'
+    program 1
     application
   end
 end

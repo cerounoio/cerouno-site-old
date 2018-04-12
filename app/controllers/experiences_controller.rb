@@ -40,6 +40,7 @@ class ExperiencesController < ApplicationController
       :technical_experience,
       :objective,
       :resume,
+      :program
       )
   end
 end

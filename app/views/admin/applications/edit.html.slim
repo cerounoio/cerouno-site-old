@@ -78,7 +78,7 @@
                               h4 EXPERIENCIA
                             .col-md-6
                               h6 NIVEL DE ESTUDIOS
-                              = experience_fields.select(:education, enum_options(Experience.new, :educations), { include_blank: 'Selecciona tu nivel de estudios' }, { class: 'custom-select form-control'})
+                              = experience_fields.select(:education, enum_options(Experience.new, :educations), { include_blank: 'Selecciona su nivel de estudios' }, { class: 'custom-select form-control'})
                             .col-md-6
                               h6 NIVEL DE INGRESOS
                               = experience_fields.number_field(:income, placeholder: 'N/A', min: 0, class: 'form-control')
@@ -87,9 +87,14 @@
                               = experience_fields.select(:technical_experience, boolean_options, { include_blank: '¿Tiene experiecia previa programando?' }, { class: 'custom-select form-control'})
                             .col-md-6
                               h6 OBJETIVO PROFESIONAL
-                              = experience_fields.select(:objective, professional_objective_options, { include_blank: 'Selecciona el objetivo profesional' }, { class: 'custom-select form-control'})
+                              = experience_fields.select(:objective, professional_objective_options, { include_blank: 'Selecciona su objetivo profesional' }, { class: 'custom-select form-control'})
                             .col-md-6.curriculum
                               h6 CURRÍCULUM VITAE
+                              .row
+                                .col-md-12
+                                  label.form-control.custom-file
+                                    = experience_fields.attachment_field(:resume, class: 'custom-file-input')
+                                    span.custom-file-control
                               - if @application.try(:experience).try(:resume_filename).present?
                                 .row
                                   .col-md-12
@@ -97,18 +102,16 @@
                                       | Tu currículum actual es
                                       |  <b>#{@application.experience.resume_filename}</b>
                                       | .
-                              .row
-                                .col-md-12
-                                  label.form-control.custom-file
-                                    = experience_fields.attachment_field(:resume, class: 'custom-file-input')
-                                    span.custom-file-control
+                            .col-md-6.curriculum
+                              h6 PROGRAMA
+                              = experience_fields.select(:program, enum_options(Experience.new, :programs), { include_blank: 'Selecciona el programa de su interés' }, { class: 'custom-select form-control'})
                         = f.fields_for (@application.recruitment || Recruitment.new) do |recruitment_fields|
                           .form-group.row.application-recruitment
                             .col-md-12
                               h4 RECLUTAMIENTO
                             .col-md-6
                               h6 CÓMO ESCUCHASTE DE NOSOTROS
-                              = recruitment_fields.select(:referral, enum_options(Recruitment.new, :referrals).sort, { include_blank: '¿A través de quién te enteraste primero del programa?' }, { class: 'custom-select form-control' })
+                              = recruitment_fields.select(:referral, enum_options(Recruitment.new, :referrals).sort, { include_blank: '¿A través de quién se enteró primero del programa?' }, { class: 'custom-select form-control' })
                             .col-md-6
                               h6 CÓDIGO PROMOCIONAL
                               = recruitment_fields.text_field(:coupon, placeholder: 'N/A', class: 'form-control')

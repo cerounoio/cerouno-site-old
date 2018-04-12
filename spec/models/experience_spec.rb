@@ -13,6 +13,7 @@ RSpec.describe Experience, type: :model do
         objective:            'startup',
         resume_id:            '1',
         resume_filename:      'simon_sosa.pdf',
+        program:              'apprenticeship',
         application:          application
         )
 
@@ -23,6 +24,7 @@ RSpec.describe Experience, type: :model do
       expect(experience.objective).to eq 'startup'
       expect(experience.resume_id).to eq '1'
       expect(experience.resume_filename).to eq 'simon_sosa.pdf'
+      expect(experience.program).to eq 'apprenticeship'
       expect(experience.application).to eq application
     end
 
@@ -72,6 +74,12 @@ RSpec.describe Experience, type: :model do
 
     it 'does not create experience without resume' do
       experience = build(:experience, resume: '')
+
+      expect(experience).not_to be_valid
+    end
+
+    it 'does not create experience without program' do
+      experience = build(:experience, program: '')
 
       expect(experience).not_to be_valid
     end

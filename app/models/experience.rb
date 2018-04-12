@@ -7,6 +7,7 @@ class Experience < ApplicationRecord
   validates :income,               presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :technical_experience, inclusion: { in: [true, false] }
   validates :objective,            presence: true
+  validates :program,              presence: true
 
   validate :presence_of_resume
 
@@ -25,12 +26,18 @@ class Experience < ApplicationRecord
     other:     4
   }
 
+  enum program: {
+    apprenticeship: 0,
+    professional:   1
+  }
+
   def complete?
     education.present?                          &&
     income.present?                             &&
     [true,false].include?(technical_experience) &&
     objective.present?                          &&
-    resume_id.present?
+    resume_id.present?                          &&
+    program.present?
   end
 
   private

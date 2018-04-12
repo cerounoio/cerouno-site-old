@@ -59,7 +59,7 @@ es-MX:
   September: 'septiembre'
   October: 'octubre'
   November: 'noviembre'
-  December: 'deciembre'
+  December: 'diciembre'
   Jan: 'ene'
   Feb: 'feb'
   Mar: 'mar'
@@ -82,3 +82,6 @@ es-MX:
   passed: aprobada
   failed: reprobada
   pending: pendiente
+  program: el programa
+  professional: professional
+  apprenticeship: apprenticeship

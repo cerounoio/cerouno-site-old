@@ -86,6 +86,9 @@
                         p= link_to @application.experience.resume_filename, attachment_url(@application.experience, :resume)
                       - else
                         p N/A
+                    .col-md-6
+                      h6 PROGRAMA
+                      = render 'application_field', message: I18n.translate(@application.experience.try(:program)).titleize
                   .row.application-recruitment
                     .col-md-12
                       h4 RECLUTAMIENTO
@@ -103,7 +106,7 @@
                       = render 'application_field', message: @application.evaluation.try(:evaluator).try(:full_name)
                     .col-md-6
                       h6 ESTATUS
-                      = render 'application_field', message: I18n.translate(@application.evaluation.try(:status)).capitalize
+                      = render 'application_field', message: I18n.translate(@application.evaluation.try(:status))
                   .row.application-bottom
                     .col-md-12
                       .text-right
