@@ -46,31 +46,31 @@
                       = render 'application_field', message: format_time(@application.demographic.try(:birthdate))
                     .col-md-6
                       h6 GÉNERO
-                      = render 'application_field', message: I18n.translate(@application.demographic.try(:gender)).capitalize
+                      = render 'application_field', message: I18n.translate(@application.demographic.try(:gender))
                   .row.application-address
                     .col-md-12
                       h4 DIRECCIÓN
                     .col-md-6
                       h6 CALLE Y NÚMERO
-                      = render 'application_field', message: @application.address.try(:line_1).to_s.titleize
+                      = render 'application_field', message: @application.address.try(:line_1)
                     .col-md-6
                       h6 COLONIA
-                      = render 'application_field', message: @application.address.try(:line_2).to_s.titleize
+                      = render 'application_field', message: @application.address.try(:line_2)
                     .col-md-6
                       h6 CIUDAD
-                      = render 'application_field', message: @application.address.try(:city).to_s.titleize
+                      = render 'application_field', message: @application.address.try(:city)
                     .col-md-6
                       h6 ESTADO
-                      = render 'application_field', message: @application.address.try(:state).to_s.titleize
+                      = render 'application_field', message: @application.address.try(:state)
                     .col-md-6
                       h6 CÓDIGO POSTAL
-                      = render 'application_field', message: @application.address.try(:zipcode).to_s
+                      = render 'application_field', message: @application.address.try(:zipcode)
                   .row.application-experience
                     .col-md-12
                       h4 EXPERIENCIA
                     .col-md-6
                       h6 NIVEL DE ESTUDIOS
-                      = render 'application_field', message: I18n.translate(@application.experience.try(:education)).titleize
+                      = render 'application_field', message: I18n.translate(@application.experience.try(:education))
                     .col-md-6
                       h6 NIVEL DE INGRESOS
                       = render 'application_field', message: number_to_currency(@application.experience.try(:income))
@@ -88,13 +88,13 @@
                         p N/A
                     .col-md-6
                       h6 PROGRAMA
-                      = render 'application_field', message: I18n.translate(@application.experience.try(:program)).titleize
+                      = render 'application_field', message: I18n.translate(@application.experience.try(:program))
                   .row.application-recruitment
                     .col-md-12
                       h4 RECLUTAMIENTO
                     .col-md-6
                       h6 CÓMO ESCUCHASTE DE NOSOTROS
-                      = render 'application_field', message: I18n.translate(@application.recruitment.try(:referral)).capitalize
+                      = render 'application_field', message: I18n.translate(@application.recruitment.try(:referral))
                     .col-md-6
                       h6 CÓDIGO PROMOCIONAL
                       = render 'application_field', message: @application.recruitment.try(:coupon).try(:code).to_s
