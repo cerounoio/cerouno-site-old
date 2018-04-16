@@ -40,7 +40,7 @@ function getApplicantData() {
     firstName = $(this).data('first-name')
     lastName  = $(this).data('last-name')
     email     = $(this).data('email')
-    applicant = `${firstName} ${lastName} <${email}>`
+    applicant = firstName + " " + lastName + " <" + email + ">"
 
     return applicant
   })
