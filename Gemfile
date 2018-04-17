@@ -25,6 +25,7 @@ gem 'foreman'
 gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-s3'
 gem 'figaro'
+gem 'intercom-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

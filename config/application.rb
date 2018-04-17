@@ -27,5 +27,8 @@ module CerounoSite
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Intercom shows for all pages
+    config.include_for_logged_out_users = true
   end
 end
