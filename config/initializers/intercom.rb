@@ -58,17 +58,17 @@ IntercomRails.config do |config|
   # }
 
   config.user.custom_data = {
-      first_name:           Proc.new { |user| user.first_name },
-      last_name:            Proc.new { |user| user.last_name },
-      email:               Proc.new { |user| user.email },
-      whatsapp:            Proc.new { |user| user.whatsapp },
-      application_status:   Proc.new { |user| user.application.status },
-      gender:              Proc.new { |user| user.application.demographic.gender },
-      objective:           Proc.new { |user| user.application.experience.objective },
-      technical_experience: Proc.new { |user| user.application.experience.technical_experience },
-      program:             Proc.new { |user| user.application.experience.program },
-      income:              Proc.new { |user| user.application.experience.income },
-      education:           Proc.new { |user| user.application.experience.education }
+      first_name:           Proc.new { |user| user.try(:first_name) },
+      last_name:            Proc.new { |user| user.try(:last_name) },
+      email:                Proc.new { |user| user.try(:email) },
+      whatsapp:             Proc.new { |user| user.try(:whatsapp) },
+      application_status:   Proc.new { |user| user.try(:application).try(:status) },
+      gender:               Proc.new { |user| user.application.try(:demographic).try(:gender) },
+      objective:            Proc.new { |user| user.application.try(:experience).try(:objective) },
+      technical_experience: Proc.new { |user| user.application.try(:experience).try(:technical_experience) },
+      program:              Proc.new { |user| user.application.try(:experience).try(:program) },
+      income:               Proc.new { |user| user.application.try(:experience).try(:income) },
+      education:            Proc.new { |user| user.application.try(:experience).try(:education) }
     }
 
   config.api_secret = Rails.application.secrets.intercom_secure_mode_secret_key
