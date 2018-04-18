@@ -57,6 +57,22 @@ IntercomRails.config do |config|
   #   :favorite_color => :favorite_color
   # }
 
+  config.user.custom_data = {
+      first_name:           Proc.new { |user| user.first_name },
+      last_name:            Proc.new { |user| user.last_name },
+      email:               Proc.new { |user| user.email },
+      whatsapp:            Proc.new { |user| user.whatsapp },
+      application_status:   Proc.new { |user| user.application.status },
+      gender:              Proc.new { |user| user.application.demographic.gender },
+      objective:           Proc.new { |user| user.application.experience.objective },
+      technical_experience: Proc.new { |user| user.application.experience.technical_experience },
+      program:             Proc.new { |user| user.application.experience.program },
+      income:              Proc.new { |user| user.application.experience.income },
+      education:           Proc.new { |user| user.application.experience.education }
+    }
+
+  config.api_secret = Rails.application.secrets.intercom_secure_mode_secret_key
+
   # == Current company method/variable
   # The method/variable that contains the current company for the current user,
   # in your controllers. 'Companies' are generic groupings of users, so this
