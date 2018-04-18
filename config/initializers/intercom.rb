@@ -63,7 +63,7 @@ IntercomRails.config do |config|
       last_name:            Proc.new { |user| user.try(:last_name) },
       email:                Proc.new { |user| user.try(:email) },
       whatsapp:             Proc.new { |user| user.try(:whatsapp) },
-      application_status:   Proc.new { |user| user.try(:application).try(status) },
+      application_status:   Proc.new { |user| user.try(:application).try(:status) },
       gender:               Proc.new { |user| user.application.try(:demographic).try(:gender) },
       objective:            Proc.new { |user| user.application.try(:experience).try(:objective) },
       technical_experience: Proc.new { |user| user.application.try(:experience).try(:technical_experience) },
