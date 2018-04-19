@@ -27,8 +27,9 @@ class Experience < ApplicationRecord
   }
 
   enum program: {
-    apprenticeship: 0,
-    professional:   1
+    apprenticeship:       0,
+    professional:         1,
+    mastery_data_science: 2
   }
 
   def complete?
