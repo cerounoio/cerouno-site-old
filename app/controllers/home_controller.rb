@@ -4,9 +4,9 @@ class HomeController < ApplicationController
   def show
   end
 
-  def program
+  def terms
   end
 
-  def programs
+  def privacy
   end
 end
