@@ -32,5 +32,9 @@
           = render 'layouts/form_error', object: @user, attribute: :password
           = f.password_field(:password_confirmation, placeholder: 'Confirma tu password', class: 'form-control')
           = render 'layouts/form_error', object: @user, attribute: :password_confirmation
+        .form-group.form-check
+          = f.check_box(:policies, { class: 'form-check-input' }, true, false)
+          = f.label(:policies, "He leído y aceptado el #{link_to "Aviso de Privacidad", "/privacy"} y los #{link_to "Términos y Condiciones", "/terms"} del sitio.".html_safe, class: 'form-check-label')
+          = render 'layouts/form_error', object: @user, attribute: :policies
         = f.submit('CREAR CUENTA', class: 'btn btn-primary form-control')
     .col-md-3

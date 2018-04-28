@@ -19,6 +19,8 @@ class User < ApplicationRecord
   validates :password, presence:     true,
                        confirmation: true
 
+  validates :policies, presence: { message: "deben ser aceptados por el usuario." }
+
   has_many :applications
   has_one  :application
 

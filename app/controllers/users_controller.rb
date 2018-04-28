@@ -48,7 +48,8 @@ class UsersController < ApplicationController
       :email,
       :password,
       :password_confirmation,
-      :whatsapp
+      :whatsapp,
+      :policies
       )
   end
 end

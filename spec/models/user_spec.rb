@@ -10,7 +10,8 @@ RSpec.describe User, type: :model do
         email:                 'jorge@example.com',
         password:              'password',
         password_confirmation: 'password',
-        admin:                 false
+        admin:                 false,
+        policies:              true
         )
 
       expect(user).to be_valid
@@ -18,6 +19,7 @@ RSpec.describe User, type: :model do
       expect(user.last_name).to eq 'Téllez'
       expect(user.email).to eq 'jorge@example.com'
       expect(user.admin).to eq false
+      expect(user.policies).to eq true
     end
   end
 
@@ -92,6 +94,12 @@ RSpec.describe User, type: :model do
 
         expect(user).not_to be_valid
       end
+    end
+
+    it 'does not create user without accepting policies' do
+      user = build(:user, policies: nil)
+
+      expect(user).not_to be_valid
     end
   end
 end
