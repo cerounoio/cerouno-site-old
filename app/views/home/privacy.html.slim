@@ -1,186 +1,70 @@
-section.intro
-  .container.intro__container.columns.is-vertical
-    .intro__info
-      h2.intro__title Descubre tu potencial de cambiar al mundo a través de la tecnología.
-      p.intro__text
-        strong → CEROUNO
-        |  es la escuela de programación con los programas más actualizados y la mejor red de instructores de todo México.
-      = link_to 'Aplicar ahora →', register_path, class: 'btn btn-alpha btn-alpha--primary'
-    .intro__image
-      = image_tag('intro.png')
-section.programs#programs
+section.static
   .container
-    .section__header
-      .section__header-sidebar
-        span.section__header-number 02
-        h3.section__header-title Programas
-      h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
-  article.program-item
-    .program-item__image style="background-image: url(#{asset_path 'program-photo-1.jpg'})"
-      = image_tag 'program-1.svg' ,class: 'program-item__icon is-left'
-    .program-item__info.is-apprenticeship
-      div
-        span.program-item__number 01
-        h3.program-item__title Apprenticeship
-        h4.program-item__text Aprende a construir una aplicación web desde cero y lanza tu idea.
-        .program-item__footer
-          span.program-item__tags Ruby, Terminal, Github
-          span.program-item__arrow
-            a href="/programs/apprenticeship" →
-  article.program-item
-    .program-item__info.is-professional
-      div
-        span.program-item__number 02
-        h3.program-item__title Professional.
-        h4.program-item__text Conviértete en desarrollador de software profesional.
-        .program-item__footer
-          span.program-item__tags JavaScript, Node.js
-          span.program-item__arrow
-            a href="/programs/professional" →
-    .program-item__image style="background-image: url(#{asset_path 'program-photo-2.jpg'})"
-      = image_tag 'program-2.svg' ,class: 'program-item__icon is-right'
-  article.program-item
-    .program-item__image style="background-image: url(#{asset_path 'program-photo-3.jpg'})"
-      = image_tag 'program-3.svg' ,class: 'program-item__icon is-left'
-    .program-item__info.is-mastery
-      div
-        span.program-item__number 03
-        h3.program-item__title Mastery
-        h4.program-item__text Lleva tus habilidades profesionales al siguiente nivel.
-        .program-item__footer
-          span.program-item__tags Data Science, React, .NET, Java, iOS, Android, Docker
-          span.program-item__arrow
-            a href="mailto:contacto@cerouno.io?subject=Informes%20Mastery%20Program" →
-section#partnerships
-  .container
-    .section__header
-      .section__header-sidebar
-        span.section__header-number 03
-        h3.section__header-title Alianzas
-      h2.section__header-text Nos únimos a empresas con un alto nivel técnico para brindarte el contenido más avanzado de programación.
-    .partnerships
-      article.partnership
-        .partnership__image
-          = image_tag 'hacker-school.png'
-        p.partnership__text Escuela de programación profesional en México.
-        a.partnership__link href="http://cerouno.io" →
-      article.partnership
-        .partnership__image
-          = image_tag 'icalia-labs.png'
-        p.partnership__text Empresa líder en desarrollo de producto en México.
-        a.partnership__link href="http://icalialabs.com" →
-      article.partnership
-        .partnership__image
-          = image_tag 'civica.png'
-        p.partnership__text Compañía de tecnología cívica pionera en México.
-        a.partnership__link href="https://civica.digital" →
-      article.partnership
-        .partnership__image
-          = image_tag 'innku.png'
-        p.partnership__text Uno de los company builders más exitosos en México.
-        a.partnership__link href="http://www.innku.com/" →
-section#mentors
-  .container
-    .section__header
-      .section__header-sidebar
-        span.section__header-number 04
-        h3.section__header-title Mentores
-      h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
-  .slider.teachers.columns
-    .slider__column
-      .slider__image style="background-image: url(#{asset_path 'alan-zambrano.jpg'})"
-    .slider__column
-      .slider__info
-        div
-          h4.slider__name Alan Zambrano
-          h5.slider__subtitle Ingeniero de Software, Lagersoft
-        div
-          h3.slider__quote
-            | Yo comence a programar por mi cuenta.
-          h3.slider__quote-strong Ahora trabajo en una consultoría de software.
-          .slider__icons
-            a.github href="https://github.com/alanzam89"
-              .fab.fa-github
-            a.twitter href="https://twitter.com/cerounoio"
-              .fab.fa-twitter
-      .slider__avatars
-        .slider__avatar data-avatar="#{asset_path 'alan-zambrano.jpg'}" data-name="Alan Zambrano" data-info="Ingeniero de Software, Lagersoft" data-quote="Yo comence a programar por mi cuenta." data-quote-strong="Ahora trabajo en una consultoría de software." data-github="https://github.com/alanzam89" data-twitter="https://twitter.com/cerounoio" style="background-image: url(#{asset_path 'alan-zambrano.jpg'})"
+    markdown:
+      # Aviso de Privacidad
 
-        .slider__avatar data-avatar="#{asset_path 'alex-cavazos.jpg'}" data-name="Alex Cavazos" data-info="Desarrollador Web" data-quote="Empecé a programar a los 12 años haciendo Mods para Minecraft." data-quote-strong="Actualmente hago aplicaciones móviles." data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'alex-cavazos.jpg'})"
+      **CEROUNO VENTURES SAPI DE CV (“CEROUNO”)**, en su carácter de responsable, emite el presente aviso de privacidad (el “Aviso”) en términos de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (la “Ley”), su Reglamento y los Lineamientos del Aviso de Privacidad, para informarle los términos y condiciones sobre la obtención, almacenamiento, uso, divulgación y transferencia (el “Tratamiento”) de sus Datos Personales (según se definen más adelante), que hayan sido o sean entregados a **CEROUNO** por clientes, empleados, proveedores, los representantes, apoderados y/o empleados de los mismos (cada uno de ellos en lo personal, el “Titular”), así como los datos que se recaben en virtud  de la relación comercial o de servicios del Titular con **CEROUNO**.
 
-        .slider__avatar data-avatar="#{asset_path 'andy-quijano.jpg'}" data-name="Andy Quijano" data-info="Co-Founder, Index Zero" data-quote="Aprendí a programar a los 14 años en la escuela." data-quote-strong="Ahora tengo mi propia empresa." data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'andy-quijano.jpg'})"
+      Para efectos del presente Aviso, **CEROUNO** señala como su domicilio el ubicado en Europa 305, Contry, Monterrey, Nuevo León (el “Domicilio”). Asimismo, se señala el sitio web http://www.cerouno.io, como el portal de Internet en el cual el Titular tendrá a su disposición el Aviso y que **CEROUNO** utilizará para los efectos referidos más adelante en el presente (el “Portal”).
 
-        .slider__avatar data-avatar="#{asset_path 'angel-huerta.jpg'}" data-name="Ángel Huerta" data-info="Diseñador, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'angel-huerta.jpg'})"
+      Los términos del presente Aviso serán observados por **CEROUNO** y sus empresas controladoras, afiliadas y subsidiarias (conjuntamente, las “Partes Relacionadas”), así como los encargados y terceros, que realicen cualquier Tratamiento de los datos personales, incluyendo los datos personales financieros.
 
-        .slider__avatar data-avatar="#{asset_path 'benito-serna.jpg'}" data-name="Benito Serna" data-info="CTO, Briq.mx" data-quote="Empecé a programar en la universidad con Java, C, Matlab y Labview." data-quote-strong="Ahora soy CTO de Briq.mx." data-github="https://github.com/bhserna" data-twitter="https://twitter.com/bhserna" style="background-image: url(#{asset_path 'benito-serna.jpg'})"
+      ## I. Datos Personales
 
-        .slider__avatar data-avatar="#{asset_path 'ceci-torres.jpg'}" data-name="Ceci Torres" data-info="Desarrollador Front-End, Lagersoft" data-quote="Empecé a programar cuando descubrí que hacer código era un súper poder en mí." data-quote-strong="Ahora ayudo a otras personas a descubrir el suyo." data-github="https://github.com/cecitorres" data-twitter="https://twitter.com/cecitorresmx" style="background-image: url(#{asset_path 'ceci-torres.jpg'})"
+      Los datos personales del Titular entregados a **CEROUNO** (los “Datos Personales”) podrán consistir en: (i) Identidad de la persona (nombre, firma, Registro Federal de Contribuyentes, Clave Única de Registro de Población, fecha de nacimiento, nacionalidad, estado civil, sexo y fotografías e imágenes de video de cámaras de seguridad, entre otros); (ii) Datos de Contacto (domicilio particular, número de teléfono de domicilio, número de celular y correo electrónico personal, entre otros);  (iii) Datos laborales del Titular (Número de Seguridad Social, contratos de trabajo, confirmación de pagos de salarios, confirmación de pagos de cuotas de seguridad social, aviso de altas y bajas ante las instituciones de seguridad social); (iv) Financieros o patrimoniales (número de cuenta bancaria para hacer depósitos, monto del salario actual, su integración y ajustes salariales, entre otros).
 
-        .slider__avatar data-avatar="#{asset_path 'elias-matheus.jpg'}" data-name="Elias Matheus" data-info="Desarrollador Web, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'elias-matheus.jpg'})"
+      El Titular declara que los Datos Personales que proporcione a **CEROUNO**, incluyendo los datos financieros o patrimoniales, serán claros, completos, precisos y actualizados, ello sin perjuicio que **CEROUNO** pueda asegurarse de la calidad de los mismos o de que el Titular tenga el derecho de rectificarlos y/o actualizarlos.
 
-        .slider__avatar data-avatar="#{asset_path 'ernesto-celis.jpg'}" data-name="Ernesto Celis" data-info="Desarrollador Web, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'ernesto-celis.jpg'})"
+      ## II. Finalidades
 
-        .slider__avatar data-avatar="#{asset_path 'fer-flores.jpg'}" data-name="Fer Flores" data-info="Senior Software Engineer, Lagersoft" data-quote="Aprendí a animar dibujos programando a los 15." data-quote-strong="Ahora lidero un departamento de ingenieros donde analizar, diseñar y crear software es parte de todos mis días." data-github="https://github.com/ferflores" data-twitter="https://twitter.com/cerounoio" style="background-image: url(#{asset_path 'fer-flores.jpg'})"
+      El Tratamiento de los Datos Personales del Titular, se realizará para cumplir con cualquiera de las siguientes finalidades que den origen y sean necesarias para la relación comercial que tiene el Titular con **CEROUNO**, como: (i) ejercer cualquier derecho o cumplir con las obligaciones derivadas de la relación comercial con **CEROUNO**, incluyendo el pago de la contraprestación pactada en un contrato, procedimientos de cobranza, proveer medios necesarios para el cumplimiento de sus funciones, entre otros; (ii) realizar una base de datos, registro y directorio de proveedores y clientes para beneficio y uso interno de **CEROUNO**, (iii) cumplir con cualquier legislación aplicable u obligación derivada de la relación comercial con **CEROUNO**, así como proporcionar información y documentación a cualquier autoridad gubernamental competente, nacional o extranjera, como parte de algún proceso o para cumplir con algún requerimiento de ley; (iv) dar cumplimiento a auditorías realizadas a **CEROUNO** o a sus Partes Relacionadas; (v) confirmar identidad y situación patrimonial del Titular; (vi) brindar acceso a las diversas instalaciones de **CEROUNO** a proveedores, clientes, así como a sus empleados, representantes o apoderados legales; (vii) confirmar el cumplimiento de obligaciones de ley por parte del proveedores, clientes respecto de sus empleados; (viii) celebrar contratos con el Titular; y (ix) cumplir con cualquier obligación que se derive de la relación comercial que se establezca entre el Titular y **CEROUNO**.
 
-        .slider__avatar data-avatar="#{asset_path 'israel-zuniga.jpg'}" data-name="Israel Zúñiga" data-info="Big Data Architect, BanRegio" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'israel-zuniga.jpg'})"
+      Cualquier ampliación a las finalidades previamente expuestas deberá ser comunicada por **CEROUNO** conforme a las disposiciones del presente Aviso.
 
-        .slider__avatar data-avatar="#{asset_path 'jesus-lerma.jpg'}" data-name="Jesús Escamilla" data-info="Software Engineer" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'jesus-lerma.jpg'})"
+      ## III. Consentimiento del Titular
 
-        .slider__avatar data-avatar="#{asset_path 'jesus-escamilla.jpg'}" data-name="Jesús Escamilla" data-info="Desarrollador Front-End, Lagersoft" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'jesus-escamilla.jpg'})"
+      Al acceder al Portal y/o la suscripción del presente Aviso, el Titular reconoce que ha leído, entiende y acepta los términos del Aviso.
 
-        .slider__avatar data-avatar="#{asset_path 'jorge-garza.jpg'}" data-name="Jorge Garza" data-info="Software Engineer" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'jorge-garza.jpg'})"
+      La no oposición del Titular al Tratamiento de los Datos Personales por los medios establecidos en el Aviso y la entrega de cualesquier Datos Personales a **CEROUNO**, ya sea que lo haga de forma directa o a través de un representante o apoderado legal, constituyen en sí mismos un signo inequívoco del consentimiento expreso que el Titular otorga a **CEROUNO** para el Tratamiento de los Datos Personales, incluyendo los datos financieros o patrimoniales y para la transferencia de los mismos conforme a lo dispuesto en el presente Aviso, ya sea por **CEROUNO**, los encargados, terceros y las Partes Relacionadas, durante el tiempo que sean indispensables para las finalidades previamente expuestas.
 
-        .slider__avatar data-avatar="#{asset_path 'juan-miguel-rubio.jpg'}" data-name="Juan Miguel Rubio" data-info="Front-End Developer, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'juan-miguel-rubio.jpg'})"
+      ## IV. Transferencia de Datos Personales
 
-        .slider__avatar data-avatar="#{asset_path 'mike-salazar.jpg'}" data-name="Mike Salazar" data-info="Co-Founder, Devian Labs" data-quote="Empecé a programar en el laboratorio de la secundaria." data-quote-strong="Ahora dirijo mi propia empresa de software." data-github="https://github.com/migsalazar" data-twitter="https://twitter.com/migsalazar_" style="background-image: url(#{asset_path 'mike-salazar.jpg'})"
+      En virtud del consentimiento otorgado por el Titular, **CEROUNO** podrá transferir por cualquier medio los Datos Personales a los siguientes terceros: (1) Partes Relacionadas nacionales y extranjeras, en términos de la Ley, que operan bajo nuestros mismos procesos y políticas internas de protección de datos personales para las finalidades mencionadas en este Aviso; (2) instituciones bancarias para administrar el pago de la contraprestación pactada entre **CEROUNO** y el Titular; (3) autoridades gubernamentales competentes (incluyendo judiciales y administrativas) nacionales o extranjeras, para la finalidad a que se refiere el inciso (iii) del apartado de Finalidades del presente Aviso; y (4) cualquier otro tercero de conformidad con las excepciones marcadas en el artículo 37 de la Ley .
 
-        .slider__avatar data-avatar="#{asset_path 'rafa-cardenas.jpg'}" data-name="Rafa Cardenas" data-info="CTO, Cívica Digital" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'rafa-cardenas.jpg'})"
+      Adicionalmente, **CEROUNO** podrá realizar transferencias nacionales o internacionales de los Datos Personales, incluyendo los datos financieros o patrimoniales, a terceros no relacionados, como parte de las siguientes operaciones o transacciones, presentes o futuras, en las que **CEROUNO** o sus Partes Relacionadas participen, tales como: i) venta o transferencia de acciones o partes sociales; ii) fusión; iii) consolidación; iv) cambio de control; v) transferencia de activos; vi) reorganización; o vii) liquidación.
 
-        .slider__avatar data-avatar="#{asset_path 'ricardo-alanis.jpg'}" data-name="Ricardo Alanis" data-info="Data Lead, Cívica Digital" data-quote="Empecé a programar cuando era niño, haciendo bash scripts y códigos de PHP para foros de Pokémon." data-quote-strong="Ahora me dedico a sacarle jugo a los datos para ayudar a entender los problemas." data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'ricardo-alanis.jpg'})"
+      Los terceros receptores de Datos Personales asumirán las mismas obligaciones que correspondan a **CEROUNO**.
 
-        .slider__avatar data-avatar="#{asset_path 'sebastian-gutierrez.jpg'}" data-name="Sebastián Gutiérrez" data-info="Diseñador, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'sebastian-gutierrez.jpg'})"
+      ## V. Derechos ARCO
 
-        .slider__avatar data-avatar="#{asset_path 'tony-ortiz.jpg'}" data-name="Tony Ortiz" data-info="Ingeniero de Software, Lagersoft" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'tony-ortiz.jpg'})"
+      El Titular tendrá derecho a acceder, rectificar, cancelar u oponerse al Tratamiento de los Datos Personales en cualquier momento sujeto a las disposiciones en la Ley, su Reglamento y cualquier otra disposición aplicable, sin que el ejercicio de sus derechos pueda tener efectos retroactivos o impida a **CEROUNO** cumplir con alguna obligación legal, contractual o fiduciaria.
 
-        .slider__avatar data-avatar="#{asset_path 'vov-quintanilla.jpg'}" data-name="Vov Quintanilla" data-info="Machine Whisperer, Icalia Labs" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'vov-quintanilla.jpg'})"
+      Para el ejercicio de sus derechos, el Titular realizará su requerimiento por escrito entregado en el Domicilio o vía correo electrónico a la dirección contacto@cerouno.io, dirigiéndose al área responsable de la protección de Datos Personales de **CEROUNO**. El escrito que deberá contener como mínimo los requisitos a que se refiere el artículo 29 de la Ley.
 
+      Ante la recepción del escrito, el área responsable de protección de Datos Personales le comunicará al Titular, en el término marcado por la Ley, de su recepción y la determinación respecto a su solicitud. No obstante lo anterior el área responsable de protección de Datos Personales podrá solicitar información adicional para acreditar la personalidad del Titular, así como la documentación que sustente su solicitud y cualquier información adicional que sea necesaria en términos de la Ley para dar contestación a la solicitud de ejercicio de sus derechos.
 
-section.call-to
-  h2.call-to__text
-    | Descubre tu talento como
-    |  desarrollador, aprende con
-    |  los mejores.
-    a href="/register"  Aplicar ya →
+      ## VI. Revocación de consentimiento y limitación de uso o divulgación
 
-section.team#team
-  .container
-    .section__header
-      .section__header-sidebar
-        span.section__header-number 05
-        h3.section__header-title Equipo
-      h2.section__header-text Nuestro equipo está formado por líderes en la industria de tecnología. Sabemos lo que hacemos.
-  .slider.columns
-    .slider__column
-      .slider__info
-        div
-          h3.slider__quote
-            | Jorge Téllez
-          h3.slider__quote-strong Director General & Co-Founder
-          .slider__icons
-            a.github href="https://github.com/novohispano"
-              .fab.fa-github
-            a.twitter href="https://twitter.com/novohispano"
-              .fab.fa-twitter
-      .slider__avatars
-        .slider__avatar data-avatar="#{asset_path 'jorge-tellez.jpg'}" data-quote="Jorge Tellez" data-quote-strong="Director General & Co-Founder" data-github="https://github.com/novohispano" data-twitter="http://twitter.com/novohispano" style="background-image: url(#{asset_path 'jorge-tellez.jpg'})"
+      El Titular tendrá derecho a revocar su consentimiento del Tratamiento de los Datos Personales o de limitar el uso o divulgación de los mismos en cualquier momento sujeto a las disposiciones en la Ley, su Reglamento y cualquier otra disposición aplicable, sin que el ejercicio de sus derechos pueda tener efectos retroactivos o impida a **CEROUNO** cumplir con alguna obligación legal, contractual o fiduciaria.
 
-        .slider__avatar data-avatar="#{asset_path 'edo-lopez.jpg'}" data-quote="Edo Lopez" data-quote-strong="Co-Founder" data-github="https://github.com/edolopez" data-twitter="https://twitter.com/edolopez" style="background-image: url(#{asset_path 'edo-lopez.jpg'})"
+      Para el ejercicio de la revocación del consentimiento del Tratamiento de Datos Personales o limitar el uso y divulgación de los mismos, el Titular realizará su requerimiento por escrito entregado en el Domicilio o vía correo electrónico a la dirección contacto@cerouno.io, dirigiéndose al área responsable de la protección de Datos Personales de **CEROUNO**. El escrito deberá contener como mínimo: i) el nombre del Titular, domicilio y/o correo electrónico para comunicarle la respuesta a su solicitud; ii) los documentos que acrediten la identidad del Titular o en su caso la representación legal del mismo; iii) la descripción clara y precisa de su intención de revocar el consentimiento para el Tratamiento de sus Datos Personales o la descripción precisa sobre el límite del uso o divulgación de los mismos; iv) en caso de ser necesario los documentos que sustenten su solicitud; y v) cualquier elemento o documento que facilite la localización de sus Datos Personales.
 
-        .slider__avatar data-avatar="#{asset_path 'jp-escobar.jpg'}" data-quote="JP Escobar" data-quote-strong="Co-Founder" data-github="https://github.com/juanpabloe" data-twitter="https://twitter.com/juanpabloe" style="background-image: url(#{asset_path 'jp-escobar.jpg'})"
+      No obstante lo anterior el área responsable de protección de Datos Personales le podrá solicitar información adicional a la descrita anteriormente, para en términos de la ley, dar contestación a la solicitud.
 
-        .slider__avatar data-avatar="#{asset_path 'adrian-cuadros.jpg'}" data-quote="Adrián Cuadros" data-quote-strong="Co-Founder" data-github="https://github.com/adriancuadros" data-twitter="https://twitter.com/adriancuadros" style="background-image: url(#{asset_path 'adrian-cuadros.jpg'}"
+      Ante la solicitud del Titular, el área encargada de Protección de Datos Personales dará respuesta a la misma en un término de veinte (20) días hábiles posteriores a la recepción de la misma. En dicha respuesta se informará al Titular sobre la confirmación de su solicitud o, en su caso, la negativa a la misma por no cumplir con los requisitos establecidos en el presente Aviso.
 
-        .slider__avatar data-avatar="#{asset_path 'alice-aguirre.jpg'}" data-quote="Alice Aguirre" data-quote-strong="Business Development Manager" data-github="https://github.com/cerounoio" data-twitter="https://twitter.com/guerisalice" style="background-image: url(#{asset_path 'alice-aguirre.jpg'})"
+      ## VII. Cambios al Aviso
 
-    .slider__column.is-secondary-on-mobile
-      .slider__image style="background-image: url(#{asset_path 'jorge-tellez.jpg'})"
+      En caso de cualquier cambio a los términos del presente Aviso, los mismos serán comunicados por **CEROUNO** por cualquiera de los siguientes medios: (i) envío de correo electrónico a la cuenta que haya proporcionado; (ii) publicación de avisos visibles en las instalaciones de **CEROUNO**; o (iii) cualquier otro medio definido de tiempo en tiempo por **CEROUNO** y que le permite al Titular tener conocimiento de los cambios en cuestión.
+
+      ## VIII. Medio de comunicación
+
+      Los proveedores y clientes podrán consultar en cualquier momento este Aviso y sus modificaciones en el Domicilio o solicitándolo al correo electrónico: contacto@cerouno.io.
+
+      ## IX. Contacto
+
+      En caso de cualquier cuestión relacionada con los Datos Personales y el presente Aviso, el Titular se dirigirá con el área responsable de la Protección de Datos Personales ubicado en el Domicilio, o bien, vía correo electrónico a la dirección: contacto@cerouno.io.
+
+      ## X. Legislación Aplicable
+
+      El presente Aviso está sujeto a la legislación aplicable en la República Mexicana.

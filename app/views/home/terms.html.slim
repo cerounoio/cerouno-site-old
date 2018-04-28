@@ -1,186 +1,106 @@
-section.intro
-  .container.intro__container.columns.is-vertical
-    .intro__info
-      h2.intro__title Descubre tu potencial de cambiar al mundo a través de la tecnología.
-      p.intro__text
-        strong → CEROUNO
-        |  es la escuela de programación con los programas más actualizados y la mejor red de instructores de todo México.
-      = link_to 'Aplicar ahora →', register_path, class: 'btn btn-alpha btn-alpha--primary'
-    .intro__image
-      = image_tag('intro.png')
-section.programs#programs
+section.static
   .container
-    .section__header
-      .section__header-sidebar
-        span.section__header-number 02
-        h3.section__header-title Programas
-      h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
-  article.program-item
-    .program-item__image style="background-image: url(#{asset_path 'program-photo-1.jpg'})"
-      = image_tag 'program-1.svg' ,class: 'program-item__icon is-left'
-    .program-item__info.is-apprenticeship
-      div
-        span.program-item__number 01
-        h3.program-item__title Apprenticeship
-        h4.program-item__text Aprende a construir una aplicación web desde cero y lanza tu idea.
-        .program-item__footer
-          span.program-item__tags Ruby, Terminal, Github
-          span.program-item__arrow
-            a href="/programs/apprenticeship" →
-  article.program-item
-    .program-item__info.is-professional
-      div
-        span.program-item__number 02
-        h3.program-item__title Professional.
-        h4.program-item__text Conviértete en desarrollador de software profesional.
-        .program-item__footer
-          span.program-item__tags JavaScript, Node.js
-          span.program-item__arrow
-            a href="/programs/professional" →
-    .program-item__image style="background-image: url(#{asset_path 'program-photo-2.jpg'})"
-      = image_tag 'program-2.svg' ,class: 'program-item__icon is-right'
-  article.program-item
-    .program-item__image style="background-image: url(#{asset_path 'program-photo-3.jpg'})"
-      = image_tag 'program-3.svg' ,class: 'program-item__icon is-left'
-    .program-item__info.is-mastery
-      div
-        span.program-item__number 03
-        h3.program-item__title Mastery
-        h4.program-item__text Lleva tus habilidades profesionales al siguiente nivel.
-        .program-item__footer
-          span.program-item__tags Data Science, React, .NET, Java, iOS, Android, Docker
-          span.program-item__arrow
-            a href="mailto:contacto@cerouno.io?subject=Informes%20Mastery%20Program" →
-section#partnerships
-  .container
-    .section__header
-      .section__header-sidebar
-        span.section__header-number 03
-        h3.section__header-title Alianzas
-      h2.section__header-text Nos únimos a empresas con un alto nivel técnico para brindarte el contenido más avanzado de programación.
-    .partnerships
-      article.partnership
-        .partnership__image
-          = image_tag 'hacker-school.png'
-        p.partnership__text Escuela de programación profesional en México.
-        a.partnership__link href="http://cerouno.io" →
-      article.partnership
-        .partnership__image
-          = image_tag 'icalia-labs.png'
-        p.partnership__text Empresa líder en desarrollo de producto en México.
-        a.partnership__link href="http://icalialabs.com" →
-      article.partnership
-        .partnership__image
-          = image_tag 'civica.png'
-        p.partnership__text Compañía de tecnología cívica pionera en México.
-        a.partnership__link href="https://civica.digital" →
-      article.partnership
-        .partnership__image
-          = image_tag 'innku.png'
-        p.partnership__text Uno de los company builders más exitosos en México.
-        a.partnership__link href="http://www.innku.com/" →
-section#mentors
-  .container
-    .section__header
-      .section__header-sidebar
-        span.section__header-number 04
-        h3.section__header-title Mentores
-      h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
-  .slider.teachers.columns
-    .slider__column
-      .slider__image style="background-image: url(#{asset_path 'alan-zambrano.jpg'})"
-    .slider__column
-      .slider__info
-        div
-          h4.slider__name Alan Zambrano
-          h5.slider__subtitle Ingeniero de Software, Lagersoft
-        div
-          h3.slider__quote
-            | Yo comence a programar por mi cuenta.
-          h3.slider__quote-strong Ahora trabajo en una consultoría de software.
-          .slider__icons
-            a.github href="https://github.com/alanzam89"
-              .fab.fa-github
-            a.twitter href="https://twitter.com/cerounoio"
-              .fab.fa-twitter
-      .slider__avatars
-        .slider__avatar data-avatar="#{asset_path 'alan-zambrano.jpg'}" data-name="Alan Zambrano" data-info="Ingeniero de Software, Lagersoft" data-quote="Yo comence a programar por mi cuenta." data-quote-strong="Ahora trabajo en una consultoría de software." data-github="https://github.com/alanzam89" data-twitter="https://twitter.com/cerounoio" style="background-image: url(#{asset_path 'alan-zambrano.jpg'})"
+    markdown:
+      # Términos y Condiciones
 
-        .slider__avatar data-avatar="#{asset_path 'alex-cavazos.jpg'}" data-name="Alex Cavazos" data-info="Desarrollador Web" data-quote="Empecé a programar a los 12 años haciendo Mods para Minecraft." data-quote-strong="Actualmente hago aplicaciones móviles." data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'alex-cavazos.jpg'})"
+      Los presentes términos y condiciones (los **Términos**) serán aplicables al sitio web www.cerouno.io (en lo sucesivo el **Sitio**) propiedad de (**CEROUNO SAPI DE CV**) (en lo sucesivo **CEROUNO**), respecto del uso del mismo por parte de usted (en lo sucesivo el **Usuario**) y de los Servicios (según se definen más adelante) que se brinden o informen a través del mismo.
 
-        .slider__avatar data-avatar="#{asset_path 'andy-quijano.jpg'}" data-name="Andy Quijano" data-info="Co-Founder, Index Zero" data-quote="Aprendí a programar a los 14 años en la escuela." data-quote-strong="Ahora tengo mi propia empresa." data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'andy-quijano.jpg'})"
+      Para efectos de cualquier comunicación referente al contenido de los **Términos** favor de dirigirse a:
 
-        .slider__avatar data-avatar="#{asset_path 'angel-huerta.jpg'}" data-name="Ángel Huerta" data-info="Diseñador, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'angel-huerta.jpg'})"
+      Correo electrónico: contacto@cerouno.io<br>
+      Teléfono: +52 1 (81) 1652-0878<br>
+      Dirección: Europa 305, Contry, Monterrey, N.L., México
 
-        .slider__avatar data-avatar="#{asset_path 'benito-serna.jpg'}" data-name="Benito Serna" data-info="CTO, Briq.mx" data-quote="Empecé a programar en la universidad con Java, C, Matlab y Labview." data-quote-strong="Ahora soy CTO de Briq.mx." data-github="https://github.com/bhserna" data-twitter="https://twitter.com/bhserna" style="background-image: url(#{asset_path 'benito-serna.jpg'})"
+      ## I. Objeto
 
-        .slider__avatar data-avatar="#{asset_path 'ceci-torres.jpg'}" data-name="Ceci Torres" data-info="Desarrollador Front-End, Lagersoft" data-quote="Empecé a programar cuando descubrí que hacer código era un súper poder en mí." data-quote-strong="Ahora ayudo a otras personas a descubrir el suyo." data-github="https://github.com/cecitorres" data-twitter="https://twitter.com/cecitorresmx" style="background-image: url(#{asset_path 'ceci-torres.jpg'})"
+      El uso del **Sitio** permite brindar información general al **Usuario** respecto de los servicios de educación que ofrece **CEROUNO** a través de sus diversos esquemas de impartición (en lo sucesivo los “Servicios”). Las especificaciones de los Servicios serán brindados en forma detallada a cada **Usuario** directamente conforme a la solicitud de información en el **Sitio** y conforme a los medios de comunicación determinados entre el **Usuario** y **CEROUNO**.
 
-        .slider__avatar data-avatar="#{asset_path 'elias-matheus.jpg'}" data-name="Elias Matheus" data-info="Desarrollador Web, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'elias-matheus.jpg'})"
+      ## II. Aceptación de los **Términos**
 
-        .slider__avatar data-avatar="#{asset_path 'ernesto-celis.jpg'}" data-name="Ernesto Celis" data-info="Desarrollador Web, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'ernesto-celis.jpg'})"
+      Mediante el acceso al **Sitio**, su uso y navegación, el **Usuario** acepta sujetarse a los **Términos** sin más condiciones o excepciones que las establecidas en los mismos. Si el **Usuario** no está de acuerdo con los **Términos** en todo o en parte, el **Usuario** deberá cerrar ventana y/o presionar “X” y dejar de hacer uso del **Sitio**.
 
-        .slider__avatar data-avatar="#{asset_path 'fer-flores.jpg'}" data-name="Fer Flores" data-info="Senior Software Engineer, Lagersoft" data-quote="Aprendí a animar dibujos programando a los 15." data-quote-strong="Ahora lidero un departamento de ingenieros donde analizar, diseñar y crear software es parte de todos mis días." data-github="https://github.com/ferflores" data-twitter="https://twitter.com/cerounoio" style="background-image: url(#{asset_path 'fer-flores.jpg'})"
+      La aceptación de los **Términos**, implica que el **Usuario** declara ser una persona mayor de edad, en pleno uso de sus facultades y en goce de su facultad de ejercicio para ser sujeto de los mismos. Asimismo, el **Usuario** acepta contar con el equipo y/o programas necesarios y suficientes para hacer y/o disponer del uso del **Sitio** en forma plena y/o satisfactoria. En el entendido de que el **Usuario** es el único responsable de contar con dicho equipo y/o programas para hacer uso correcto del **Sitio**.
 
-        .slider__avatar data-avatar="#{asset_path 'israel-zuniga.jpg'}" data-name="Israel Zúñiga" data-info="Big Data Architect, BanRegio" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'israel-zuniga.jpg'})"
+      La aceptación de **CEROUNO** respecto de que el **Usuario** haga uso del **Sitio**, está limitada y condicionado a que el **Usuario** acepta expresamente todos y cada uno de los **Términos**.
 
-        .slider__avatar data-avatar="#{asset_path 'jesus-lerma.jpg'}" data-name="Jesús Escamilla" data-info="Software Engineer" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'jesus-lerma.jpg'})"
+      ## III. Actualización de los **Términos**
 
-        .slider__avatar data-avatar="#{asset_path 'jesus-escamilla.jpg'}" data-name="Jesús Escamilla" data-info="Desarrollador Front-End, Lagersoft" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'jesus-escamilla.jpg'})"
+      **CEROUNO** de tiempo en tiempo podrá actualizar los **Términos** por cualquier razón y sin necesidad de previo aviso. No obstante, **CEROUNO** hará sus mayores esfuerzos por notificar a los **Usuario**s por cualesquier medios los cambios realizados a los **Términos** una vez aplicados, incluyendo la publicación o notificación mediante el presente **Sitio**.
 
-        .slider__avatar data-avatar="#{asset_path 'jorge-garza.jpg'}" data-name="Jorge Garza" data-info="Software Engineer" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'jorge-garza.jpg'})"
+      El uso continuo del **Sitio** por parte del **Usuario** se considera expresamente como aceptación de los **Términos** y cualesquier cambios y/o modificaciones realizados a los mismos.
 
-        .slider__avatar data-avatar="#{asset_path 'juan-miguel-rubio.jpg'}" data-name="Juan Miguel Rubio" data-info="Front-End Developer, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'juan-miguel-rubio.jpg'})"
+      ## IV. Uso Legal
 
-        .slider__avatar data-avatar="#{asset_path 'mike-salazar.jpg'}" data-name="Mike Salazar" data-info="Co-Founder, Devian Labs" data-quote="Empecé a programar en el laboratorio de la secundaria." data-quote-strong="Ahora dirijo mi propia empresa de software." data-github="https://github.com/migsalazar" data-twitter="https://twitter.com/migsalazar_" style="background-image: url(#{asset_path 'mike-salazar.jpg'})"
+      **CEROUNO** mantiene el **Sitio** y su contenido para el uso de los **Usuario**s, clientes, proveedores, empleados y miembros del público en general, pero solo para los fines legales descritos en estos **Términos**. Mediante el uso de este **Sitio**, el **Usuario** acepta y garantiza a **CEROUNO** que no usará el **Sitio** o su contenido para ningún fin que sea ilegal cuando y donde se use, ni para ningún fin prohibido explícitamente los **Términos**. El contenido del **Sitio** incluye toda la información, comunicaciones, software, comandos, fotos, texto, vídeo, gráficos, música, sonidos, imágenes y otros materiales y servicios que se encuentren o se utilicen en este **Sitio**, se le muestren o no mientras utiliza el **Sitio**.
 
-        .slider__avatar data-avatar="#{asset_path 'rafa-cardenas.jpg'}" data-name="Rafa Cardenas" data-info="CTO, Cívica Digital" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'rafa-cardenas.jpg'})"
+      ## V. Envío de Información a **Usuario**s
 
-        .slider__avatar data-avatar="#{asset_path 'ricardo-alanis.jpg'}" data-name="Ricardo Alanis" data-info="Data Lead, Cívica Digital" data-quote="Empecé a programar cuando era niño, haciendo bash scripts y códigos de PHP para foros de Pokémon." data-quote-strong="Ahora me dedico a sacarle jugo a los datos para ayudar a entender los problemas." data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'ricardo-alanis.jpg'})"
+      En virtud del objeto de los **Términos**, los **Usuario**s mediante el uso de las herramientas disponibles en el **Sitio**, podrán solicitar información relativa a los Servicios de **CEROUNO**. Los **Usuario**s deberán proporcionar por lo menos su nombre completo y correo electrónico, para que el personal de **CEROUNO**, dentro de sus términos, se ponga en contacto con el **Usuario**, con objeto de brindar información detallada de los Servicios.
 
-        .slider__avatar data-avatar="#{asset_path 'sebastian-gutierrez.jpg'}" data-name="Sebastián Gutiérrez" data-info="Diseñador, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'sebastian-gutierrez.jpg'})"
+      Ningún envío de información y/o la información contenida en el **Sitio** deberá ser interpretado como una oferta vinculante para el ofrecimiento de Servicios y/o de cotización de los mismos, a menos que **CEROUNO**, por medio de su personal así lo exprese por escrito.
 
-        .slider__avatar data-avatar="#{asset_path 'tony-ortiz.jpg'}" data-name="Tony Ortiz" data-info="Ingeniero de Software, Lagersoft" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'tony-ortiz.jpg'})"
+      ## VI. Propiedad del **Sitio** y sus Materiales
 
-        .slider__avatar data-avatar="#{asset_path 'vov-quintanilla.jpg'}" data-name="Vov Quintanilla" data-info="Machine Whisperer, Icalia Labs" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'vov-quintanilla.jpg'})"
+      **CEROUNO** es el propietario de, o tiene licencia por parte de sus proveedores para usar, este **Sitio** y su contenido. **CEROUNO** se reserva todos los derechos de propiedad intelectual y de otro tipo sobre el **Sitio** y su contenido, incluyendo, sin limitación, todos los derechos protegidos bajo leyes de copyright y marcas comerciales, se haya completado o no una solicitud o registro de dicha marca comercial o copyright. El permiso concedido para usar el **Sitio** y cualquier parte de su contenido está limitado por y queda completamente sujeto al complimiento por su parte de estos **Términos**. Mediante el uso de este **Sitio** y su contenido, el **Usuario** acepta respetar los derechos de propiedad intelectual y de otro tipo de **CEROUNO** y sus proveedores. Además, el **Usuario** acepta que cualquier contenido que publique o que proporcione en este **Sitio** le conferirá de forma inmediata a **CEROUNO** la licencia perpetua, irrevocable y completamente pagada de uso de dicho contenido para los fines que considere **CEROUNO**, y renuncia a cualquier reclamación contra **CEROUNO** y sus agentes y otorgantes de licencia por la infracción o cualquier forma de derechos económicos o compensación basados en el uso de dicho contenido.
 
+      El **Usuario** acepta no realizar ninguna de las siguientes acciones, ni tampoco permitir que otros las realicen: 
+      Subir archivos, publicar, enviar por correo electrónico, transmitir o suministrar de cualquier otra manera en el **Sitio** cualquier contenido del que no posea los derechos de patentes, propiedad intelectual, derechos de autor, secreto comercial, licencia o cualesquiera otros derechos.
 
-section.call-to
-  h2.call-to__text
-    | Descubre tu talento como
-    |  desarrollador, aprende con
-    |  los mejores.
-    a href="/register"  Aplicar ya →
+      A. Infringir las leyes o normativas vigentes, ya sean federales, estatales, locales, extranjeras o internacionales, que se apliquen a este **Sitio**, su contenido y el uso que el **Usuario** haga de ellos, incluidas, sin limitación, las leyes y normativas estadounidenses de control de exportaciones y reexportaciones, y no involucrarse en actividades ilegales, manipulativas o engañosas mediante el uso de este **Sitio** o su contenido.
 
-section.team#team
-  .container
-    .section__header
-      .section__header-sidebar
-        span.section__header-number 05
-        h3.section__header-title Equipo
-      h2.section__header-text Nuestro equipo está formado por líderes en la industria de tecnología. Sabemos lo que hacemos.
-  .slider.columns
-    .slider__column
-      .slider__info
-        div
-          h3.slider__quote
-            | Jorge Téllez
-          h3.slider__quote-strong Director General & Co-Founder
-          .slider__icons
-            a.github href="https://github.com/novohispano"
-              .fab.fa-github
-            a.twitter href="https://twitter.com/novohispano"
-              .fab.fa-twitter
-      .slider__avatars
-        .slider__avatar data-avatar="#{asset_path 'jorge-tellez.jpg'}" data-quote="Jorge Tellez" data-quote-strong="Director General & Co-Founder" data-github="https://github.com/novohispano" data-twitter="http://twitter.com/novohispano" style="background-image: url(#{asset_path 'jorge-tellez.jpg'})"
+      B. Copiar y/o reproducir de cualquier otra manera el contenido de este **Sitio** sin previa aprobación expresa por escrito de parte de **CEROUNO**.
 
-        .slider__avatar data-avatar="#{asset_path 'edo-lopez.jpg'}" data-quote="Edo Lopez" data-quote-strong="Co-Founder" data-github="https://github.com/edolopez" data-twitter="https://twitter.com/edolopez" style="background-image: url(#{asset_path 'edo-lopez.jpg'})"
+      C. Subir archivos, publicar, enviar por correo electrónico, transmitir, vincular o suministrar en el **Sitio** de cualquier otra manera contenido ilegal, perjudicial, intimidante, abusivo, amenazante, malintencionado, difamatorio, vulgar, obsceno, injurioso, invasivo respecto a la propiedad ajena, transmisor de odio o inaceptable tanto en aspectos raciales o éticos como cualquier otro aspecto.
 
-        .slider__avatar data-avatar="#{asset_path 'jp-escobar.jpg'}" data-quote="JP Escobar" data-quote-strong="Co-Founder" data-github="https://github.com/juanpabloe" data-twitter="https://twitter.com/juanpabloe" style="background-image: url(#{asset_path 'jp-escobar.jpg'})"
+      D. Intentar usar este **Sitio** o su contenido para ocasionar daños a menores de cualquier manera. Hacerse pasar por otra persona o representar a otra entidad, o modificar su afiliación con una persona o entidad legal.
 
-        .slider__avatar data-avatar="#{asset_path 'adrian-cuadros.jpg'}" data-quote="Adrián Cuadros" data-quote-strong="Co-Founder" data-github="https://github.com/adriancuadros" data-twitter="https://twitter.com/adriancuadros" style="background-image: url(#{asset_path 'adrian-cuadros.jpg'}"
+      E. Manipular, alterar, falsificar o modificar de cualquier otra manera la información identificativa de forma que puede ocultar o cambiar el origen de cualquier contenido que el **Usuario** publique, suba o suministre en el **Sitio**.
 
-        .slider__avatar data-avatar="#{asset_path 'alice-aguirre.jpg'}" data-quote="Alice Aguirre" data-quote-strong="Business Development Manager" data-github="https://github.com/cerounoio" data-twitter="https://twitter.com/guerisalice" style="background-image: url(#{asset_path 'alice-aguirre.jpg'})"
+      F. Subir archivos, publicar, enviar por correo electrónico, vincular o suministrar de cualquier otra manera en el **Sitio** cualquier contenido que infrinja los derechos de propiedad intelectual u otros derechos relacionados con la información propiedad de cualquier persona o entidad legal.
 
-    .slider__column.is-secondary-on-mobile
-      .slider__image style="background-image: url(#{asset_path 'jorge-tellez.jpg'})"
+      G. Subir archivos, publicar, enviar por correo electrónico, vincular o suministrar de cualquier otra manera en el **Sitio** contenidos con virus, códigos informáticos, archivos o cualquier otro material que tenga como propósito la interrupción, destrucción o pérdida de funcionalidad de software, datos, hardware, equipos de telecomunicaciones o capacidad de comunicación informática.
+
+      H. Otorgar acceso al **Sitio** o a su contenido a terceros no autorizados, ya sea al compartir su identificación de inicio de sesión o contraseña, o por otros medios.
+
+      I. Intentar obtener acceso a información confidencial para la cual no tiene autorización. Modificar, realizar ingeniería inversa, desarmar, descompilar o realizar piratería informática en cualquiera de las aplicaciones de software o herramientas relacionadas, o las utilidades que se usan en este **Sitio**.
+
+      J. Alterar o eliminar información proporcionada por terceros, o interferir con el funcionamiento de este **Sitio**, incluyendo la distribución de publicidad no solicitada, los mensajes de correo electrónico, la propagación de gusanos, virus, etc.
+
+      ## VII. Privacidad y Protección de Datos Personales
+
+      Los aspectos relativos a la privacidad de datos ser regirán bajo los términos del Aviso Privacidad del **Sitio**.
+
+      ## VIII. Links (Hipervínculos)
+
+      El **Sitio** puede contener hipervínculos a sitios web mantenidos por terceros no relacionados con **CEROUNO**. Dichos vínculos se suministran únicamente por comodidad y constituyan una referencia para los **Usuario**s. **CEROUNO** no controla el contenido de esos sitios de terceros y no tiene control sobre la información de identificación personal que se reúne en dichos sitios. Una vez que el **Usuario** utiliza dichos sitios, está sujeto a políticas, prácticas y cláusulas de uso de esos sitios. De la misma manera, **CEROUNO** no respalda dichos sitios o sus contenidos, ni tampoco certifica la precisión, seguridad o utilidad de los contenidos que se encuentran en ellos.
+
+      ## IX. Acceso a Menores de Edad
+
+      Si por cualquier motivo y/o circunstancia, el **Usuario** resulta ser un menor de edad, por el simple hecho de su acceso al **Sitio**, el **Usuario** declara y acepta que lo hace bajo la guarda y guía de su representante, tutor y/o titular de la patria potestad, quien cuenta con facultades para poder obligarse de conformidad con los **Términos**.
+
+      Si la persona que tiene acceso al **Sitio** es menor de edad sin supervisión, no podrá tener acceso al **Sitio**, sujetarse a los **Términos** y/o solicitar información de los Servicios, a menos que su representante, tutor y/o titular de la patria potestad lo haga en su nombre y representación.
+
+      ## X. Negativa y/o Retiro de Acceso al **Sitio**
+
+      **CEROUNO** se reserva, en todo momento, el derecho a negar o retirar el acceso al **Sitio** y/o a sus contenidos, en cualquier momento y sin previo aviso, por iniciativa propia, solicitud de algún tercero (incluyendo autoridad gubernamental), a cualquier **Usuario** por cualquier motivo, incluyendo sin limitar por el uso indebido del **Sitio**, su contenido o que incumplan cualquiera de las disposiciones de los **Términos**.
+
+      ## XI. Vigencia
+
+      El **Sitio** y su contenido tendrán una duración indefinida. No obstante lo anterior, **CEROUNO** podrá dar por terminado, suspender o interrumpir en cualquier momento y sin necesidad de previo aviso el **Sitio** y/o cualquiera de sus contenidos.
+
+      ## X. Garantías
+
+      El **Sitio**, su contenido y los Servicios descritos dentro del mismos, así como cualquier otro material provisto o puesto a disposición por el **Sitio** se entrega en condiciones tal cual en las que se encuentra (“As is”) y sin ninguna otra garantía de ninguna clase o tipo, ya sea expresa o implícita. **CEROUNO**, sus afiliadas, proveedores, licenciatarios, anunciantes o patrocinadores, agentes no garantizan que el uso del presente **Sitio** y el acceso al contenido dentro del mismo será ininterrumpido, libre de errores o seguro, que los defectos serán corregidos o que el servidor en los que se encuentra soportado el **Sitio**, está libre de virus u otros componentes dañinos.
+      Ninguna opinión, consejo o declaración de **CEROUNO**, sus afiliados, licenciatarios, proveedores, anunciantes, patrocinadores, agentes o visitantes, sea hecho a través del presente **Sitio** o en cualquier otra plataforma de algún tercero, creará o se entenderá como el otorgamiento de alguna garantía. El uso del **Sitio** es a completo riesgo del **Usuario**.
+
+      ## XI. Indemnización
+
+      A cambio de la autorización del **Usuario** para acceder a este **Sitio** y su contenido, el **Usuario** acepta indemnizar y defender **CEROUNO**, sus empleados, directores, socios, accionistas, y a defenderlo, indemnizarlo y mantenerlo en paz y a salvo de todo coste, demanda, multa, sanción reclamación, acusación, gastos y responsabilidades, entre los que se incluyen, sin limitación, los honorarios de los representantes legales y los costes asociados en forma alguna a reclamaciones o acusaciones relacionadas con el uso que el **Usuario** hace de este **Sitio**, incluidas sin limitación las conductas u omisiones por las cuales se constituiría un incumplimiento de estos **Términos**, o cualquiera de ellas, o en relación con cualquier material o contenido que el **Usuario** suministre o que se suministre por medio de su identificación de inicio de sesión o su contraseña. El **Usuario** acepta cooperar tanto como se le solicite en defensa de **CEROUNO** o en la resolución de dicha reclamación. **CEROUNO** se reserva el derecho de asumir exclusivo control sobre la defensa y la resolución de cualquier tema sujeto a una indemnización por parte del usuario.
+
+      ## XII. Límite de Responsabilidad
+
+      **CEROUNO** no se responsabilizará de ninguna manera por daños directos, indirectos, resultantes, incidentales, especiales o punitivos que provengan o estén conectados con el uso que haga el **Usuario** de este **Sitio** y de su contenido, o que estén conectados con algún cambio a dicho contenido o con alguna demora o incapacidad de acceder o utilizar este sitio o su contenido, sin importar si dicha reclamación puede estar fundada en un contrato, responsabilidad, responsabilidad contractual o alguna otra teoría.
+
+      ## XIII. Jurisdicción
+
+      Para todo lo relativo a la interpretación de los **Términos**, los mismos se regirán conforme a la legislación vigente en el estado de Nuevo León, México, y que para el caso del surgimiento de cualquier conflicto, disputa o diferencia en cuanto a su interpretación, ejecución y cumplimiento, el **Usuario** acepta someterse expresa y exclusivamente a la jurisdicción de los tribunales competentes de la ciudad de Monterrey, Nuevo León, renunciando, a cualquier otro que les pudiera corresponder por virtud de sus domicilios, presentes, futuros, o por cualquier otra razón.

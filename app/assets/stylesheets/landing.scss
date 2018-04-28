@@ -214,6 +214,26 @@ img {
   }
 }
 
+.static {
+  padding: 5rem 0;
+
+  h1 {
+    color: $color-action;
+    font-size: 2.5rem;
+    font-family: $font-brand;
+    line-height: 1em;
+    margin: 1em 0
+  }
+
+  h2 {
+    margin: 1em 0
+  }
+
+  p {
+    margin: 1em 0
+  }
+}
+
 .program .section__header-text {
   font-size: 3rem;
   @include mobile {font-size: 2rem; }
@@ -361,7 +381,7 @@ img {
       padding-bottom: 2rem;
     }
 
-    a {
+    p, a {
       color: #fff;
       font-family: $font-brand;
       font-size: 1.5rem;
@@ -570,6 +590,28 @@ img {
   background: #fff;
   padding: 1.5rem 0;
 
+  .privacy, .terms {
+    text-align: right;
+  }
+
+  .legal {
+    margin-top: .75rem;
+  }
+
+  .copyright, .privacy, .terms {
+    color: rgba(#000, 0.2);
+    font-weight: 600;
+
+    a {
+      color: $color-action;
+    }
+
+    @include mobile {
+      text-align: center;
+      padding: 1rem 0;
+    }
+  }
+
   &__container {
     display: flex;
     align-items: center;
@@ -587,16 +629,6 @@ img {
     img {
       width: 10rem;
       padding-right: 1rem;
-    }
-
-    .copyright {
-      color: rgba(#000, 0.2);
-      font-weight: 600;
-
-      @include mobile {
-        text-align: center;
-        padding: 1rem 0;
-      }
     }
   }
 
