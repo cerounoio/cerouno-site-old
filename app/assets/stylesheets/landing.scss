@@ -53,6 +53,11 @@ img {
     align-items: center;
   }
 
+  &.mastery_header {
+    background-color: yellow;
+    width: 70%;
+  }
+
   @include mobile {
     flex-direction: column;
   }
