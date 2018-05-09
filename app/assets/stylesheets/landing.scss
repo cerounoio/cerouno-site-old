@@ -107,7 +107,6 @@ img {
 }
 
 .main-header {
-  position: absolute;
   width: 100%;
   top: 0;
   z-index: 2;
@@ -264,10 +263,6 @@ img {
     color: #fff;
     padding: 8rem 0;
 
-  &__mastery-header{
-    margin-top:50px;
-  }
-
     @include mobile {
       width: 100%;
       padding: 1rem;
@@ -277,9 +272,23 @@ img {
     &.is-apprenticeship { background: #FFC565; }
     &.is-professional { background: #5C4CFF; }
     &.is-mastery { background: #474747; }
-    &.is-orange { background: rgba(255, 197, 101, .8); }
-    &.is-purple { background: rgba(92, 76, 255, .8); }
-    &.is-gray { background: rgba(71, 71, 71, .8); }
+    &.is-orange { 
+      background: rgba(255, 197, 101, .8); 
+      margin: 0;
+      width: 50%;
+      padding-left: 3%;
+      padding-right: 3%;
+      }
+    &.is-purple { 
+      background: rgba(92, 76, 255, .8); 
+      margin: 0;
+      width: 50%;
+      }
+    &.is-gray { 
+      background: rgba(71, 71, 71, .8); 
+      margin: 0;
+      width: 50%;
+    }
   }
 
   &__icon {
@@ -302,7 +311,7 @@ img {
 
   &__title {
     font-family: $font-brand;
-    font-size: 5rem;
+    font-size: 2.5rem;
     transition: all 0.2s ease;
 
     @include mobile { font-size: 2rem; }
