@@ -311,7 +311,7 @@ img {
 
   &__title {
     font-family: $font-brand;
-    font-size: 2.5rem;
+    font-size: 5rem;
     transition: all 0.2s ease;
 
     @include mobile { font-size: 2rem; }
@@ -954,5 +954,17 @@ img {
 
   &-author {
     color: $color-action;
+  }
+}
+
+.mastery-view_cards {
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 100;
   }
 }
