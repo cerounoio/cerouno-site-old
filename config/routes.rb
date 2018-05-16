@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :applications, only: [:show, :index, :update, :edit] do
       patch 'toggle', on: :member
+      get   'export', on: :collection
     end
 
     resources :evaluations, except: [:index]

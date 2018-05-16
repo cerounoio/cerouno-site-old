@@ -42,5 +42,5 @@
               |  la extensión <b>pdf</b>, <b>doc</b> o <b>docx</b>.
           .col-md-6
             = f.label(:program, 'PROGRAMA')
-            = f.text_field(:program, value: I18n.translate(@experience.program).capitalize, class: 'custom-select form-control', readonly: '')
+            = f.text_field(:program, value: I18n.translate(@experience.program).to_s.capitalize, class: 'custom-select form-control', readonly: '')
             small.form-text.text-muted ¿A qué programa estás aplicando?

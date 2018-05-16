@@ -47,6 +47,20 @@ class Admin::ApplicationsController < AdminController
     render 'admin/applications/show'
   end
 
+  def export
+    status = params[:status]
+
+    if status == 'all'
+      applications = Application.all
+    else
+      applications = Application.find_by(status: status)
+    end
+
+    respond_to do |format|
+      format.csv { send_data ApplicationExporterService.new(applications).render, filename: 'applications.csv' }
+    end
+  end
+
   private
 
   def application_params
