@@ -115,7 +115,7 @@ img {
     position: fixed;
     background: #FAFAFA;
     padding: 0.5rem 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid p#ccc;
   }
 
   &__container {
@@ -192,7 +192,14 @@ img {
     align-items: start;
     justify-content: space-between;
 
-    @include mobile { flex-direction: column; }
+    @include mobile { 
+      flex-direction: column; 
+      display: block;
+    }
+
+    &-sidebar {
+      margin-bottom: 5%;
+    }
 
     &-number {
       font-weight: 900;
@@ -240,6 +247,7 @@ img {
 
     .program-item__title { transform: translateX(-2rem); }
     .program-item__arrow { transform: translateY(-50%)translateX(50%); }
+    .program-item__info.is-back { transform: translateX(-2rem); transition: all 0.2s ease; }
     .program-item__icon.is-left { transform: translate(50%, -50%)rotate(90deg); }
     .program-item__icon.is-right { transform: translate(-50%, -50%)rotate(90deg); }
   }
@@ -265,7 +273,7 @@ img {
 
     @include mobile {
       width: 100%;
-      padding: 1rem;
+      padding: 2rem;
       order: 2;
     }
 
@@ -275,19 +283,29 @@ img {
     &.is-orange { 
       background: rgba(255, 197, 101, .8); 
       margin: 0;
-      width: 50%;
-      padding-left: 3%;
-      padding-right: 3%;
+      width:100%;
       }
+
     &.is-purple { 
       background: rgba(92, 76, 255, .8); 
       margin: 0;
-      width: 50%;
+      width:100%;
       }
     &.is-gray { 
       background: rgba(71, 71, 71, .8); 
       margin: 0;
-      width: 50%;
+      width:100%;
+    }
+    &.is-back a { 
+      color: #FF4F23;
+      font-size: 3rem;
+      font-weight: bold;
+      font-family: "Poppins", sans-serif;
+      transition: all 0.2s ease;
+
+      @include mobile { 
+        font-size: 2rem; 
+      }
     }
   }
 
@@ -307,6 +325,8 @@ img {
       right: 0;
       transform: translate(50%, -50%);
     }
+
+
   }
 
   &__title {
@@ -375,6 +395,10 @@ img {
 
   &__column {
     width: 50%;
+
+    @include mobile { 
+      margin: 0%; 
+    }
   }
 
   &__item {
@@ -393,6 +417,10 @@ img {
       font-size: 1.5rem;
       font-weight: 800;
       display: block;
+
+      @include mobile { 
+        font-size: 1rem; 
+      }
     }
   }
 }
@@ -472,7 +500,7 @@ img {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 
     @include mobile { width: 100%;}
 
@@ -958,13 +986,31 @@ img {
 }
 
 .mastery-view_cards {
+  padding-left: 7%;
+  padding-right: 7%;
 
   h3 {
     font-size: 3rem;
+
+    @include mobile {
+      font-size: 2rem;
+    }
   }
 
   h4 {
     font-size: 1rem;
     font-weight: 100;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+  span{
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 }

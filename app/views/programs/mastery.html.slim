@@ -1,6 +1,6 @@
 .program
   article.program-item
-    .program-item__image style="background-image: url('assets/edo-lopez.jpg')"
+    .program-item__image style="background-image: url(#{asset_path 'edo-lopez.jpg'})"
       = image_tag 'program-1.svg' ,class: 'program-item__icon is-left'
     .program-item__info.is-mastery
       div
@@ -9,6 +9,7 @@
         h4.program-item__text Aprende a construir una aplicación web y lanza tu idea.
         .program-item__footer
           span.program-item__tags Ruby, Terminal, Github
+          
 section.programs
   .container
     .section__header
@@ -16,32 +17,77 @@ section.programs
         span.section__header-number 01
         h3.section__header-title Programas
       h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
-  article.program-item
 
-    .program-item__info.is-orange
+section.columns
+
+  article.program-item.slider__column
+    .program-item__info.is-purple
       div.mastery-view_cards
         span.program-item__number 01
         h3.program-item__title Técnicas de escalabilidad en .NET
-        h4.program-item__text Aprende a construir una aplicación web y lanza tu idea.
+        h4.program-item__text Impartido por: Fernando Flores
         .program-item__footer
-          span.program-item__tags Ruby, Terminal, Github
           span.program-item__arrow Ver Programa →
-  article.program-item
-    .program-item__info.is-purple
-      div.is-right
+
+  article.program-item.slider__column
+    .program-item__info.is-gray
+      div.mastery-view_cards
         span.program-item__number 02
-        h3.program-item__title Professional.
-        h4.program-item__text Aprende a construir una aplicación web y lanza tu idea.
+        h3.program-item__title Técnicas de escalabilidad en Java
+        h4.program-item__text Impartido por: Antonio Ortiz
         .program-item__footer
-          span.program-item__tags Ruby, Terminal, Github
+          span.program-item__arrow Ver Programa →
+section.columns
+
+  article.program-item.slider__column
+    .program-item__info.is-orange
+      div.mastery-view_cards
+        span.program-item__number 03
+        h3.program-item__title Diplomado en ciencia de datos
+        h4.program-item__text Impartido por: Ricardo Alanís
+        .program-item__footer
           span.program-item__arrow  Ver Programa →
 
-  article.program-item
-    .program-item__info.is-gray
-      div
-        span.program-item__number 03
-        h3.program-item__title Mastery
-        h4.program-item__text Aprende a construir una aplicación web y lanza tu idea.
+  article.program-item.slider__column
+    .program-item__info.is-purple
+      div.mastery-view_cards
+        span.program-item__number 04
+        h3.program-item__title Desarrollo Front-End en react
+        h4.program-item__text Impartido por: Fernando Flores
         .program-item__footer
-          span.program-item__tags Ruby, Terminal, Github
           span.program-item__arrow Ver Programa →
+
+section.columns
+
+  article.program-item.slider__column
+    .program-item__info.is-gray
+      div.mastery-view_cards
+        span.program-item__number 05
+        h3.program-item__title Desarrollo de aplicaciones móviles en IOS
+        h4.program-item__text Impartido por: Rafa Cárdenas
+        .program-item__footer
+          span.program-item__arrow  Ver Programa →
+
+  article.program-item.slider__column
+    .program-item__info.is-orange
+      div.mastery-view_cards
+        span.program-item__number 06
+        h3.program-item__title Desarrollo de aplicaciones móviles en Android
+        h4.program-item__text Impartido por: Rafa Cárdenas
+        .program-item__footer
+          span.program-item__arrow Ver Programa →
+
+section.columns
+
+  article.program-item.slider__column
+    .program-item__info.is-purple
+      div.mastery-view_cards
+        span.program-item__number 07
+        h3.program-item__title Administración de infraestructura con Docker
+        h4.program-item__text Impartido por: Roberto Quintanilla
+        .program-item__footer
+          span.program-item__arrow  Ver Programa →
+
+  article.program-item.slider__column
+    .program-item__info.is-back
+      a{ :href ="..."  } Regresar→
