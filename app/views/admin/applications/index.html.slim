@@ -10,6 +10,9 @@
             .col-md-12
               h1 DASHBOARD
               h3 APLICACIONES
+              .text-right
+                button.btn.btn-secondary#copyApplicationEmails EMAILS
+                = link_to 'EXPORTAR', export_admin_applications_path(status: params[:status], format: :csv), class: 'btn btn-secondary'
           .row.applications-container
             .col-md-12
               .row

@@ -7,5 +7,6 @@ FactoryGirl.define do
     password_confirmation 'password'
     whatsapp              '1234567890'
     admin                 false
+    policies              true
   end
 end

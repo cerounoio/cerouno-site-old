@@ -35,7 +35,7 @@ class UserMailer < ApplicationMailer
   end
 
   def operations_manager
-    '"Cris Flores" <cris@cerouno.io>'
+    '"Alice Aguirre" <alice@cerouno.io>'
   end
 
   def executive_director

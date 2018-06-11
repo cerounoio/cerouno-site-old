@@ -1,0 +1,21 @@
+footer.main-footer
+  .container.main-footer__container
+    .main-footer__brand
+      a href="/"
+        = image_tag('cerouno-logo-horizontal-grayscale.png')
+    nav.main-footer__social
+      a href="https://facebook.com/cerounoio"
+        i.fab.fa-facebook
+      a href="https://twitter.com/cerounoio"
+        i.fab.fa-twitter
+      a href="https://instagram.com/cerounoio"
+        i.fab.fa-instagram
+      a href="https://github.com/cerounoio"
+        i.fab.fa-github
+  .container.main-footer__container.legal
+    .footer__column
+      p.copyright Cerouno Ventures SAPI de CV © 2018 
+      p.copyright Todos los Derechos Reservados
+    .footer__column.right
+      p.privacy= link_to 'Aviso de Privacidad', '/privacy'
+      p.terms= link_to 'Términos y Condiciones', '/terms'

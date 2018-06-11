@@ -9,8 +9,8 @@ html
     'data-turbolinks-track': 'reload'
     = render 'layouts/facebook'
     = render 'layouts/google'
+    = render 'layouts/hubspot'
     = render 'layouts/favicon'
-
     script crossorigin="anonymous" defer="" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
   body
     header.main-header
@@ -26,55 +26,5 @@ html
           = link_to 'Aplicar ahora →', register_path, class: 'btn btn-primary'
     = render 'layouts/alert'
     = yield
-    section.contact
-      .container
-        .section__header
-            .section__header-sidebar
-              span.section__header-number 04
-              h3.section__header-title Contacto
-            h2.section__header-text ¿Tienes alguna pregunta o quieres colaborar con nosotros? Mándanos un mensaje.
-        .columns
-          .contact__column
-            .contact__item
-              h4.contact__item-title Admisiones
-              a href="mailto://admisiones@cerouno.io" admisiones@cerouno.io
-              a href="/" 81.1652.0878
-            .contact__item
-              h4.contact__item-title Alianzas
-              a href="mailto://alianzas@cerouno.io" alianzas@cerouno.io
-              a href="/" 81.1652.0878
-          .contact__column
-            .contact__item
-              h4.contact__item-title Redes Sociales
-              a href="https://facebook.com/cerounoio" Facebook
-              a href="https://twitter.com/cerounoio" Twitter
-              a href="https://medium.com/@cerounoio" Medium
-              a href="https://instagram.com/cerounoio" Instagram
-              a href="https://github.com/cerounoio" Github
-    section.newsletter
-      .columns
-        .newsletter__column.newsletter__form
-          div
-            h3 NEWSLETTER
-            p ¿Quieres más información sobre CEROUNO?
-            p Inscríbete a nuestro newsletter.
-            form#mc-embedded-subscribe-form.validate[action="https://cerouno.us15.list-manage.com/subscribe/post?u=a702e3835beed93f059881b5a&amp;id=4cc2c3f97d" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate]
-              input#mce-EMAIL.required.email[type="email" placeholder="Email" value="" name="EMAIL"]
-              button#mc-embedded-subscribe.button[type="submit" value="Subscribe" name="subscribe"] Enviar
-        .newsletter__column
-    footer.main-footer
-      .container.main-footer__container
-        .main-footer__brand
-          a href="/"
-            = image_tag('cerouno-logo-horizontal-grayscale.png')
-          span.copyright | Derechos Reservados Cerouno Ventures SAPI de CV 2018 ©
-        nav.main-footer__social
-          a href="https://facebook.com/cerounoio"
-            i.fab.fa-facebook
-          a href="https://twitter.com/cerounoio"
-            i.fab.fa-twitter
-          a href="https://instagram.com/cerounoio"
-            i.fab.fa-instagram
-          a href="https://github.com/cerounoio"
-            i.fab.fa-github
+    = render 'layouts/footer'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

@@ -17,12 +17,16 @@ section.programs#programs
       h2.section__header-text Contamos con los programas más avanzados del mercado impartidos por los mejores profesionales del país.
   article.program-item
     .program-item__image style="background-image: url(#{asset_path 'program-photo-1.jpg'})"
-      = image_tag 'program-1.svg' ,class: 'program-item__icon is-left'
+      = image_tag 'program-1.svg', class: 'program-item__icon is-left'
+
     .program-item__info.is-apprenticeship
       div
-        span.program-item__number 01
-        h3.program-item__title Apprenticeship
-        h4.program-item__text Aprende a construir una aplicación web desde cero y lanza tu idea.
+        span.program-item__number
+          a href="/programs/apprenticeship" 01
+        h3.program-item__title
+          a href="/programs/apprenticeship" Apprenticeship
+        h4.program-item__text
+          a href="/programs/apprenticeship" Aprende a construir una aplicación web desde cero y lanza tu idea.
         .program-item__footer
           span.program-item__tags Ruby, Terminal, Github
           span.program-item__arrow
@@ -30,9 +34,12 @@ section.programs#programs
   article.program-item
     .program-item__info.is-professional
       div
-        span.program-item__number 02
-        h3.program-item__title Professional.
-        h4.program-item__text Conviértete en desarrollador de software profesional.
+        span.program-item__number
+          a href="/programs/professional" 02
+        h3.program-item__title
+          a href="/programs/professional" Professional
+        h4.program-item__text
+          a href="/programs/professional" Conviértete en desarrollador de software profesional.
         .program-item__footer
           span.program-item__tags JavaScript, Node.js
           span.program-item__arrow
@@ -44,9 +51,12 @@ section.programs#programs
       = image_tag 'program-3.svg' ,class: 'program-item__icon is-left'
     .program-item__info.is-mastery
       div
-        span.program-item__number 03
-        h3.program-item__title Mastery
-        h4.program-item__text Lleva tus habilidades profesionales al siguiente nivel.
+        span.program-item__number
+          a href="mailto:contacto@cerouno.io?subject=Informes%20Mastery%20Program" 03
+        h3.program-item__title
+          a href="mailto:contacto@cerouno.io?subject=Informes%20Mastery%20Program" Mastery
+        h4.program-item__text
+          a href="mailto:contacto@cerouno.io?subject=Informes%20Mastery%20Program" Lleva tus habilidades profesionales al siguiente nivel.
         .program-item__footer
           span.program-item__tags Data Science, React, .NET, Java, iOS, Android, Docker
           span.program-item__arrow
@@ -57,7 +67,7 @@ section#partnerships
       .section__header-sidebar
         span.section__header-number 03
         h3.section__header-title Alianzas
-      h2.section__header-text Nos únimos a empresas con un alto nivel técnico para brindarte el contenido más avanzado de programación.
+      h2.section__header-text Nos unimos a empresas con un alto nivel técnico para brindarte el contenido más avanzado de programación.
     .partnerships
       article.partnership
         .partnership__image
@@ -118,15 +128,13 @@ section#mentors
 
         .slider__avatar data-avatar="#{asset_path 'elias-matheus.jpg'}" data-name="Elias Matheus" data-info="Desarrollador Web, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'elias-matheus.jpg'})"
 
-        .slider__avatar data-avatar="#{asset_path 'ernesto-celis.jpg'}" data-name="Ernesto Celis" data-info="Desarrollador Web, Reservamos.mx" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'ernesto-celis.jpg'})"
-
         .slider__avatar data-avatar="#{asset_path 'fer-flores.jpg'}" data-name="Fer Flores" data-info="Senior Software Engineer, Lagersoft" data-quote="Aprendí a animar dibujos programando a los 15." data-quote-strong="Ahora lidero un departamento de ingenieros donde analizar, diseñar y crear software es parte de todos mis días." data-github="https://github.com/ferflores" data-twitter="https://twitter.com/cerounoio" style="background-image: url(#{asset_path 'fer-flores.jpg'})"
 
         .slider__avatar data-avatar="#{asset_path 'israel-zuniga.jpg'}" data-name="Israel Zúñiga" data-info="Big Data Architect, BanRegio" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'israel-zuniga.jpg'})"
 
-        .slider__avatar data-avatar="#{asset_path 'jesus-lerma.jpg'}" data-name="Jesús Escamilla" data-info="Software Engineer" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'jesus-lerma.jpg'})"
-
         .slider__avatar data-avatar="#{asset_path 'jesus-escamilla.jpg'}" data-name="Jesús Escamilla" data-info="Desarrollador Front-End, Lagersoft" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'jesus-escamilla.jpg'})"
+
+        .slider__avatar data-avatar="#{asset_path 'jesus-lerma.jpg'}" data-name="Jesús Lerma" data-info="Software Engineer" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'jesus-lerma.jpg'})"
 
         .slider__avatar data-avatar="#{asset_path 'jorge-garza.jpg'}" data-name="Jorge Garza" data-info="Software Engineer" data-quote="" data-quote-strong="" data-github="google.com" data-twitter="google.com" style="background-image: url(#{asset_path 'jorge-garza.jpg'})"
 
@@ -184,3 +192,5 @@ section.team#team
 
     .slider__column.is-secondary-on-mobile
       .slider__image style="background-image: url(#{asset_path 'jorge-tellez.jpg'})"
+= render 'layouts/contact'
+= render 'layouts/newsletter'

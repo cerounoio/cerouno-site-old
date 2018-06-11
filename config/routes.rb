@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get 'terms',   to: 'home#terms'
+  get 'privacy', to: 'home#privacy'
+
   get  'login',  to: 'sessions#new'
   post 'login',  to: 'sessions#create'
   get  'logout', to: 'sessions#destroy'
@@ -20,6 +23,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :applications, only: [:show, :index, :update, :edit] do
       patch 'toggle', on: :member
+      get   'export', on: :collection
     end
 
     resources :evaluations, except: [:index]

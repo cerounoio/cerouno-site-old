@@ -20,7 +20,7 @@ module ApplicationHelper
   end
 
   def enum_options(object, enum)
-    object.class.send(enum).collect { |key, value| [ I18n.translate(key.gsub('_', ' ')).capitalize, key ] }
+    object.class.send(enum).collect { |key, value| [ format_enum_option_text(key), key ] }
   end
 
   def boolean_options
@@ -93,5 +93,11 @@ module ApplicationHelper
   def format_error_message(attribute, message)
     attribute = I18n.translate(attribute.to_s.gsub('_', ' '))
     "#{attribute} #{message}.".capitalize
+  end
+
+  def format_enum_option_text(text)
+    text = I18n.translate(text.gsub('_', ' '))
+
+    text.first == text.first.upcase ? text : text.titleize
   end
 end
