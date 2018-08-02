@@ -22,7 +22,7 @@ class ApplicationsController < ApplicationController
       user.update_column(:token, SecureRandom.hex(20))
 
       UserMailer.acceptance(user).deliver_now  if application.accepted_invitation?
-      Usermailer.declination(user).deliver_now if application.declined_invitation?
+      UserMailer.declination(user).deliver_now if application.declined_invitation?
 
       redirect_to root_path, success: 'Tu respuesta ha sido registrada exitosamente. Te hemos enviado un correo.'
     else
