@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get 'terms',   to: 'home#terms'
-  get 'privacy', to: 'home#privacy'
+  get 'terms',    to: 'home#terms'
+  get 'privacy',  to: 'home#privacy'
+  get 'warranty', to: 'home#warranty'
 
   get  'login',  to: 'sessions#new'
   post 'login',  to: 'sessions#create'

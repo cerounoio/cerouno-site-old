@@ -45,6 +45,13 @@ img {
   margin: 0 auto;
 }
 
+ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  position: relative;
+  left: 2em;
+}
+
 .columns {
   display: flex;
   justify-content: space-between;
