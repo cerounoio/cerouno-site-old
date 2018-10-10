@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   post 'login',  to: 'sessions#create'
   get  'logout', to: 'sessions#destroy'
 
-  get 'register', to: 'users#new'
+  # get 'register', to: 'users#new'
+  get 'register', to: redirect('https://cerouno.typeform.com/to/VDquyl')
   resources :users, only: [:show, :create, :edit, :update]
 
   resources :applications, only: [:show, :update] do
